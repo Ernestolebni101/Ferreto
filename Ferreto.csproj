@@ -69,6 +69,12 @@
     <Compile Include="Views\FirstContainer.Designer.cs">
       <DependentUpon>FirstContainer.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\InicioContainer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\InicioContainer.Designer.cs">
+      <DependentUpon>InicioContainer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\FirstContainer.resx">
       <DependentUpon>FirstContainer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\InicioContainer.resx">
+      <DependentUpon>InicioContainer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Inventario.resx">
       <DependentUpon>Inventario.cs</DependentUpon>
@@ -171,6 +180,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Ferreto_de_lo_facilita-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-screen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimize %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar sesion.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,6 +1,6 @@
 ﻿namespace Ferreto.Views
 {
-    partial class Inventario
+    partial class InicioContainer
     {
         /// <summary>
         /// Required designer variable.
@@ -28,29 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ferreto.Properties.Resources.Ferreto_de_lo_facilita_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(84, 162);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(491, 263);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(195, 236);
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label1.Location = new System.Drawing.Point(83, 84);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(276, 22);
+            this.label1.Size = new System.Drawing.Size(504, 56);
             this.label1.TabIndex = 1;
-            this.label1.Text = "AQUI VIENEN EL INVENTARIO";
+            this.label1.Text = "Bienvenido a Ferreto";
             // 
-            // Inventario
+            // InicioContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(678, 494);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Inventario";
-            this.Text = "Inventario";
+            this.Name = "InicioContainer";
+            this.Text = "InicioContainer";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -58,6 +72,7 @@
 
         #endregion
 
+        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
     }
 }
