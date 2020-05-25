@@ -1,6 +1,6 @@
 ﻿namespace Ferreto.Views
 {
-    partial class InicioContainer
+    partial class Inicio
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Ferreto.Properties.Resources.Ferreto_de_lo_facilita_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(84, 162);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 145);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(491, 263);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -48,21 +48,22 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(83, 84);
+            this.label1.Location = new System.Drawing.Point(130, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(504, 56);
+            this.label1.Size = new System.Drawing.Size(553, 56);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Bienvenido a Ferreto";
+            this.label1.Text = "¡Bienvenido de Vuelta!";
             // 
-            // InicioContainer
+            // Inicio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 494);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(820, 463);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "InicioContainer";
+            this.Name = "Inicio";
             this.Text = "InicioContainer";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

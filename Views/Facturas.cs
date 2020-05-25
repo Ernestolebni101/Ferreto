@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ferreto.Views
 {
-    public partial class Facturas : Form
+    public partial class ReimprimirBo : Form
     {
-        public Facturas()
+        public ReimprimirBo()
         {
             InitializeComponent();
         }

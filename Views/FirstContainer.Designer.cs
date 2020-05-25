@@ -32,18 +32,23 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pctOcultar = new System.Windows.Forms.PictureBox();
+            this.InicioBo = new AltoControls.AltoButton();
+            this.RegistroBo = new AltoControls.AltoButton();
+            this.panelBotones = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).BeginInit();
+            this.panelBotones.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelCont
             // 
+            this.panelCont.BackColor = System.Drawing.Color.White;
             this.panelCont.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panelCont.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCont.Location = new System.Drawing.Point(0, 0);
+            this.panelCont.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelCont.Location = new System.Drawing.Point(0, 57);
             this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(740, 380);
+            this.panelCont.Size = new System.Drawing.Size(740, 341);
             this.panelCont.TabIndex = 0;
             // 
             // panel1
@@ -84,13 +89,67 @@
             this.pctOcultar.TabStop = false;
             this.pctOcultar.Click += new System.EventHandler(this.Minimizar);
             // 
+            // InicioBo
+            // 
+            this.InicioBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.InicioBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.InicioBo.BackColor = System.Drawing.Color.Transparent;
+            this.InicioBo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.InicioBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InicioBo.ForeColor = System.Drawing.Color.White;
+            this.InicioBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.InicioBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.InicioBo.Location = new System.Drawing.Point(28, 3);
+            this.InicioBo.Name = "InicioBo";
+            this.InicioBo.Radius = 3;
+            this.InicioBo.Size = new System.Drawing.Size(145, 19);
+            this.InicioBo.Stroke = false;
+            this.InicioBo.StrokeColor = System.Drawing.Color.Gray;
+            this.InicioBo.TabIndex = 2;
+            this.InicioBo.Text = "Inicia Sesión";
+            this.InicioBo.Transparency = false;
+            this.InicioBo.Click += new System.EventHandler(this.InicioBo_Click);
+            // 
+            // RegistroBo
+            // 
+            this.RegistroBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.RegistroBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.RegistroBo.BackColor = System.Drawing.Color.Transparent;
+            this.RegistroBo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.RegistroBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroBo.ForeColor = System.Drawing.Color.White;
+            this.RegistroBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.RegistroBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.RegistroBo.Location = new System.Drawing.Point(198, 3);
+            this.RegistroBo.Name = "RegistroBo";
+            this.RegistroBo.Radius = 5;
+            this.RegistroBo.Size = new System.Drawing.Size(145, 19);
+            this.RegistroBo.Stroke = false;
+            this.RegistroBo.StrokeColor = System.Drawing.Color.Gray;
+            this.RegistroBo.TabIndex = 3;
+            this.RegistroBo.Text = "Regístrate";
+            this.RegistroBo.Transparency = false;
+            this.RegistroBo.Click += new System.EventHandler(this.RegistroBo_Click);
+            // 
+            // panelBotones
+            // 
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.panelBotones.Controls.Add(this.RegistroBo);
+            this.panelBotones.Controls.Add(this.InicioBo);
+            this.panelBotones.Location = new System.Drawing.Point(0, 29);
+            this.panelBotones.Name = "panelBotones";
+            this.panelBotones.Size = new System.Drawing.Size(377, 28);
+            this.panelBotones.TabIndex = 0;
+            // 
             // FirstContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 380);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(740, 398);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCont);
+            this.Controls.Add(this.panelBotones);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FirstContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -98,6 +157,7 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).EndInit();
+            this.panelBotones.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -108,5 +168,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pctOcultar;
+        private AltoControls.AltoButton InicioBo;
+        private AltoControls.AltoButton RegistroBo;
+        private System.Windows.Forms.Panel panelBotones;
     }
 }

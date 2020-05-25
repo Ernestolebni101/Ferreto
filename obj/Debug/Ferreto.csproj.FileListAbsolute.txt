@@ -36,3 +36,30 @@ C:\Users\Carlos\Desktop\Ferreto\obj\Debug\Ferreto.csproj.CopyComplete
 C:\Users\Carlos\Desktop\Ferreto\obj\Debug\Ferreto.exe
 C:\Users\Carlos\Desktop\Ferreto\obj\Debug\Ferreto.pdb
 C:\Users\Carlos\Desktop\Ferreto\obj\Debug\Ferreto.Views.InicioContainer.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\bin\Debug\Ferreto.exe.config
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\bin\Debug\Ferreto.exe
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\bin\Debug\Ferreto.pdb
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\bin\Debug\AltoControls.dll
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.csprojAssemblyReference.cache
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Properties.Resources.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.ChargingScreen.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Compras.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.ReimprimirBo.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.FirstContainer.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Inicio.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Inventario.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Login.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.MainContainer.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Venta.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.csproj.GenerateResource.cache
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.csproj.CopyComplete
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.exe
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.pdb
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Register.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.CompraExistente.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.CompraNueva.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Administrar.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.AñadirProveedor.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.Proveedores.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.EditarCuenta.resources
+C:\Users\user\Desktop\2DO AÑO UNI\FERRETO .2\obj\Debug\Ferreto.Views.EditarItem.resources

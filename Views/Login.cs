@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -49,10 +50,10 @@ namespace Ferreto.Views
             if (ValidoCredenciales())
             {
                 MainContainer obj = new MainContainer();
+                //ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
                 //this.Hide();
                 obj.Show();
-
             }
             else
             {
@@ -61,5 +62,6 @@ namespace Ferreto.Views
                 PassTxt.Text = string.Empty;
             }
         }
+
     }
 }

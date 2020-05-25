@@ -16,7 +16,7 @@ namespace Ferreto.Views
         public MainContainer()
         {
             InitializeComponent();
-            AbrirSub(new InicioContainer());
+            AbrirSub(new Inicio());
         }
 
         public void AbrirSub(object Submenu)
@@ -33,7 +33,7 @@ namespace Ferreto.Views
 
         private void InicioHija(object sender, EventArgs e)
         {
-            AbrirSub(new InicioContainer());
+            AbrirSub(new Inicio());
         }
 
         private void VentaBo_Click(object sender, EventArgs e)
@@ -48,9 +48,23 @@ namespace Ferreto.Views
 
         private void FacturaBo_Click(object sender, EventArgs e)
         {
-            AbrirSub(new Facturas());
+            AbrirSub(new ReimprimirBo());
         }
 
+        private void ComprasBo_Click(object sender, EventArgs e)
+        {
+            AbrirSub(new Compras());
+        }
+
+        private void ProveedoresBo_Click(object sender, EventArgs e)
+        {
+            AbrirSub(new Proveedores());
+        }
+
+        private void AdministrarBo_Click(object sender, EventArgs e)
+        {
+            AbrirSub(new Administrar());
+        }
 
         private void Cerrarpaneltop(object sender, EventArgs e)
         {
@@ -94,5 +108,7 @@ namespace Ferreto.Views
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        
     }
 }

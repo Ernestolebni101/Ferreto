@@ -50,7 +50,7 @@
             this.LoginPB.BackColor = System.Drawing.Color.Transparent;
             this.LoginPB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LoginPB.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.LoginPB.Location = new System.Drawing.Point(315, 240);
+            this.LoginPB.Location = new System.Drawing.Point(312, 261);
             this.LoginPB.MaxValue = 100;
             this.LoginPB.MinimumSize = new System.Drawing.Size(60, 60);
             this.LoginPB.MinValue = 0;
@@ -68,11 +68,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(740, 380);
+            this.ClientSize = new System.Drawing.Size(740, 411);
             this.Controls.Add(this.LoginPB);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ChargingScreen";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ChargingScreen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

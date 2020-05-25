@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ferreto.Views
 {
-    public partial class InicioContainer : Form
+    public partial class CompraExistente : Form
     {
-        public InicioContainer()
+        public CompraExistente()
         {
             InitializeComponent();
         }

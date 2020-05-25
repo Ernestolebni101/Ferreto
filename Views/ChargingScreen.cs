@@ -5,8 +5,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Ferreto.Views;
 
 namespace Ferreto.Views
 {
@@ -15,6 +17,21 @@ namespace Ferreto.Views
         public ChargingScreen()
         {
             InitializeComponent();
+            Thread.Sleep(1000);
+            Cargar();   
+            
         }
+
+        public void Cargar()
+        {
+            MainContainer obj = new MainContainer();
+            //ChargingScreen.ActiveForm.Hide();
+            obj.Show();
+            
+        }
+
+        
+
+       
     }
 }

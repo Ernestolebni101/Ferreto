@@ -32,6 +32,16 @@ namespace Ferreto.Views
             fh.Show();
         }
 
+        private void InicioBo_Click(object sender, EventArgs e)
+        {
+            AbrirSub(new Login());
+        }
+
+        private void RegistroBo_Click(object sender, EventArgs e)
+        {
+            AbrirSub(new Register());
+        }
+
         private void Cerrar(object sender, EventArgs e)
         {
             Application.Exit();
@@ -53,5 +63,7 @@ namespace Ferreto.Views
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        
     }
 }
