@@ -28,32 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainContainer));
             this.MenuCont = new System.Windows.Forms.Panel();
+            this.ProveedoresBo = new System.Windows.Forms.Button();
+            this.AdministrarBo = new System.Windows.Forms.Button();
             this.ComprasBo = new System.Windows.Forms.Button();
             this.SalirBo = new System.Windows.Forms.Button();
             this.FacturaBo = new System.Windows.Forms.Button();
             this.InventarioBo = new System.Windows.Forms.Button();
             this.VentaBo = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelCont = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.AdministrarBo = new System.Windows.Forms.Button();
-            this.ProveedoresBo = new System.Windows.Forms.Button();
             this.pctminizar = new System.Windows.Forms.PictureBox();
             this.pctMaximizar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pctOcultar = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.MenuCont.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctminizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // MenuCont
             // 
+            this.MenuCont.AutoScroll = true;
             this.MenuCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.MenuCont.Controls.Add(this.ProveedoresBo);
             this.MenuCont.Controls.Add(this.AdministrarBo);
@@ -68,6 +70,36 @@
             this.MenuCont.Name = "MenuCont";
             this.MenuCont.Size = new System.Drawing.Size(155, 494);
             this.MenuCont.TabIndex = 0;
+            // 
+            // ProveedoresBo
+            // 
+            this.ProveedoresBo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ProveedoresBo.FlatAppearance.BorderSize = 0;
+            this.ProveedoresBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ProveedoresBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProveedoresBo.ForeColor = System.Drawing.Color.White;
+            this.ProveedoresBo.Location = new System.Drawing.Point(0, 275);
+            this.ProveedoresBo.Name = "ProveedoresBo";
+            this.ProveedoresBo.Size = new System.Drawing.Size(155, 41);
+            this.ProveedoresBo.TabIndex = 7;
+            this.ProveedoresBo.Text = "Proveedores";
+            this.ProveedoresBo.UseVisualStyleBackColor = true;
+            this.ProveedoresBo.Click += new System.EventHandler(this.ProveedoresBo_Click);
+            // 
+            // AdministrarBo
+            // 
+            this.AdministrarBo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AdministrarBo.FlatAppearance.BorderSize = 0;
+            this.AdministrarBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.AdministrarBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AdministrarBo.ForeColor = System.Drawing.Color.White;
+            this.AdministrarBo.Location = new System.Drawing.Point(0, 369);
+            this.AdministrarBo.Name = "AdministrarBo";
+            this.AdministrarBo.Size = new System.Drawing.Size(155, 41);
+            this.AdministrarBo.TabIndex = 6;
+            this.AdministrarBo.Text = "Administrar";
+            this.AdministrarBo.UseVisualStyleBackColor = true;
+            this.AdministrarBo.Click += new System.EventHandler(this.AdministrarBo_Click);
             // 
             // ComprasBo
             // 
@@ -144,15 +176,27 @@
             this.VentaBo.UseVisualStyleBackColor = true;
             this.VentaBo.Click += new System.EventHandler(this.VentaBo_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ferreto.Properties.Resources.Ferreto_removebg_preview;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(155, 135);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.InicioHija);
+            // 
             // panelCont
             // 
             this.panelCont.AutoScroll = true;
             this.panelCont.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panelCont.BackColor = System.Drawing.Color.White;
             this.panelCont.Cursor = System.Windows.Forms.Cursors.Default;
-            this.panelCont.Location = new System.Drawing.Point(155, 31);
+            this.panelCont.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCont.Location = new System.Drawing.Point(155, 0);
             this.panelCont.Name = "panelCont";
-            this.panelCont.Size = new System.Drawing.Size(820, 463);
+            this.panelCont.Size = new System.Drawing.Size(820, 494);
             this.panelCont.TabIndex = 1;
             // 
             // panel1
@@ -168,36 +212,6 @@
             this.panel1.Size = new System.Drawing.Size(820, 31);
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mover);
-            // 
-            // AdministrarBo
-            // 
-            this.AdministrarBo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.AdministrarBo.FlatAppearance.BorderSize = 0;
-            this.AdministrarBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.AdministrarBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AdministrarBo.ForeColor = System.Drawing.Color.White;
-            this.AdministrarBo.Location = new System.Drawing.Point(0, 369);
-            this.AdministrarBo.Name = "AdministrarBo";
-            this.AdministrarBo.Size = new System.Drawing.Size(155, 41);
-            this.AdministrarBo.TabIndex = 6;
-            this.AdministrarBo.Text = "Administrar";
-            this.AdministrarBo.UseVisualStyleBackColor = true;
-            this.AdministrarBo.Click += new System.EventHandler(this.AdministrarBo_Click);
-            // 
-            // ProveedoresBo
-            // 
-            this.ProveedoresBo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ProveedoresBo.FlatAppearance.BorderSize = 0;
-            this.ProveedoresBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.ProveedoresBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProveedoresBo.ForeColor = System.Drawing.Color.White;
-            this.ProveedoresBo.Location = new System.Drawing.Point(0, 275);
-            this.ProveedoresBo.Name = "ProveedoresBo";
-            this.ProveedoresBo.Size = new System.Drawing.Size(155, 41);
-            this.ProveedoresBo.TabIndex = 7;
-            this.ProveedoresBo.Text = "Proveedores";
-            this.ProveedoresBo.UseVisualStyleBackColor = true;
-            this.ProveedoresBo.Click += new System.EventHandler(this.ProveedoresBo_Click);
             // 
             // pctminizar
             // 
@@ -252,17 +266,6 @@
             this.pctOcultar.TabStop = false;
             this.pctOcultar.Click += new System.EventHandler(this.Ocultar);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ferreto.Properties.Resources.Ferreto_removebg_preview;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(155, 135);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.InicioHija);
-            // 
             // MainContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,16 +275,19 @@
             this.Controls.Add(this.panelCont);
             this.Controls.Add(this.MenuCont);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MinimumSize = new System.Drawing.Size(975, 494);
             this.Name = "MainContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainContainer";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MenuCont.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctminizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctOcultar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

@@ -16,5 +16,10 @@ namespace Ferreto.Views
         {
             InitializeComponent();
         }
+
+        private void Cerrar(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
     }
 }

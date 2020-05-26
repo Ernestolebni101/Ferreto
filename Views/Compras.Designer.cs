@@ -46,7 +46,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(154, 51);
+            this.label2.Location = new System.Drawing.Point(154, 81);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(165, 19);
             this.label2.TabIndex = 2;
@@ -66,7 +66,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label17.Location = new System.Drawing.Point(19, 9);
+            this.label17.Location = new System.Drawing.Point(19, 39);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(178, 19);
             this.label17.TabIndex = 9;
@@ -77,7 +77,7 @@
             this.UserLab.AutoSize = true;
             this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLab.Location = new System.Drawing.Point(203, 9);
+            this.UserLab.Location = new System.Drawing.Point(203, 39);
             this.UserLab.Name = "UserLab";
             this.UserLab.Size = new System.Drawing.Size(40, 19);
             this.UserLab.TabIndex = 10;
@@ -85,10 +85,11 @@
             // 
             // FechaLab
             // 
+            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(450, 9);
+            this.FechaLab.Location = new System.Drawing.Point(450, 39);
             this.FechaLab.Name = "FechaLab";
             this.FechaLab.Size = new System.Drawing.Size(58, 19);
             this.FechaLab.TabIndex = 11;
@@ -96,10 +97,11 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(495, 51);
+            this.label3.Location = new System.Drawing.Point(495, 81);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(151, 19);
             this.label3.TabIndex = 3;
@@ -107,9 +109,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 124);
+            this.dataGridView1.Location = new System.Drawing.Point(23, 154);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(774, 291);
             this.dataGridView1.TabIndex = 12;
@@ -125,7 +130,7 @@
             this.ActualizarBo.ForeColor = System.Drawing.Color.White;
             this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ActualizarBo.Location = new System.Drawing.Point(158, 88);
+            this.ActualizarBo.Location = new System.Drawing.Point(158, 118);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
             this.ActualizarBo.Size = new System.Drawing.Size(161, 30);
@@ -140,6 +145,7 @@
             // 
             this.AñadirBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
             this.AñadirBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.AñadirBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AñadirBo.BackColor = System.Drawing.Color.Transparent;
             this.AñadirBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AñadirBo.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -147,7 +153,7 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.White;
             this.AñadirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AñadirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AñadirBo.Location = new System.Drawing.Point(499, 88);
+            this.AñadirBo.Location = new System.Drawing.Point(499, 118);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
             this.AñadirBo.Size = new System.Drawing.Size(161, 30);
@@ -162,6 +168,7 @@
             // 
             this.altoButton1.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
             this.altoButton1.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.altoButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.altoButton1.BackColor = System.Drawing.Color.Transparent;
             this.altoButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.altoButton1.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -169,7 +176,7 @@
             this.altoButton1.ForeColor = System.Drawing.Color.White;
             this.altoButton1.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.altoButton1.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.altoButton1.Location = new System.Drawing.Point(23, 421);
+            this.altoButton1.Location = new System.Drawing.Point(23, 451);
             this.altoButton1.Name = "altoButton1";
             this.altoButton1.Radius = 5;
             this.altoButton1.Size = new System.Drawing.Size(174, 30);
@@ -184,7 +191,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 463);
+            this.ClientSize = new System.Drawing.Size(820, 494);
             this.Controls.Add(this.altoButton1);
             this.Controls.Add(this.AñadirBo);
             this.Controls.Add(this.ActualizarBo);

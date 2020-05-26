@@ -45,7 +45,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.AñadirBo = new AltoControls.AltoButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -54,9 +58,9 @@
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.label11);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 32);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(798, 77);
+            this.panel1.Size = new System.Drawing.Size(800, 77);
             this.panel1.TabIndex = 38;
             // 
             // label12
@@ -97,7 +101,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(35, 107);
+            this.label2.Location = new System.Drawing.Point(35, 139);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(83, 19);
             this.label2.TabIndex = 39;
@@ -109,7 +113,7 @@
             this.ProductoTxt.Br = System.Drawing.Color.White;
             this.ProductoTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductoTxt.ForeColor = System.Drawing.Color.Black;
-            this.ProductoTxt.Location = new System.Drawing.Point(39, 156);
+            this.ProductoTxt.Location = new System.Drawing.Point(39, 188);
             this.ProductoTxt.Name = "ProductoTxt";
             this.ProductoTxt.Size = new System.Drawing.Size(169, 30);
             this.ProductoTxt.TabIndex = 40;
@@ -119,7 +123,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(253, 107);
+            this.label1.Location = new System.Drawing.Point(253, 139);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
             this.label1.TabIndex = 41;
@@ -130,7 +134,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(35, 238);
+            this.label3.Location = new System.Drawing.Point(35, 270);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 19);
             this.label3.TabIndex = 43;
@@ -142,7 +146,7 @@
             this.altoTextBox2.Br = System.Drawing.Color.White;
             this.altoTextBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoTextBox2.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox2.Location = new System.Drawing.Point(39, 298);
+            this.altoTextBox2.Location = new System.Drawing.Point(39, 330);
             this.altoTextBox2.Name = "altoTextBox2";
             this.altoTextBox2.Size = new System.Drawing.Size(169, 30);
             this.altoTextBox2.TabIndex = 44;
@@ -152,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(260, 238);
+            this.label4.Location = new System.Drawing.Point(260, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(65, 19);
             this.label4.TabIndex = 45;
@@ -164,7 +168,7 @@
             this.altoTextBox1.Br = System.Drawing.Color.White;
             this.altoTextBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox1.Location = new System.Drawing.Point(246, 156);
+            this.altoTextBox1.Location = new System.Drawing.Point(246, 188);
             this.altoTextBox1.Name = "altoTextBox1";
             this.altoTextBox1.Size = new System.Drawing.Size(169, 30);
             this.altoTextBox1.TabIndex = 46;
@@ -175,7 +179,7 @@
             this.altoTextBox3.Br = System.Drawing.Color.White;
             this.altoTextBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoTextBox3.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox3.Location = new System.Drawing.Point(246, 298);
+            this.altoTextBox3.Location = new System.Drawing.Point(246, 330);
             this.altoTextBox3.Name = "altoTextBox3";
             this.altoTextBox3.Size = new System.Drawing.Size(194, 30);
             this.altoTextBox3.TabIndex = 47;
@@ -185,7 +189,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label5.Location = new System.Drawing.Point(525, 97);
+            this.label5.Location = new System.Drawing.Point(525, 129);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(80, 19);
             this.label5.TabIndex = 48;
@@ -197,7 +201,7 @@
             this.altoTextBox4.Br = System.Drawing.Color.White;
             this.altoTextBox4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoTextBox4.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox4.Location = new System.Drawing.Point(529, 141);
+            this.altoTextBox4.Location = new System.Drawing.Point(529, 173);
             this.altoTextBox4.Name = "altoTextBox4";
             this.altoTextBox4.Size = new System.Drawing.Size(206, 30);
             this.altoTextBox4.TabIndex = 49;
@@ -207,7 +211,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label6.Location = new System.Drawing.Point(525, 187);
+            this.label6.Location = new System.Drawing.Point(525, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(87, 19);
             this.label6.TabIndex = 50;
@@ -224,7 +228,7 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.White;
             this.AñadirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AñadirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AñadirBo.Location = new System.Drawing.Point(589, 351);
+            this.AñadirBo.Location = new System.Drawing.Point(589, 383);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
             this.AñadirBo.Size = new System.Drawing.Size(146, 42);
@@ -237,18 +241,40 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(529, 223);
+            this.textBox1.Location = new System.Drawing.Point(529, 255);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(226, 105);
             this.textBox1.TabIndex = 53;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(800, 32);
+            this.panel2.TabIndex = 54;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::Ferreto.Properties.Resources.error;
+            this.pictureBox1.Location = new System.Drawing.Point(769, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 55;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
             // 
             // AñadirProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(800, 405);
+            this.ClientSize = new System.Drawing.Size(800, 433);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.AñadirBo);
             this.Controls.Add(this.label6);
@@ -263,12 +289,14 @@
             this.Controls.Add(this.ProductoTxt);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AñadirProveedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AñadirProveedor";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -293,5 +321,7 @@
         private System.Windows.Forms.Label label6;
         private AltoControls.AltoButton AñadirBo;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

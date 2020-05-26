@@ -83,6 +83,26 @@ namespace Ferreto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Bienvenidos_de_vuelta {
+            get {
+                object obj = ResourceManager.GetObject("Bienvenidos de vuelta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bienvenidos_de_vuelta1 {
+            get {
+                object obj = ResourceManager.GetObject("Bienvenidos de vuelta1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cerrar_sesion {
             get {
                 object obj = ResourceManager.GetObject("cerrar sesion", resourceCulture);
@@ -206,6 +226,16 @@ namespace Ferreto.Properties {
         internal static System.Drawing.Bitmap minimize__2_ {
             get {
                 object obj = ResourceManager.GetObject("minimize (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap padlock_78356 {
+            get {
+                object obj = ResourceManager.GetObject("padlock_78356", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

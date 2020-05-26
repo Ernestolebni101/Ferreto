@@ -42,7 +42,11 @@
             this.label4 = new System.Windows.Forms.Label();
             this.ProductosCB = new System.Windows.Forms.ComboBox();
             this.ActualizarBo = new AltoControls.AltoButton();
+            this.PanelEditarCuenta = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
+            this.PanelEditarCuenta.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,7 +54,7 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(0, -1);
+            this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(585, 77);
             this.panel1.TabIndex = 39;
@@ -82,7 +86,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(34, 103);
+            this.label1.Location = new System.Drawing.Point(34, 131);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 19);
             this.label1.TabIndex = 40;
@@ -92,7 +96,7 @@
             // 
             this.UsuarioCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioCB.FormattingEnabled = true;
-            this.UsuarioCB.Location = new System.Drawing.Point(38, 153);
+            this.UsuarioCB.Location = new System.Drawing.Point(38, 181);
             this.UsuarioCB.Name = "UsuarioCB";
             this.UsuarioCB.Size = new System.Drawing.Size(155, 25);
             this.UsuarioCB.TabIndex = 41;
@@ -102,7 +106,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(312, 103);
+            this.label2.Location = new System.Drawing.Point(312, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(217, 19);
             this.label2.TabIndex = 42;
@@ -113,7 +117,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(312, 185);
+            this.label3.Location = new System.Drawing.Point(312, 213);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(158, 19);
             this.label3.TabIndex = 43;
@@ -124,7 +128,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label5.Location = new System.Drawing.Point(34, 218);
+            this.label5.Location = new System.Drawing.Point(34, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(63, 19);
             this.label5.TabIndex = 45;
@@ -136,7 +140,7 @@
             this.BuscarProveedorTxt.Br = System.Drawing.Color.White;
             this.BuscarProveedorTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarProveedorTxt.ForeColor = System.Drawing.Color.Black;
-            this.BuscarProveedorTxt.Location = new System.Drawing.Point(316, 148);
+            this.BuscarProveedorTxt.Location = new System.Drawing.Point(316, 176);
             this.BuscarProveedorTxt.Name = "BuscarProveedorTxt";
             this.BuscarProveedorTxt.Size = new System.Drawing.Size(204, 30);
             this.BuscarProveedorTxt.TabIndex = 46;
@@ -147,7 +151,7 @@
             this.altoTextBox1.Br = System.Drawing.Color.White;
             this.altoTextBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.altoTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox1.Location = new System.Drawing.Point(316, 218);
+            this.altoTextBox1.Location = new System.Drawing.Point(316, 246);
             this.altoTextBox1.Name = "altoTextBox1";
             this.altoTextBox1.Size = new System.Drawing.Size(204, 30);
             this.altoTextBox1.TabIndex = 47;
@@ -157,7 +161,7 @@
             this.slideButton1.BorderColor = System.Drawing.Color.LightGray;
             this.slideButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.slideButton1.IsOn = true;
-            this.slideButton1.Location = new System.Drawing.Point(133, 218);
+            this.slideButton1.Location = new System.Drawing.Point(123, 241);
             this.slideButton1.Name = "slideButton1";
             this.slideButton1.Size = new System.Drawing.Size(60, 35);
             this.slideButton1.TabIndex = 49;
@@ -169,7 +173,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(312, 272);
+            this.label4.Location = new System.Drawing.Point(312, 300);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(91, 19);
             this.label4.TabIndex = 50;
@@ -179,7 +183,7 @@
             // 
             this.ProductosCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProductosCB.FormattingEnabled = true;
-            this.ProductosCB.Location = new System.Drawing.Point(316, 308);
+            this.ProductosCB.Location = new System.Drawing.Point(316, 336);
             this.ProductosCB.Name = "ProductosCB";
             this.ProductosCB.Size = new System.Drawing.Size(204, 25);
             this.ProductosCB.TabIndex = 51;
@@ -195,7 +199,7 @@
             this.ActualizarBo.ForeColor = System.Drawing.Color.White;
             this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ActualizarBo.Location = new System.Drawing.Point(38, 308);
+            this.ActualizarBo.Location = new System.Drawing.Point(38, 336);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
             this.ActualizarBo.Size = new System.Drawing.Size(155, 35);
@@ -205,12 +209,33 @@
             this.ActualizarBo.Text = "Actualizar";
             this.ActualizarBo.Transparency = false;
             // 
+            // PanelEditarCuenta
+            // 
+            this.PanelEditarCuenta.Controls.Add(this.pictureBox1);
+            this.PanelEditarCuenta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelEditarCuenta.Location = new System.Drawing.Point(0, 0);
+            this.PanelEditarCuenta.Name = "PanelEditarCuenta";
+            this.PanelEditarCuenta.Size = new System.Drawing.Size(585, 32);
+            this.PanelEditarCuenta.TabIndex = 53;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ferreto.Properties.Resources.error;
+            this.pictureBox1.Location = new System.Drawing.Point(553, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
+            // 
             // EditarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(584, 381);
+            this.ClientSize = new System.Drawing.Size(585, 409);
+            this.Controls.Add(this.PanelEditarCuenta);
             this.Controls.Add(this.ActualizarBo);
             this.Controls.Add(this.ProductosCB);
             this.Controls.Add(this.label4);
@@ -223,12 +248,15 @@
             this.Controls.Add(this.UsuarioCB);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarCuenta";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.PanelEditarCuenta.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,5 +278,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox ProductosCB;
         private AltoControls.AltoButton ActualizarBo;
+        private System.Windows.Forms.Panel PanelEditarCuenta;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

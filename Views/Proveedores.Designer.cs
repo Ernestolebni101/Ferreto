@@ -46,7 +46,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label17.Location = new System.Drawing.Point(27, 9);
+            this.label17.Location = new System.Drawing.Point(27, 37);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(178, 19);
             this.label17.TabIndex = 10;
@@ -57,7 +57,7 @@
             this.UserLab.AutoSize = true;
             this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLab.Location = new System.Drawing.Point(221, 9);
+            this.UserLab.Location = new System.Drawing.Point(221, 37);
             this.UserLab.Name = "UserLab";
             this.UserLab.Size = new System.Drawing.Size(40, 19);
             this.UserLab.TabIndex = 11;
@@ -65,10 +65,11 @@
             // 
             // FechaLab
             // 
+            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(478, 9);
+            this.FechaLab.Location = new System.Drawing.Point(478, 37);
             this.FechaLab.Name = "FechaLab";
             this.FechaLab.Size = new System.Drawing.Size(58, 19);
             this.FechaLab.TabIndex = 12;
@@ -76,9 +77,12 @@
             // 
             // ProveedoresDG
             // 
+            this.ProveedoresDG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProveedoresDG.BackgroundColor = System.Drawing.Color.White;
             this.ProveedoresDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProveedoresDG.Location = new System.Drawing.Point(31, 147);
+            this.ProveedoresDG.Location = new System.Drawing.Point(31, 175);
             this.ProveedoresDG.Name = "ProveedoresDG";
             this.ProveedoresDG.Size = new System.Drawing.Size(761, 264);
             this.ProveedoresDG.TabIndex = 14;
@@ -88,7 +92,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(27, 64);
+            this.label3.Location = new System.Drawing.Point(27, 92);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 21);
             this.label3.TabIndex = 15;
@@ -100,7 +104,7 @@
             this.BuscarProveedorTxt.Br = System.Drawing.Color.White;
             this.BuscarProveedorTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BuscarProveedorTxt.ForeColor = System.Drawing.Color.Black;
-            this.BuscarProveedorTxt.Location = new System.Drawing.Point(31, 100);
+            this.BuscarProveedorTxt.Location = new System.Drawing.Point(31, 128);
             this.BuscarProveedorTxt.Name = "BuscarProveedorTxt";
             this.BuscarProveedorTxt.Size = new System.Drawing.Size(220, 30);
             this.BuscarProveedorTxt.TabIndex = 16;
@@ -116,7 +120,7 @@
             this.BuscarBo.ForeColor = System.Drawing.Color.White;
             this.BuscarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.BuscarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BuscarBo.Location = new System.Drawing.Point(313, 100);
+            this.BuscarBo.Location = new System.Drawing.Point(313, 128);
             this.BuscarBo.Name = "BuscarBo";
             this.BuscarBo.Radius = 5;
             this.BuscarBo.Size = new System.Drawing.Size(80, 30);
@@ -130,6 +134,7 @@
             // 
             this.EliminarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
             this.EliminarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.EliminarBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.EliminarBo.BackColor = System.Drawing.Color.Transparent;
             this.EliminarBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.EliminarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -137,7 +142,7 @@
             this.EliminarBo.ForeColor = System.Drawing.Color.White;
             this.EliminarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.EliminarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.EliminarBo.Location = new System.Drawing.Point(31, 421);
+            this.EliminarBo.Location = new System.Drawing.Point(31, 449);
             this.EliminarBo.Name = "EliminarBo";
             this.EliminarBo.Radius = 5;
             this.EliminarBo.Size = new System.Drawing.Size(145, 30);
@@ -149,10 +154,11 @@
             // 
             // label2
             // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(547, 65);
+            this.label2.Location = new System.Drawing.Point(547, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(161, 19);
             this.label2.TabIndex = 19;
@@ -162,6 +168,7 @@
             // 
             this.AñadirBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
             this.AñadirBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.AñadirBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AñadirBo.BackColor = System.Drawing.Color.Transparent;
             this.AñadirBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AñadirBo.DialogResult = System.Windows.Forms.DialogResult.OK;
@@ -169,7 +176,7 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.White;
             this.AñadirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AñadirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AñadirBo.Location = new System.Drawing.Point(547, 100);
+            this.AñadirBo.Location = new System.Drawing.Point(547, 128);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
             this.AñadirBo.Size = new System.Drawing.Size(161, 30);
@@ -185,7 +192,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 463);
+            this.ClientSize = new System.Drawing.Size(820, 494);
             this.Controls.Add(this.AñadirBo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.EliminarBo);

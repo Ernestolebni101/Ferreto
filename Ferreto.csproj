@@ -277,5 +277,14 @@
   <ItemGroup>
     <None Include="Resources\cerrar sesion.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\padlock_78356.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bienvenidos de vuelta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Bienvenidos de vuelta1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
