@@ -144,9 +144,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dbcontrollers\FerretoDbcontext.cs" />
+    <Compile Include="Models\Acceso.cs" />
+    <Compile Include="Models\Categoria.cs" />
+    <Compile Include="Common\Parameter.cs" />
+    <Compile Include="Models\Compra.cs" />
+    <Compile Include="Models\Detallecompra.cs" />
+    <Compile Include="Models\Detallefactura.cs" />
+    <Compile Include="Models\Factura.cs" />
+    <Compile Include="Models\FerretoSContext.cs" />
+    <Compile Include="Models\Inventario.cs" />
+    <Compile Include="Models\Marca.cs" />
+    <Compile Include="Models\Movinventario.cs" />
+    <Compile Include="Models\Persona.cs" />
+    <Compile Include="Models\Precioproducto.cs" />
+    <Compile Include="Models\Presentacion.cs" />
+    <Compile Include="Models\Producto.cs" />
+    <Compile Include="Models\Proveedores.cs" />
+    <Compile Include="Models\Rol.cs" />
+    <Compile Include="Models\Rolacceso.cs" />
+    <Compile Include="Models\Rolusuario.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServicesDummy\CompraService.cs" />
+    <Compile Include="ServicesDummy\PersonaSevice.cs" />
+    <Compile Include="ServicesDummy\ProductoService.cs" />
+    <Compile Include="ServicesDummy\ProveedorService.cs" />
+    <Compile Include="ServicesDummy\UsuarioService.cs" />
+    <Compile Include="Services\IHelper.cs" />
+    <Compile Include="Services\Helper.cs" />
     <Compile Include="Views\Administrar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -330,10 +356,7 @@
   <ItemGroup>
     <None Include="Resources\Fondo 2.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="Resources\Ferreto.png" />
   </ItemGroup>

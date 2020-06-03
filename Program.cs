@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Ferreto.Dbcontrollers;
 using Microsoft.EntityFrameworkCore;
 using Ferreto.Views;
 
@@ -20,13 +19,33 @@ namespace Ferreto
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new FirstContainer());
-            var optionsbuilder= new DbContextOptionsBuilder<FerretoDbcontext>();
-            optionsbuilder.UseSqlServer("Server=Desk");
-            var context = new FerretoDbcontext(optionsbuilder.Options);
+            //var optionsbuilder= new DbContextOptionsBuilder<FerretoDbcontext>();
+            //optionsbuilder.UseSqlServer("Server=localhost\\Database=FerretoS;Trusted_Connection=True;MultipleActiveResultSets=true;");
+            //var context = new FerretoDbcontext(optionsbuilder.Options);
+            //Testconnection(context);
         }
-        private static void Testconnection()
-        {
-        
-        }
+        //private static void Testconnection(FerretoDbcontext context)
+        //{
+        //    var isconnected = false;
+        //    try
+        //    {
+        //        isconnected = context.Database.EnsureCreated();
+        //    }
+        //    catch (Exception)
+        //    {
+        //        isconnected = false;
+        //    }
+        //    if (isconnected)
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.Green;
+        //        Console.WriteLine("Connection Succesful");
+        //    }
+        //    else
+        //    {
+        //        Console.ForegroundColor = ConsoleColor.Green;
+        //        Console.WriteLine("Connection Unsuccesful");
+        //    }
+        //    Console.Read();
+        //}
     }
 }
