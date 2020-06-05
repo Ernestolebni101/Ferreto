@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ferreto.Models;
+using Ferreto.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +20,7 @@ namespace Ferreto.Views
             InitializeComponent();
             AbrirSub(new Inicio());
         }
-
+       
         public void AbrirSub(object Submenu)
         {
             if (this.panelCont.Controls.Count > 0)
@@ -58,7 +60,7 @@ namespace Ferreto.Views
 
         private void ProveedoresBo_Click(object sender, EventArgs e)
         {
-            AbrirSub(new Proveedores());
+            AbrirSub(new ProveedoresForm());
         }
 
         private void AdministrarBo_Click(object sender, EventArgs e)

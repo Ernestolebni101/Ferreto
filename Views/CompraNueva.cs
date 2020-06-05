@@ -19,27 +19,27 @@ namespace Ferreto.Views
         public CompraNueva()
         {
             InitializeComponent();
-            initcb();
+           
         }
 
         private void Cerrar(object sender, EventArgs e)
         {
             this.Dispose();
         }
-        private void initcb()
-        {
-            var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
-            optionsbuilder.UseSqlServer(Parameter.Connectionstring);
+        //private void initcb()
+        //{
+        //    var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
+        //    optionsbuilder.UseSqlServer(Parameter.Connectionstring);
 
-            var context = new FerretoSContext(optionsbuilder.Options);
+        //    var context = new FerretoSContext(optionsbuilder.Options);
 
-            var proveedorservice = new ProveedorService(context);
-            using (context)
-            {
-                ProveedorCB.DataSource = proveedorservice.GetAll();
-                ProveedorCB.ValueMember = "Idproveedor";
-                ProveedorCB.DisplayMember = "IdpersonaNavigation";
-            }       
-        }
+        //    var proveedorservice = new ProveedorService(context);
+        //    using (context)
+        //    {
+        //        ProveedorCB.DataSource = proveedorservice.GetAll();
+        //        ProveedorCB.ValueMember = "Idproveedor";
+        //        ProveedorCB.DisplayMember = "IdpersonaNavigation";
+        //    }       
+        
     }
 }

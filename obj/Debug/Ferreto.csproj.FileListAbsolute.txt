@@ -175,10 +175,12 @@ C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Inicio.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Inventario.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Login.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.MainContainer.resources
-C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Proveedores.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Register.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.Venta.resources
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.csproj.GenerateResource.cache
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.csproj.CopyComplete
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.exe
 C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.pdb
+C:\Users\usuario\Documents\Ferreto\bin\Debug\SimpleInjector.dll
+C:\Users\usuario\Documents\Ferreto\bin\Debug\SimpleInjector.xml
+C:\Users\usuario\Documents\Ferreto\obj\Debug\Ferreto.Views.ProveedoresForm.resources

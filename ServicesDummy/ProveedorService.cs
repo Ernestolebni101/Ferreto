@@ -28,9 +28,5 @@ namespace Ferreto.Services
         }
 
       
-        //public Proveedores getidproveedores()
-        //{
-        //    return 
-        //}
     }
 }

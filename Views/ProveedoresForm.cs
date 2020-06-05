@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Ferreto.Views
 {
-    public partial class Proveedores : Form
+    public partial class ProveedoresForm : Form
     {
-        public Proveedores()
+        public ProveedoresForm()
         {
             InitializeComponent();
         }
@@ -22,5 +22,9 @@ namespace Ferreto.Views
             AñadirProveedor obj = new AñadirProveedor();
             obj.ShowDialog();
         }
+
+        //public string Empresa { get;  set; }
+        //public int Idpersona { get;  set; }
+        //public bool Estado { get;  set; }
     }
 }

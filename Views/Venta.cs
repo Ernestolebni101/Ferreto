@@ -14,32 +14,34 @@ using System.Windows.Forms;
 
 namespace Ferreto.Views
 {
+   
+  /// <summary>
+  /// 
+  /// </summary>
+  ///
     public partial class Venta : Form
     {
-        public Venta()
-        {
-            InitializeComponent();
-            initcb();
-        }
+        private readonly IHelper<Producto> _productohelper;
 
+        private readonly FerretoSContext _Fcontext;
+        //public Venta(IHelper<Producto> productohelper,FerretoSContext Fcontext)
+        //{
+        //    _Fcontext = Fcontext;
+        //    _productohelper = productohelper; 
+        //    InitializeComponent();   
+        //    initcb();
+        //}
 
-        private void initcb()
-        {
-         
+        /// <summary>
+        /// Este metodo inicializa el combobox mediante un servicio que implementa interfaces
+        /// </summary>
+        //private void initcb()
+        //{
 
-            var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
-            optionsbuilder.UseSqlServer(Parameter.Connectionstring);
+        //    ProductosCB.DataSource = _productohelper.Getall();
+        //    ProductosCB.ValueMember = "IdProducto";
+        //    ProductosCB.DisplayMember = "Nombre";
 
-            var context = new FerretoSContext(optionsbuilder.Options);
-
-            var productoService = new ProductoService(context);
-
-            using (context)
-            {
-                ProductosCB.DataSource = productoService.GetAll();
-                ProductosCB.ValueMember= "Idproducto";
-                ProductosCB.DisplayMember ="Nombre";
-            }
-        }
+        //}
     }
 }

@@ -1,6 +1,6 @@
 ﻿namespace Ferreto.Views
 {
-    partial class Proveedores
+    partial class ProveedoresForm
     {
         /// <summary>
         /// Required designer variable.

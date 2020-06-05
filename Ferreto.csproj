@@ -99,6 +99,9 @@
     <Reference Include="Microsoft.Identity.Client, Version=3.0.8.0, Culture=neutral, PublicKeyToken=0a613f4dd989e8ae, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Identity.Client.3.0.8\lib\net45\Microsoft.Identity.Client.dll</HintPath>
     </Reference>
+    <Reference Include="SimpleInjector, Version=4.10.2.0, Culture=neutral, PublicKeyToken=984cb50dea722e99, processorArchitecture=MSIL">
+      <HintPath>packages\SimpleInjector.4.10.2\lib\net45\SimpleInjector.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
@@ -144,6 +147,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Initializecontext.cs" />
     <Compile Include="Models\Acceso.cs" />
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Common\Parameter.cs" />
@@ -257,11 +261,11 @@
     <Compile Include="Views\MainContainer.Designer.cs">
       <DependentUpon>MainContainer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Proveedores.cs">
+    <Compile Include="Views\ProveedoresForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Proveedores.Designer.cs">
-      <DependentUpon>Proveedores.cs</DependentUpon>
+    <Compile Include="Views\ProveedoresForm.Designer.cs">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Register.cs">
       <SubType>Form</SubType>
@@ -327,8 +331,8 @@
     <EmbeddedResource Include="Views\MainContainer.resx">
       <DependentUpon>MainContainer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Proveedores.resx">
-      <DependentUpon>Proveedores.cs</DependentUpon>
+    <EmbeddedResource Include="Views\ProveedoresForm.resx">
+      <DependentUpon>ProveedoresForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Register.resx">
       <DependentUpon>Register.cs</DependentUpon>

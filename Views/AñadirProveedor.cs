@@ -1,4 +1,5 @@
-﻿using Ferreto.Models;
+﻿using Ferreto.Common;
+using Ferreto.Models;
 using Ferreto.Models.Common;
 using Ferreto.Services;
 using Microsoft.EntityFrameworkCore;
@@ -16,65 +17,51 @@ namespace Ferreto.Views
 {
     public partial class AñadirProveedor : Form
     {
+        #region metods
+        private  Helper<Persona> _personaHelper;
+        private  Helper<Proveedores> _proveedorhelper;
+        private readonly FerretoSContext _contex;
         public AñadirProveedor()
         {
             InitializeComponent();
+            _contex = Initializecontext.initcontext();
+            _personaHelper = new Helper<Persona>(_contex);
+            _proveedorhelper = new Helper<Proveedores>(_contex);
         }
+
+        private Persona Per;
+        private Proveedores Pro;
+
+        private void create()
+        {
+            Per = new Persona();
+            Per.Nombre = nombretxt.Text;
+            Per.Apellido = apellidotxt.Text;
+            Per.Direccion = direcciontxt.Text;
+            Per.Telefono = telefonotxt.Text;
+            Per.Email = this.correotxt.Text;
+            _personaHelper.add(Per);
+            /// <Suma>
+            /// Proceso de creacion de un proveedor a travez del Idpersona
+            /// </Suma>
+            Pro = new Proveedores();
+            Pro.Idpersona = Per.Idpersona;
+            Pro.Empresa = Empresatxt.Text;
+            Pro.Estado = true;
+            DataforProvider(Pro);
+        }
+
+        private void DataforProvider(Proveedores pro)
+        {
+            _proveedorhelper.add(pro);
+        }
+        #endregion
+        #region Events
         private void Cerrar(object sender, EventArgs e)
         {
             this.Dispose();
         }
-        private List<Persona> Per;
-        private Proveedores Pro;
-        private void create(string nombre, string apellido, string correo, string direccion, string telefono)
-        {
-            var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
-            optionsbuilder.UseSqlServer(Parameter.Connectionstring);
-            var context = new FerretoSContext(optionsbuilder.Options);
-            var personaservice = new PersonaSevice(context);
-            var proveedorservice = new ProveedorService(context);
 
-            Per = new List<Persona>()
-            {
-                new Persona(){Nombre= this.nombretxt.Text
-                ,Apellido= this.apellidotxt.Text,Telefono=this.telefonotxt.Text,
-                Email= this.correotxt.Text,Direccion= direcciontxt.Text}
-            };
-            using (context)
-            {
-                var exist = personaservice.Existbyname(nombre, apellido, correo, direccion, telefono);
-
-                while (exist == true)
-                {
-                    if (exist)
-                    {
-                        MessageBox.Show("Este proveedor  ya existe en la base de datos");
-                    }
-                    break;
-                }
-                personaservice.newpersona(Per);
-                consultid(Per);
-            }
-        }
-
-        private void consultid(List<Persona> per)
-        {
-            var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
-            optionsbuilder.UseSqlServer(Parameter.Connectionstring);
-            var context = new FerretoSContext(optionsbuilder.Options);
-            var queryperson = per;
-            var proveedorservice = new ProveedorService(context);
-            var idrecuperado = 0;
-            using (context)
-            {
-                foreach (var iterator in queryperson)
-                {
-                    idrecuperado=iterator.Idpersona;
-                    break;
-                }
-                proveedorservice.createprovider(Empresatxt.Text,idrecuperado,true);                
-            }
-        }
         private void cleantext()
         {
             this.nombretxt.Text = string.Empty;
@@ -87,8 +74,9 @@ namespace Ferreto.Views
         }
         private void AñadirBo_Click(object sender, EventArgs e)
         {
-            create(this.nombretxt.Text, this.apellidotxt.Text, correotxt.Text, direcciontxt.Text, telefonotxt.Text);
+            create();
             cleantext();
         }
+        #endregion 
     }
 }

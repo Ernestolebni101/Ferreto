@@ -19,6 +19,7 @@ namespace Ferreto.Models
         public string Direccion { get; set; }
         public string Email { get; set; }
 
+        
         public virtual ICollection<Proveedores> Proveedores { get; set; }
         public virtual ICollection<Usuario> Usuario { get; set; }
     }

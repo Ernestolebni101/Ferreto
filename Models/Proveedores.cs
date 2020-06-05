@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Ferreto.Models
 {
-    public partial class Proveedores
+    public   class Proveedores
     {
         public Proveedores()
         {
@@ -12,7 +12,7 @@ namespace Ferreto.Models
 
         public int Idproveedor { get; set; }
         public string Empresa { get; set; }
-        public int Idpersona { get; set; }
+        public int Idpersona { get;  set; }
         public bool Estado { get; set; }
 
         public virtual Persona IdpersonaNavigation { get; set; }
