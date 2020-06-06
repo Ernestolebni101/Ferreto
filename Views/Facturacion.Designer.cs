@@ -1,6 +1,6 @@
 ﻿namespace Ferreto.Views
 {
-    partial class Venta
+    partial class Facturacion
     {
         /// <summary>
         /// Required designer variable.
@@ -33,7 +33,6 @@
             this.FechaLab = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.ProductosCB = new System.Windows.Forms.ComboBox();
             this.AgregarBo = new AltoControls.AltoButton();
             this.BorrarBo = new AltoControls.AltoButton();
             this.ImprimirBo = new AltoControls.AltoButton();
@@ -47,8 +46,10 @@
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Total = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CantidadTxt = new AltoControls.AltoTextBox();
+            this.ProductosTxt = new AltoControls.AltoTextBox();
+            this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // label1
@@ -107,15 +108,6 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Cantidad:";
             // 
-            // ProductosCB
-            // 
-            this.ProductosCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductosCB.FormattingEnabled = true;
-            this.ProductosCB.Location = new System.Drawing.Point(27, 142);
-            this.ProductosCB.Name = "ProductosCB";
-            this.ProductosCB.Size = new System.Drawing.Size(266, 25);
-            this.ProductosCB.TabIndex = 5;
-            // 
             // AgregarBo
             // 
             this.AgregarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -128,7 +120,7 @@
             this.AgregarBo.ForeColor = System.Drawing.Color.White;
             this.AgregarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AgregarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AgregarBo.Location = new System.Drawing.Point(593, 142);
+            this.AgregarBo.Location = new System.Drawing.Point(591, 137);
             this.AgregarBo.Name = "AgregarBo";
             this.AgregarBo.Radius = 5;
             this.AgregarBo.Size = new System.Drawing.Size(80, 30);
@@ -137,6 +129,7 @@
             this.AgregarBo.TabIndex = 7;
             this.AgregarBo.Text = "Agregar";
             this.AgregarBo.Transparency = false;
+            this.AgregarBo.Click += new System.EventHandler(this.AgregarBo_Click);
             // 
             // BorrarBo
             // 
@@ -150,7 +143,7 @@
             this.BorrarBo.ForeColor = System.Drawing.Color.White;
             this.BorrarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.BorrarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BorrarBo.Location = new System.Drawing.Point(707, 142);
+            this.BorrarBo.Location = new System.Drawing.Point(707, 137);
             this.BorrarBo.Name = "BorrarBo";
             this.BorrarBo.Radius = 5;
             this.BorrarBo.Size = new System.Drawing.Size(80, 30);
@@ -172,7 +165,7 @@
             this.ImprimirBo.ForeColor = System.Drawing.Color.White;
             this.ImprimirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ImprimirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ImprimirBo.Location = new System.Drawing.Point(696, 397);
+            this.ImprimirBo.Location = new System.Drawing.Point(696, 414);
             this.ImprimirBo.Name = "ImprimirBo";
             this.ImprimirBo.Radius = 5;
             this.ImprimirBo.Size = new System.Drawing.Size(91, 59);
@@ -188,7 +181,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(23, 393);
+            this.label4.Location = new System.Drawing.Point(23, 410);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(136, 21);
             this.label4.TabIndex = 10;
@@ -200,7 +193,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label5.Location = new System.Drawing.Point(116, 414);
+            this.label5.Location = new System.Drawing.Point(116, 431);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 21);
             this.label5.TabIndex = 11;
@@ -212,7 +205,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label6.Location = new System.Drawing.Point(55, 435);
+            this.label6.Location = new System.Drawing.Point(55, 452);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(104, 21);
             this.label6.TabIndex = 12;
@@ -224,7 +217,7 @@
             this.BaseLab.AutoSize = true;
             this.BaseLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaseLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.BaseLab.Location = new System.Drawing.Point(184, 393);
+            this.BaseLab.Location = new System.Drawing.Point(184, 410);
             this.BaseLab.Name = "BaseLab";
             this.BaseLab.Size = new System.Drawing.Size(40, 21);
             this.BaseLab.TabIndex = 13;
@@ -236,7 +229,7 @@
             this.IvaLab.AutoSize = true;
             this.IvaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IvaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.IvaLab.Location = new System.Drawing.Point(184, 414);
+            this.IvaLab.Location = new System.Drawing.Point(184, 431);
             this.IvaLab.Name = "IvaLab";
             this.IvaLab.Size = new System.Drawing.Size(40, 21);
             this.IvaLab.TabIndex = 14;
@@ -248,7 +241,7 @@
             this.NetoLab.AutoSize = true;
             this.NetoLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NetoLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.NetoLab.Location = new System.Drawing.Point(184, 435);
+            this.NetoLab.Location = new System.Drawing.Point(184, 452);
             this.NetoLab.Name = "NetoLab";
             this.NetoLab.Size = new System.Drawing.Size(40, 21);
             this.NetoLab.TabIndex = 15;
@@ -263,13 +256,29 @@
             this.Id,
             this.Nombre,
             this.Precio,
-            this.Total});
+            this.Cantidad,
+            this.Subtotal});
             this.ProductosLV.HideSelection = false;
             this.ProductosLV.Location = new System.Drawing.Point(27, 178);
             this.ProductosLV.Name = "ProductosLV";
             this.ProductosLV.Size = new System.Drawing.Size(760, 212);
             this.ProductosLV.TabIndex = 16;
             this.ProductosLV.UseCompatibleStateImageBehavior = false;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 180;
+            // 
+            // Precio
+            // 
+            this.Precio.Text = "Precio (C$)";
+            this.Precio.Width = 180;
             // 
             // CantidadTxt
             // 
@@ -282,12 +291,34 @@
             this.CantidadTxt.Size = new System.Drawing.Size(87, 30);
             this.CantidadTxt.TabIndex = 17;
             // 
-            // Venta
+            // ProductosTxt
+            // 
+            this.ProductosTxt.BackColor = System.Drawing.Color.Transparent;
+            this.ProductosTxt.Br = System.Drawing.Color.White;
+            this.ProductosTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductosTxt.ForeColor = System.Drawing.Color.Black;
+            this.ProductosTxt.Location = new System.Drawing.Point(27, 137);
+            this.ProductosTxt.Name = "ProductosTxt";
+            this.ProductosTxt.Size = new System.Drawing.Size(248, 30);
+            this.ProductosTxt.TabIndex = 18;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Text = "Cantidad (Q)";
+            this.Cantidad.Width = 180;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.Text = "Sub Total";
+            this.Subtotal.Width = 180;
+            // 
+            // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(820, 494);
+            this.Controls.Add(this.ProductosTxt);
             this.Controls.Add(this.CantidadTxt);
             this.Controls.Add(this.ProductosLV);
             this.Controls.Add(this.NetoLab);
@@ -299,14 +330,13 @@
             this.Controls.Add(this.ImprimirBo);
             this.Controls.Add(this.BorrarBo);
             this.Controls.Add(this.AgregarBo);
-            this.Controls.Add(this.ProductosCB);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FechaLab);
             this.Controls.Add(this.UserLab);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Venta";
+            this.Name = "Facturacion";
             this.Text = "Venta";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -320,7 +350,6 @@
         private System.Windows.Forms.Label FechaLab;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox ProductosCB;
         private AltoControls.AltoButton AgregarBo;
         private AltoControls.AltoButton BorrarBo;
         private AltoControls.AltoButton ImprimirBo;
@@ -334,7 +363,9 @@
         private System.Windows.Forms.ColumnHeader Id;
         private System.Windows.Forms.ColumnHeader Nombre;
         private System.Windows.Forms.ColumnHeader Precio;
-        private System.Windows.Forms.ColumnHeader Total;
         private AltoControls.AltoTextBox CantidadTxt;
+        private AltoControls.AltoTextBox ProductosTxt;
+        private System.Windows.Forms.ColumnHeader Cantidad;
+        private System.Windows.Forms.ColumnHeader Subtotal;
     }
 }

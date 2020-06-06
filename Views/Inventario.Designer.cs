@@ -110,7 +110,7 @@
             this.InventarioDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.InventarioDG.Location = new System.Drawing.Point(35, 190);
             this.InventarioDG.Name = "InventarioDG";
-            this.InventarioDG.Size = new System.Drawing.Size(727, 274);
+            this.InventarioDG.Size = new System.Drawing.Size(752, 274);
             this.InventarioDG.TabIndex = 7;
             // 
             // BuscarBo
@@ -143,7 +143,7 @@
             this.ProductoVeijoCont.Controls.Add(this.label4);
             this.ProductoVeijoCont.Controls.Add(this.label1);
             this.ProductoVeijoCont.Controls.Add(this.label15);
-            this.ProductoVeijoCont.Location = new System.Drawing.Point(513, 62);
+            this.ProductoVeijoCont.Location = new System.Drawing.Point(538, 62);
             this.ProductoVeijoCont.Name = "ProductoVeijoCont";
             this.ProductoVeijoCont.Size = new System.Drawing.Size(249, 122);
             this.ProductoVeijoCont.TabIndex = 9;

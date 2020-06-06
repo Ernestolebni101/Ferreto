@@ -19,18 +19,23 @@ namespace Ferreto.Views
   /// 
   /// </summary>
   ///
-    public partial class Venta : Form
-    {
-        private readonly IHelper<Producto> _productohelper;
 
-        private readonly FerretoSContext _Fcontext;
-        //public Venta(IHelper<Producto> productohelper,FerretoSContext Fcontext)
-        //{
-        //    _Fcontext = Fcontext;
-        //    _productohelper = productohelper; 
-        //    InitializeComponent();   
-        //    initcb();
-        //}
+    
+    public partial class Facturacion : Form
+    {
+        //private readonly IHelper<Producto> _productohelper;
+
+        //private readonly FerretoSContext _Fcontext;
+        public Facturacion()
+        {
+            InitializeComponent();
+            ProductosLV.View = System.Windows.Forms.View.Details;
+        }
+
+        private void AgregarBo_Click(object sender, EventArgs e)
+        {
+            
+        }
 
         /// <summary>
         /// Este metodo inicializa el combobox mediante un servicio que implementa interfaces

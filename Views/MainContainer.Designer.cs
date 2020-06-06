@@ -108,7 +108,7 @@
             this.ComprasBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComprasBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComprasBo.ForeColor = System.Drawing.Color.White;
-            this.ComprasBo.Location = new System.Drawing.Point(0, 177);
+            this.ComprasBo.Location = new System.Drawing.Point(0, 228);
             this.ComprasBo.Name = "ComprasBo";
             this.ComprasBo.Size = new System.Drawing.Size(155, 41);
             this.ComprasBo.TabIndex = 5;
@@ -153,7 +153,7 @@
             this.InventarioBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InventarioBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventarioBo.ForeColor = System.Drawing.Color.White;
-            this.InventarioBo.Location = new System.Drawing.Point(0, 224);
+            this.InventarioBo.Location = new System.Drawing.Point(0, 177);
             this.InventarioBo.Name = "InventarioBo";
             this.InventarioBo.Size = new System.Drawing.Size(155, 45);
             this.InventarioBo.TabIndex = 2;
@@ -172,7 +172,7 @@
             this.VentaBo.Name = "VentaBo";
             this.VentaBo.Size = new System.Drawing.Size(155, 39);
             this.VentaBo.TabIndex = 1;
-            this.VentaBo.Text = "Venta";
+            this.VentaBo.Text = "Facturacion";
             this.VentaBo.UseVisualStyleBackColor = true;
             this.VentaBo.Click += new System.EventHandler(this.VentaBo_Click);
             // 

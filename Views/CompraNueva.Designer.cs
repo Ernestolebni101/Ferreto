@@ -292,7 +292,7 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.White;
             this.AñadirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AñadirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AñadirBo.Location = new System.Drawing.Point(632, 366);
+            this.AñadirBo.Location = new System.Drawing.Point(632, 383);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
             this.AñadirBo.Size = new System.Drawing.Size(146, 42);
