@@ -10,8 +10,10 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -74,9 +76,85 @@ namespace Ferreto.Views
         }
         private void AñadirBo_Click(object sender, EventArgs e)
         {
-            create();
-            cleantext();
+            Validar();
+            //create();
+            //cleantext();
         }
-        #endregion 
+        #endregion
+        #region Validar
+        public void Validar()
+        {
+            bool bandera = false;
+            //Letras
+            Regex regexLetras = new Regex(@"^[a-z A-Z]+$");
+
+            if (!regexLetras.IsMatch(nombretxt.Text))
+            {
+                ErrorProviderLetras.
+                        SetError(nombretxt, ">>Ingrese al menos un nombre");
+            }
+            else if (!regexLetras.IsMatch(apellidotxt.Text))
+            {
+                ErrorProviderLetras.
+                     SetError(apellidotxt, ">>Ingrese al menos un apellido!");
+            }
+            else
+            {
+                bandera = true;
+                this.ErrorProviderLetras.Clear();
+            }
+            //Telefono
+            Regex regexTelefono = new Regex(@"^[0-9]{4}(-)[0-9]{4}$");
+
+            if (!regexTelefono.IsMatch(telefonotxt.Text))
+            {
+                errorProviderTelefono.
+                    SetError(telefonotxt, ">>Ingrese correctamente el formato [0000-0000]");
+            }
+            else
+                this.errorProviderTelefono.Clear();
+
+            //Correo
+            Regex regexCorreo = new Regex(@"^[^@]+@[^@]+\.[a-zA-Z]{3,}$");
+
+            if (!regexCorreo.IsMatch(correotxt.Text))
+            {
+                errorProviderCorreo.
+                        SetError(correotxt, ">>> Formato de correo incorrecto [algo/alguien@example.com]");
+            }
+            else
+                this.errorProviderCorreo.Clear();
+            
+            //Cedula
+            Regex regexCedula = new Regex(@"^[0-9]{3}(-)[0-9]{6}(-)[0-9A-Z]{5}");
+            if (!regexCedula.IsMatch(CedulaTxt.Text))
+            {
+                errorProviderCedula.
+                    SetError(CedulaTxt, ">>> Formato de cedula incorrecto [000-000000-0000Letra]");
+            }
+            else
+                this.errorProviderCedula.Clear();
+
+            //Nombre empresa
+            Regex regexEmpresa = new Regex(@"^[a-zA-Z0-9.]+$");
+            if (!regexEmpresa.IsMatch(Empresatxt.Text))
+            {
+                errorProviderEmpresa.
+                    SetError(Empresatxt, ">>> Formato incorrecto");
+            }
+            else
+                this.errorProviderEmpresa.Clear();
+
+            //Direccion
+            Regex regexDireccione = new Regex(@"^[a-zA-Z0-9/]");
+            if (!regexDireccione.IsMatch(direcciontxt.Text))
+            {
+                errorProviderDireccion.
+                    SetError(direcciontxt, ">>> Formato incorrecto");
+            }
+            else
+                this.errorProviderDireccion.Clear();
+        }
+        #endregion
     }
 }

@@ -9,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -34,7 +35,7 @@ namespace Ferreto.Views
 
         private void AgregarBo_Click(object sender, EventArgs e)
         {
-            
+            validar();
         }
 
         /// <summary>
@@ -48,5 +49,28 @@ namespace Ferreto.Views
         //    ProductosCB.DisplayMember = "Nombre";
 
         //}
+        #region Valaciones
+        public void validar()
+        {
+            //Letras
+            Regex regexLetras = new Regex(@"^[a-zA-Z]+$");
+            if (!regexLetras.IsMatch(ProductosTxt.Text))
+            {
+                errorProviderLetras.
+                    SetError(ProductosTxt, ">>Formato no valido!");
+            }
+            else
+                this.errorProviderLetras.Clear();
+            //Numeros
+            Regex regexNumero = new Regex(@"^[0-9]+$");
+            if (!regexNumero.IsMatch(CantidadTxt.Text))
+            {
+                errorProviderCantidad.
+                    SetError(CantidadTxt, ">>Formato no valido!");
+            }
+            else
+                this.errorProviderCantidad.Clear();
+        }
+        #endregion
     }
 }

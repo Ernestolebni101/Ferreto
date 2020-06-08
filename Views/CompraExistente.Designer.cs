@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraExistente));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -47,9 +49,15 @@
             this.ActualizarBo = new AltoControls.AltoButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNumero = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderdecimal = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderdecimal)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -242,6 +250,7 @@
             this.ActualizarBo.TabIndex = 51;
             this.ActualizarBo.Text = "Actualizar";
             this.ActualizarBo.Transparency = false;
+            this.ActualizarBo.Click += new System.EventHandler(this.Actualizar);
             // 
             // panel2
             // 
@@ -263,6 +272,21 @@
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
+            // 
+            // errorProviderLetras
+            // 
+            this.errorProviderLetras.ContainerControl = this;
+            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
+            // 
+            // errorProviderNumero
+            // 
+            this.errorProviderNumero.ContainerControl = this;
+            this.errorProviderNumero.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderNumero.Icon")));
+            // 
+            // errorProviderdecimal
+            // 
+            this.errorProviderdecimal.ContainerControl = this;
+            this.errorProviderdecimal.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderdecimal.Icon")));
             // 
             // CompraExistente
             // 
@@ -293,6 +317,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderdecimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -319,5 +346,8 @@
         private AltoControls.AltoButton ActualizarBo;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderLetras;
+        private System.Windows.Forms.ErrorProvider errorProviderNumero;
+        private System.Windows.Forms.ErrorProvider errorProviderdecimal;
     }
 }

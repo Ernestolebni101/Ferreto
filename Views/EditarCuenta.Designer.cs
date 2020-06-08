@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarCuenta));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -36,17 +38,21 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.BuscarProveedorTxt = new AltoControls.AltoTextBox();
-            this.altoTextBox1 = new AltoControls.AltoTextBox();
+            this.nombreUsuarioTxt = new AltoControls.AltoTextBox();
+            this.contraselaNuevatxt = new AltoControls.AltoTextBox();
             this.slideButton1 = new AltoControls.SlideButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.ProductosCB = new System.Windows.Forms.ComboBox();
             this.ActualizarBo = new AltoControls.AltoButton();
             this.PanelEditarCuenta = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderVacios = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.nuevorolCB = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.PanelEditarCuenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVacios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -134,27 +140,27 @@
             this.label5.TabIndex = 45;
             this.label5.Text = "Estado:";
             // 
-            // BuscarProveedorTxt
+            // nombreUsuarioTxt
             // 
-            this.BuscarProveedorTxt.BackColor = System.Drawing.Color.Transparent;
-            this.BuscarProveedorTxt.Br = System.Drawing.Color.White;
-            this.BuscarProveedorTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarProveedorTxt.ForeColor = System.Drawing.Color.Black;
-            this.BuscarProveedorTxt.Location = new System.Drawing.Point(316, 176);
-            this.BuscarProveedorTxt.Name = "BuscarProveedorTxt";
-            this.BuscarProveedorTxt.Size = new System.Drawing.Size(204, 30);
-            this.BuscarProveedorTxt.TabIndex = 46;
+            this.nombreUsuarioTxt.BackColor = System.Drawing.Color.Transparent;
+            this.nombreUsuarioTxt.Br = System.Drawing.Color.White;
+            this.nombreUsuarioTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreUsuarioTxt.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuarioTxt.Location = new System.Drawing.Point(316, 176);
+            this.nombreUsuarioTxt.Name = "nombreUsuarioTxt";
+            this.nombreUsuarioTxt.Size = new System.Drawing.Size(204, 30);
+            this.nombreUsuarioTxt.TabIndex = 46;
             // 
-            // altoTextBox1
+            // contraselaNuevatxt
             // 
-            this.altoTextBox1.BackColor = System.Drawing.Color.Transparent;
-            this.altoTextBox1.Br = System.Drawing.Color.White;
-            this.altoTextBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altoTextBox1.ForeColor = System.Drawing.Color.Black;
-            this.altoTextBox1.Location = new System.Drawing.Point(316, 246);
-            this.altoTextBox1.Name = "altoTextBox1";
-            this.altoTextBox1.Size = new System.Drawing.Size(204, 30);
-            this.altoTextBox1.TabIndex = 47;
+            this.contraselaNuevatxt.BackColor = System.Drawing.Color.Transparent;
+            this.contraselaNuevatxt.Br = System.Drawing.Color.White;
+            this.contraselaNuevatxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraselaNuevatxt.ForeColor = System.Drawing.Color.Black;
+            this.contraselaNuevatxt.Location = new System.Drawing.Point(316, 246);
+            this.contraselaNuevatxt.Name = "contraselaNuevatxt";
+            this.contraselaNuevatxt.Size = new System.Drawing.Size(204, 30);
+            this.contraselaNuevatxt.TabIndex = 47;
             // 
             // slideButton1
             // 
@@ -179,15 +185,6 @@
             this.label4.TabIndex = 50;
             this.label4.Text = "Nuevo Rol:";
             // 
-            // ProductosCB
-            // 
-            this.ProductosCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ProductosCB.FormattingEnabled = true;
-            this.ProductosCB.Location = new System.Drawing.Point(316, 336);
-            this.ProductosCB.Name = "ProductosCB";
-            this.ProductosCB.Size = new System.Drawing.Size(204, 25);
-            this.ProductosCB.TabIndex = 51;
-            // 
             // ActualizarBo
             // 
             this.ActualizarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -208,6 +205,7 @@
             this.ActualizarBo.TabIndex = 52;
             this.ActualizarBo.Text = "Actualizar";
             this.ActualizarBo.Transparency = false;
+            this.ActualizarBo.Click += new System.EventHandler(this.Actualizar);
             // 
             // PanelEditarCuenta
             // 
@@ -229,6 +227,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
             // 
+            // errorProviderVacios
+            // 
+            this.errorProviderVacios.ContainerControl = this;
+            this.errorProviderVacios.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderVacios.Icon")));
+            // 
+            // errorProviderLetras
+            // 
+            this.errorProviderLetras.ContainerControl = this;
+            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
+            // 
+            // nuevorolCB
+            // 
+            this.nuevorolCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nuevorolCB.FormattingEnabled = true;
+            this.nuevorolCB.Location = new System.Drawing.Point(316, 336);
+            this.nuevorolCB.Name = "nuevorolCB";
+            this.nuevorolCB.Size = new System.Drawing.Size(204, 25);
+            this.nuevorolCB.TabIndex = 51;
+            // 
             // EditarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -237,11 +254,11 @@
             this.ClientSize = new System.Drawing.Size(585, 409);
             this.Controls.Add(this.PanelEditarCuenta);
             this.Controls.Add(this.ActualizarBo);
-            this.Controls.Add(this.ProductosCB);
+            this.Controls.Add(this.nuevorolCB);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.slideButton1);
-            this.Controls.Add(this.altoTextBox1);
-            this.Controls.Add(this.BuscarProveedorTxt);
+            this.Controls.Add(this.contraselaNuevatxt);
+            this.Controls.Add(this.nombreUsuarioTxt);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -257,6 +274,8 @@
             this.panel1.PerformLayout();
             this.PanelEditarCuenta.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderVacios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,13 +291,15 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
-        private AltoControls.AltoTextBox BuscarProveedorTxt;
-        private AltoControls.AltoTextBox altoTextBox1;
+        private AltoControls.AltoTextBox nombreUsuarioTxt;
+        private AltoControls.AltoTextBox contraselaNuevatxt;
         private AltoControls.SlideButton slideButton1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox ProductosCB;
         private AltoControls.AltoButton ActualizarBo;
         private System.Windows.Forms.Panel PanelEditarCuenta;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderVacios;
+        private System.Windows.Forms.ErrorProvider errorProviderLetras;
+        private System.Windows.Forms.ComboBox nuevorolCB;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
             this.label1 = new System.Windows.Forms.Label();
             this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
@@ -46,10 +48,14 @@
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.CantidadTxt = new AltoControls.AltoTextBox();
-            this.ProductosTxt = new AltoControls.AltoTextBox();
             this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CantidadTxt = new AltoControls.AltoTextBox();
+            this.ProductosTxt = new AltoControls.AltoTextBox();
+            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCantidad = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -280,6 +286,16 @@
             this.Precio.Text = "Precio (C$)";
             this.Precio.Width = 180;
             // 
+            // Cantidad
+            // 
+            this.Cantidad.Text = "Cantidad (Q)";
+            this.Cantidad.Width = 180;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.Text = "Sub Total";
+            this.Subtotal.Width = 180;
+            // 
             // CantidadTxt
             // 
             this.CantidadTxt.BackColor = System.Drawing.Color.Transparent;
@@ -302,15 +318,15 @@
             this.ProductosTxt.Size = new System.Drawing.Size(248, 30);
             this.ProductosTxt.TabIndex = 18;
             // 
-            // Cantidad
+            // errorProviderLetras
             // 
-            this.Cantidad.Text = "Cantidad (Q)";
-            this.Cantidad.Width = 180;
+            this.errorProviderLetras.ContainerControl = this;
+            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
             // 
-            // Subtotal
+            // errorProviderCantidad
             // 
-            this.Subtotal.Text = "Sub Total";
-            this.Subtotal.Width = 180;
+            this.errorProviderCantidad.ContainerControl = this;
+            this.errorProviderCantidad.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderCantidad.Icon")));
             // 
             // Facturacion
             // 
@@ -338,6 +354,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Facturacion";
             this.Text = "Venta";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,5 +385,7 @@
         private AltoControls.AltoTextBox ProductosTxt;
         private System.Windows.Forms.ColumnHeader Cantidad;
         private System.Windows.Forms.ColumnHeader Subtotal;
+        private System.Windows.Forms.ErrorProvider errorProviderLetras;
+        private System.Windows.Forms.ErrorProvider errorProviderCantidad;
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CompraNueva));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.ProductoTxt = new AltoControls.AltoTextBox();
@@ -53,9 +55,15 @@
             this.MarcaCB = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNumero1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderdecimal = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderdecimal)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -301,6 +309,7 @@
             this.AñadirBo.TabIndex = 38;
             this.AñadirBo.Text = "Añadir";
             this.AñadirBo.Transparency = false;
+            this.AñadirBo.Click += new System.EventHandler(this.Añadir);
             // 
             // MarcaCB
             // 
@@ -331,6 +340,21 @@
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
+            // 
+            // errorProviderLetras
+            // 
+            this.errorProviderLetras.ContainerControl = this;
+            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
+            // 
+            // errorProviderNumero1
+            // 
+            this.errorProviderNumero1.ContainerControl = this;
+            this.errorProviderNumero1.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderNumero1.Icon")));
+            // 
+            // errorProviderdecimal
+            // 
+            this.errorProviderdecimal.ContainerControl = this;
+            this.errorProviderdecimal.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderdecimal.Icon")));
             // 
             // CompraNueva
             // 
@@ -367,6 +391,9 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderdecimal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -399,5 +426,8 @@
         private System.Windows.Forms.ComboBox MarcaCB;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderLetras;
+        private System.Windows.Forms.ErrorProvider errorProviderNumero1;
+        private System.Windows.Forms.ErrorProvider errorProviderdecimal;
     }
 }

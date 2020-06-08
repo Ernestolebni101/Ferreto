@@ -224,7 +224,6 @@
             this.pctminizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctminizar.TabIndex = 2;
             this.pctminizar.TabStop = false;
-            this.pctminizar.Visible = false;
             this.pctminizar.Click += new System.EventHandler(this.Minimizar);
             // 
             // pctMaximizar
@@ -238,6 +237,7 @@
             this.pctMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctMaximizar.TabIndex = 3;
             this.pctMaximizar.TabStop = false;
+            this.pctMaximizar.Visible = false;
             this.pctMaximizar.Click += new System.EventHandler(this.Maximizar);
             // 
             // pictureBox3

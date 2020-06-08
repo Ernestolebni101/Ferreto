@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inventario));
             this.label2 = new System.Windows.Forms.Label();
             this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
@@ -41,8 +43,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
+            this.errorProviderletras = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.InventarioDG)).BeginInit();
             this.ProductoVeijoCont.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -133,6 +137,7 @@
             this.BuscarBo.TabIndex = 8;
             this.BuscarBo.Text = "Buscar";
             this.BuscarBo.Transparency = false;
+            this.BuscarBo.Click += new System.EventHandler(this.Buscar);
             // 
             // ProductoVeijoCont
             // 
@@ -214,6 +219,11 @@
             this.label15.TabIndex = 26;
             this.label15.Text = "Estado:";
             // 
+            // errorProviderletras
+            // 
+            this.errorProviderletras.ContainerControl = this;
+            this.errorProviderletras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderletras.Icon")));
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,6 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.InventarioDG)).EndInit();
             this.ProductoVeijoCont.ResumeLayout(false);
             this.ProductoVeijoCont.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -253,5 +264,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ErrorProvider errorProviderletras;
     }
 }

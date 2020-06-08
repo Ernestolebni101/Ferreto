@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AñadirProveedor));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -49,9 +51,21 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CedulaTxt = new AltoControls.AltoTextBox();
+            this.ErrorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderTelefono = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderEmpresa = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderDireccion = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmpresa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -293,6 +307,36 @@
             this.CedulaTxt.Size = new System.Drawing.Size(169, 30);
             this.CedulaTxt.TabIndex = 56;
             // 
+            // ErrorProviderLetras
+            // 
+            this.ErrorProviderLetras.ContainerControl = this;
+            this.ErrorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorProviderLetras.Icon")));
+            // 
+            // errorProviderTelefono
+            // 
+            this.errorProviderTelefono.ContainerControl = this;
+            this.errorProviderTelefono.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderTelefono.Icon")));
+            // 
+            // errorProviderCorreo
+            // 
+            this.errorProviderCorreo.ContainerControl = this;
+            this.errorProviderCorreo.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderCorreo.Icon")));
+            // 
+            // errorProviderCedula
+            // 
+            this.errorProviderCedula.ContainerControl = this;
+            this.errorProviderCedula.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderCedula.Icon")));
+            // 
+            // errorProviderEmpresa
+            // 
+            this.errorProviderEmpresa.ContainerControl = this;
+            this.errorProviderEmpresa.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderEmpresa.Icon")));
+            // 
+            // errorProviderDireccion
+            // 
+            this.errorProviderDireccion.ContainerControl = this;
+            this.errorProviderDireccion.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderDireccion.Icon")));
+            // 
             // AñadirProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -324,6 +368,12 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmpresa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +402,11 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private AltoControls.AltoTextBox CedulaTxt;
+        private System.Windows.Forms.ErrorProvider ErrorProviderLetras;
+        private System.Windows.Forms.ErrorProvider errorProviderTelefono;
+        private System.Windows.Forms.ErrorProvider errorProviderCorreo;
+        private System.Windows.Forms.ErrorProvider errorProviderCedula;
+        private System.Windows.Forms.ErrorProvider errorProviderEmpresa;
+        private System.Windows.Forms.ErrorProvider errorProviderDireccion;
     }
 }

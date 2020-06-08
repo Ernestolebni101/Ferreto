@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReimprimirBo));
             this.label2 = new System.Windows.Forms.Label();
             this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
@@ -40,6 +42,10 @@
             this.BuscarBo = new AltoControls.AltoButton();
             this.ReBo = new AltoControls.AltoButton();
             this.FacturaLV = new System.Windows.Forms.ListView();
+            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderSerie = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).BeginInit();
             this.SuspendLayout();
             // 
             // label2
@@ -158,6 +164,7 @@
             this.BuscarBo.TabIndex = 12;
             this.BuscarBo.Text = "Buscar";
             this.BuscarBo.Transparency = false;
+            this.BuscarBo.Click += new System.EventHandler(this.Buscar);
             // 
             // ReBo
             // 
@@ -193,6 +200,16 @@
             this.FacturaLV.TabIndex = 14;
             this.FacturaLV.UseCompatibleStateImageBehavior = false;
             // 
+            // errorProviderLetras
+            // 
+            this.errorProviderLetras.ContainerControl = this;
+            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
+            // 
+            // errorProviderSerie
+            // 
+            this.errorProviderSerie.ContainerControl = this;
+            this.errorProviderSerie.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderSerie.Icon")));
+            // 
             // ReimprimirBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -214,6 +231,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReimprimirBo";
             this.Text = "Facturas";
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -232,5 +251,7 @@
         private AltoControls.AltoButton BuscarBo;
         private AltoControls.AltoButton ReBo;
         private System.Windows.Forms.ListView FacturaLV;
+        private System.Windows.Forms.ErrorProvider errorProviderLetras;
+        private System.Windows.Forms.ErrorProvider errorProviderSerie;
     }
 }

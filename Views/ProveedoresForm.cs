@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +24,23 @@ namespace Ferreto.Views
             obj.ShowDialog();
         }
 
+        private void Buscarpro(object sender, EventArgs e)
+        {
+            validar();
+        }
+        #region Validaciones
+        public void validar()
+        {
+            Regex regexLetras = new Regex(@"^[a-zA-Z]+$");
+            if (!regexLetras.IsMatch(BuscarProveedorTxt.Text))
+            {
+                errorProviderletras.
+                    SetError(BuscarProveedorTxt, ">>Formato no valido!");
+            }
+            else
+                this.errorProviderletras.Clear();
+        }
+        #endregion
         //public string Empresa { get;  set; }
         //public int Idpersona { get;  set; }
         //public bool Estado { get;  set; }

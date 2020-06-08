@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresForm));
             this.label17 = new System.Windows.Forms.Label();
             this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
@@ -38,7 +40,9 @@
             this.EliminarBo = new AltoControls.AltoButton();
             this.label2 = new System.Windows.Forms.Label();
             this.AñadirBo = new AltoControls.AltoButton();
+            this.errorProviderletras = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresDG)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
             this.SuspendLayout();
             // 
             // label17
@@ -129,6 +133,7 @@
             this.BuscarBo.TabIndex = 17;
             this.BuscarBo.Text = "Buscar";
             this.BuscarBo.Transparency = false;
+            this.BuscarBo.Click += new System.EventHandler(this.Buscarpro);
             // 
             // EliminarBo
             // 
@@ -187,7 +192,12 @@
             this.AñadirBo.Transparency = false;
             this.AñadirBo.Click += new System.EventHandler(this.AñadirBo_Click);
             // 
-            // Proveedores
+            // errorProviderletras
+            // 
+            this.errorProviderletras.ContainerControl = this;
+            this.errorProviderletras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderletras.Icon")));
+            // 
+            // ProveedoresForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -204,9 +214,10 @@
             this.Controls.Add(this.UserLab);
             this.Controls.Add(this.label17);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Proveedores";
+            this.Name = "ProveedoresForm";
             this.Text = "Proveedores";
             ((System.ComponentModel.ISupportInitialize)(this.ProveedoresDG)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -224,5 +235,6 @@
         private AltoControls.AltoButton EliminarBo;
         private System.Windows.Forms.Label label2;
         private AltoControls.AltoButton AñadirBo;
+        private System.Windows.Forms.ErrorProvider errorProviderletras;
     }
 }

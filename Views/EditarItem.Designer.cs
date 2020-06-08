@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EditarItem));
             this.panel1 = new System.Windows.Forms.Panel();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -62,9 +64,13 @@
             this.label18 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.errorProviderLeytras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNumero = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLeytras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -379,6 +385,7 @@
             this.ActualizarBo.TabIndex = 67;
             this.ActualizarBo.Text = "Actualizar";
             this.ActualizarBo.Transparency = false;
+            this.ActualizarBo.Click += new System.EventHandler(this.Actualizar);
             // 
             // label15
             // 
@@ -449,6 +456,16 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.Cerrar);
             // 
+            // errorProviderLeytras
+            // 
+            this.errorProviderLeytras.ContainerControl = this;
+            this.errorProviderLeytras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLeytras.Icon")));
+            // 
+            // errorProviderNumero
+            // 
+            this.errorProviderNumero.ContainerControl = this;
+            this.errorProviderNumero.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderNumero.Icon")));
+            // 
             // EditarItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -495,6 +512,8 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLeytras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNumero)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -536,5 +555,7 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.ErrorProvider errorProviderLeytras;
+        private System.Windows.Forms.ErrorProvider errorProviderNumero;
     }
 }
