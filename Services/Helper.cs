@@ -5,12 +5,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 using Ferreto.Models;
+using Microsoft.EntityFrameworkCore;
+
 namespace Ferreto.Services
 {
     public class Helper<T> : IHelper<T> where T : class
-    {
-     //    public class 
-   
+    { 
         private readonly FerretoSContext _context;
         public Helper(FerretoSContext context)
         {
@@ -42,7 +42,7 @@ namespace Ferreto.Services
             return await _context.Set<T>().FindAsync(id);
         }
 
-  
+
 
         public T Update(T t)
         {
@@ -67,7 +67,7 @@ namespace Ferreto.Services
             throw new NotImplementedException();
         }
 
-       
+
 
         public async Task<bool> SaveAsync()
         {
@@ -87,6 +87,43 @@ namespace Ferreto.Services
         {
             _context.Set<T>().AddRange(t);
             return t;
+        }
+
+        public bool validatecredentials(Usuario U)
+        {
+            return _context.Usuario.Any(x => x.Login == U.Login && x.Password == U.Password);
+        }
+
+        public bool Existbymarc(T t)
+        {
+            return _context.Marca.Any(x => x.Equals(t));
+        }
+        public IEnumerable<Rolusuario> RolAcc()
+        {
+            return _context.Rolusuario.Include(x => x.IdusuarioNavigation)
+                                      .Include(x => x.IdrolNavigation);
+        }
+
+        public IEnumerable<T> Get()
+        {
+            return _context.Set<T>().ToList();
+        }
+
+        public IEnumerable<Producto> ConcatenarProductos()
+        {
+            return _context.Producto.Include(x => x.IdcategoriaNavigation)
+                                    .Include(x => x.IdmarcaNavigation);
+        }
+
+        public IEnumerable<Precioproducto> PrecioProducto()
+        {
+            return _context.Precioproducto
+                .Include(x => x.IdproductoNavigation).ToList();
+        }
+
+        public IEnumerable<Inventario> Inventory()
+        {
+            return _context.Inventario.Include(x => x.IdproductoNavigation);
         }
     }
 }

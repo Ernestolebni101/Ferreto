@@ -7,13 +7,14 @@ namespace Ferreto.Models
     {
         public Persona()
         {
-            Proveedores = new List<Proveedores>();
-            Usuario = new List<Usuario>();
+            Proveedores = new HashSet<Proveedores>();
+            Usuario = new HashSet<Usuario>();
         }
 
         public int Idpersona { get; set; }
         public string Nombre { get; set; }
         public string Apellido { get; set; }
+
         public string Telefono { get; set; }
         public string Cedula { get; set; }
         public string Direccion { get; set; }

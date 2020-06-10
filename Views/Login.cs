@@ -1,4 +1,7 @@
-﻿using System;
+﻿using Ferreto.Common;
+using Ferreto.Models;
+using Ferreto.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,45 +16,98 @@ namespace Ferreto.Views
 {
     public partial class Login : Form
     {
+        private readonly Helper<Usuario> _usuariohelper;
+        private readonly FerretoSContext _context;
+        private readonly Helper<Rolusuario> _rolusuariohelper;
+        private Usuario _usuario;
         public Login()
         {
             InitializeComponent();
+            _context = Initializecontext.initcontext();
+            _usuariohelper = new Helper<Usuario>(_context);
+            _rolusuariohelper = new Helper<Rolusuario>(_context);
+        }
+      private string RolUsuarioInfo(string cadena)
+        {
+            string rolactual = string.Empty;
+           var local= _rolusuariohelper.RolAcc();
+            foreach (var iter in local)
+            {
+               var nombrerol= iter.IdrolNavigation.Nombrerol;
+                var usuario = iter.IdusuarioNavigation.Login;
+                var Estado =  iter.Estado;
+                if (cadena.Equals(usuario))
+                {
+                     rolactual = nombrerol;
+                    break;
+                }
+         
+            }
+            return rolactual;
+        }
+        private Usuario returnusuario()
+        {
+            _usuario = new Usuario();
+            _usuario.Login = this.UserTxt.Text;
+            _usuario.Password = this.PassTxt.Text;
+            return _usuario;
         }
 
         private void InicioBo_Click(object sender, EventArgs e)
         {
-            Sesion();
+            Access();
         }
-
-        private bool ValidoCredenciales()
+        public void Access()
         {
-            try
-            {
-                if (UserTxt.Text.Equals("admin") && PassTxt.Text.Equals("12345"))
-                {
-                    return true;
 
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show(ex.Message);
-                return false;
-            }
-        } 
-
-        public void Sesion()
-        {
-            if (ValidoCredenciales())
+            if (_usuariohelper.validatecredentials(returnusuario()))
             {
                 MainContainer obj = new MainContainer();
                 //ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
+                if (RolUsuarioInfo(UserTxt.Text).Equals("Admin"))
+                {
+                    obj.VentaBo.Visible = false;
+                    obj.ComprasBo.Visible = false;
+                }
+
+                else if (RolUsuarioInfo(UserTxt.Text).Equals("Comprador"))
+                {
+                    obj.VentaBo.Visible = false;
+                    obj.FacturaBo.Visible = false;
+                    obj.AdministrarBo.Visible = false;
+                }
+
+                else if (RolUsuarioInfo(UserTxt.Text).Equals("Vendedor"))
+                {
+                    obj.ProveedoresBo.Visible = false;
+                    obj.FacturaBo.Visible = false;
+                    obj.ComprasBo.Visible = false;
+                    obj.AdministrarBo.Visible = false;
+                }
+
+
+                else if (RolUsuarioInfo(UserTxt.Text).Equals("bodegaResp"))
+                {
+                    obj.VentaBo.Visible = false;
+                    obj.FacturaBo.Visible = false;
+                    obj.AdministrarBo.Visible = false;
+                    obj.ComprasBo.Visible = false;
+                }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                 //this.Hide();
                 obj.Show();
             }

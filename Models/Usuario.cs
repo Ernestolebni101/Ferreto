@@ -16,8 +16,8 @@ namespace Ferreto.Models
         public string Login { get; set; }
         public int Idpersona { get; set; }
         public bool Estado { get; set; }
-        public byte[] Password { get; set; }
 
+        public string Password { get; set; }
         public virtual Persona IdpersonaNavigation { get; set; }
         public virtual ICollection<Compra> Compra { get; set; }
         public virtual ICollection<Factura> Factura { get; set; }

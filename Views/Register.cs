@@ -1,4 +1,8 @@
-﻿using System;
+﻿using Ferreto.Common;
+using Ferreto.Models;
+using Ferreto.Models.Common;
+using Ferreto.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +10,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -13,115 +18,114 @@ namespace Ferreto.Views
 {
     public partial class Register : Form
     {
+
+        private readonly Helper<Rol> _rolhelper;
+        private Helper<Persona> _personahelper;
+        private Helper<Rolusuario> _rolusuariohelper;
+        private Helper<Usuario> _usuariohelper;
+        private readonly FerretoSContext _context;
         public Register()
         {
             InitializeComponent();
+            _context = Initializecontext.initcontext();
+            _rolhelper = new Helper<Rol>(_context);
+            _personahelper = new Helper<Persona>(_context);
+            _usuariohelper = new Helper<Usuario>(_context);
+            _rolusuariohelper = new Helper<Rolusuario>(_context);
+            Init();
         }
-        #region Validaciones
-        public void validar()
+        #region Methods
+        private Usuario _objusuario;
+        private Persona _objpersona;
+        private Rolusuario _rolusuario;
+        /// <summary>
+        /// Este metodo carga las propiedades de un nuevo objeto del tipo Persona
+        /// </summary>
+        /// <returns> me retorna una nueva persona</returns>
+        private Persona PersonalInfor()
         {
-            //Datos personales
-            bool bandera = false;
-            //Letras
-            Regex regexLetras = new Regex(@"^[a-z A-Z]+$");
-
-            if (!regexLetras.IsMatch(NombreTxt.Text))
+            _objpersona = new Persona();
+            _objpersona.Nombre = this.NombreTxt.Text;
+            _objpersona.Apellido = ApellidoTxt.Text;
+            _objpersona.Email = CorreoTxt.Text;
+            _objpersona.Cedula = CedulaTxt.Text;
+            _objpersona.Telefono = TelefonoTxt.Text;
+            _objpersona.Direccion = direcciontxt.Text;
+            return _objpersona;
+        }
+        
+        /// <summary>
+        /// Metodo principal para crear un usuario
+        /// </summary>
+        private void CreateUser()
+        {
+                var dataperson = PersonalInfor();
+                _personahelper.add(dataperson);
+                var datauser = Userinfo(dataperson.Idpersona);
+                _usuariohelper.add(datauser);
+                var dataroluser = Roluser(datauser.Idusuario);
+                _rolusuariohelper.add(dataroluser);
+                errorProvidercode.SetError(FerretoCodeTxt, "Verifique su contraseña");
+        }
+        private Usuario Userinfo(int idpersona)
+        {
+            _objusuario = new Usuario();
+            _objusuario.Login = UsuarioTxt.Text;
+            _objusuario.Password = ContraseñaTxt.Text;
+            _objusuario.Idpersona = idpersona;
+            _objusuario.Estado = true;
+            return _objusuario;
+        }
+        private void Init()
+        {
+            RolCB.DataSource = _rolhelper.Get();
+            RolCB.ValueMember = "Idrol";
+            RolCB.DisplayMember = "Nombrerol";   
+        }
+        private Rolusuario Roluser(int idusuario)
+        {
+            _rolusuario = new Rolusuario();
+            _rolusuario.Idusuario = idusuario;
+            _rolusuario.Idrol  = Getidrol(RolCB.Text); 
+            _rolusuario.Estado = true;
+            return _rolusuario;
+        }
+        private void cleancontrols()
+        {
+            NombreTxt.Text = string.Empty;
+            ApellidoTxt.Text = string.Empty;
+            direcciontxt.Text = String.Empty;
+            CorreoTxt.Text = string.Empty;
+            UsuarioTxt.Text = string.Empty;
+            TelefonoTxt.Text = string.Empty;
+            ContraseñaTxt.Text = string.Empty;
+            CedulaTxt.Text = string.Empty;
+        }
+        private int Getidrol(string cadena)
+        {
+           var colection= _rolhelper.Get();
+            int idrol = 0;
+            foreach (var iter in colection)
             {
-                 bandera = false;
-                ErrorProviderLetras.
-                        SetError(NombreTxt, ">>Ingrese al menos un nombre");
+                if (cadena.Equals(iter.Nombrerol))
+                {
+                    idrol = iter.Idrol;
+                    break;
+                } 
             }
-            else
-            {
-                bandera = true;
-                this.ErrorProviderLetras.Clear();
-            }
-            if (!regexLetras.IsMatch(ApellidoTxt.Text))
-            {
-                bandera = false;
-                ErrorProviderLetras.
-                     SetError(ApellidoTxt, ">>Ingrese al menos un apellido!");
-            }
-            else
-            {
-                bandera = true;
-                this.ErrorProviderLetras.Clear();
-            }
-            if (!regexLetras.IsMatch(RolCB.Text))
-            {
-                bandera = false;
-                ErrorProviderLetras.
-                        SetError(RolCB, ">>Ingrese al menos un nombre");
-            }
-            else
-            {
-                bandera = true;
-                this.ErrorProviderLetras.Clear();
-            }
-            //Telefono
-            Regex regexTelefono = new Regex(@"^[0-9]{4}(-)[0-9]{4}$");
-
-            if (!regexTelefono.IsMatch(TelefonoTxt.Text))
-            {
-                errorProviderTelefono.
-                    SetError(TelefonoTxt, ">>Ingrese correctamente el formato [0000-0000]");
-            }
-            else
-                this.errorProviderTelefono.Clear();
-
-            //Correo
-            Regex regexCorreo = new Regex(@"^[^@]+@[^@]+\.[a-zA-Z]{3,}$");
-
-            if (!regexCorreo.IsMatch(CorreoTxt.Text))
-            {
-                errorProviderCorreo.
-                        SetError(CorreoTxt, ">>> Formato de correo incorrecto [algo/alguien@example.com]");
-            }
-            else
-                this.errorProviderCorreo.Clear();
-
-            //Cedula
-            Regex regexCedula = new Regex(@"^[0-9]{3}(-)[0-9]{6}(-)[0-9A-Z]{5}");
-            if (!regexCedula.IsMatch(CedulaTxt.Text))
-            {
-                errorProviderCedula.
-                    SetError(CedulaTxt, ">>> Formato de cedula incorrecto [000-000000-0000Letra]");
-            }
-            else
-                this.errorProviderCedula.Clear();
-            //Direccion
-            Regex regexDireccione = new Regex(@"^[a-zA-Z0-9/]");
-            if (!regexDireccione.IsMatch(direcciontxt.Text))
-            {
-                errorProviderDireccion.
-                    SetError(direcciontxt, ">>> Formato incorrecto");
-            }
-            else
-                this.errorProviderDireccion.Clear();
-
-            //Code
-            Regex regexCode = new Regex(@"^[a-zA-Z0-9]+$");
-            if (!regexCode.IsMatch(FerretoCodeTxt.Text))
-            {
-                errorProvidercode.
-                    SetError(FerretoCodeTxt, ">> Formato no valido!");
-            }
-            else
-                this.errorProvidercode.Clear();
-            if (!regexCode.IsMatch(UsuarioTxt.Text))
-            {
-                errorProvidercode.
-                    SetError(UsuarioTxt, ">> Formato no valido!");
-            }
-            else
-                this.errorProvidercode.Clear();
-
+            return idrol;
         }
         #endregion
 
+        #region Events
         private void Registrar(object sender, EventArgs e)
         {
-            validar();
+            CreateUser();
+            //var encrypted = Parameter.Str(FerretoCodeTxt.Text);
+            cleancontrols();
         }
+
+    
+        #endregion
     }
 }

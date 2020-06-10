@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Ferreto.Models;
+using Ferreto.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,91 +9,49 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Ferreto.Common;
 using System.Windows.Forms;
 
 namespace Ferreto.Views
 {
     public partial class EditarItem : Form
     {
+        private readonly FerretoSContext _context;
+        private readonly Helper<Marca> _marcahelper;
+        private readonly Helper<Presentacion> _presentaciohelper;
+        private readonly Helper<Categoria> _categoriahelper;
         public EditarItem()
         {
             InitializeComponent();
+            _context = Initializecontext.initcontext();
+            _marcahelper = new Helper<Marca>(_context);
+            _presentaciohelper = new Helper<Presentacion>(_context);
+            _categoriahelper = new Helper<Categoria>(_context);
         }
 
+        private Marca _objmarca;
+        private Presentacion _objpresentacion;
+        private Categoria _objcategoria;
+
+        #region Methods
+         private Marca objmarca()
+        {
+            _objmarca = new Marca();
+            //_objmarca.Nombre = 
+            return _objmarca;
+        }
+
+        #endregion
+
+        #region Events
+        private void Actualizar(object sender, EventArgs e)
+        {
+
+        }
         private void Cerrar(object sender, EventArgs e)
         {
             this.Dispose();
         }
-        #region validaciones
-        public void validar()
-        {
-            Regex regexLetras = new Regex(@"[a-zA-Z]+$");
-            if (!regexLetras.IsMatch(MarcaCB.Text))
-            {
-                errorProviderLeytras.
-                    SetError(MarcaCB, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-            if (!regexLetras.IsMatch(MarcaTxt.Text))
-            {
-                errorProviderLeytras.
-                    SetError(MarcaTxt, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-            if (!regexLetras.IsMatch(CategoriaCB.Text))
-            {
-                errorProviderLeytras.
-                    SetError(CategoriaCB, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-            if (!regexLetras.IsMatch(CategoriaTxt.Text))
-            {
-                errorProviderLeytras.
-                    SetError(CategoriaTxt, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-            if (!regexLetras.IsMatch(RolCB.Text))
-            {
-                errorProviderLeytras.
-                    SetError(RolCB, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-            if (!regexLetras.IsMatch(RolTxt.Text))
-            {
-                errorProviderLeytras.
-                    SetError(RolTxt, ">>Formato no valido!");
-            }
-            else
-                this.errorProviderLeytras.Clear();
-
-            //Numeros
-            Regex regexNumeros = new Regex(@"^[+]?[0-9]{1,9}(?:.[0-9]{1,2})?$");
-            if (!regexNumeros.IsMatch(MedidaCB.Text))
-            {
-                errorProviderNumero.
-                    SetError(MedidaCB, ">>Formate no valido!");
-            }
-            else
-                this.errorProviderNumero.Clear();
-            if (!regexNumeros.IsMatch(MedidaTxt.Text))
-            {
-                errorProviderNumero.
-                    SetError(MedidaTxt, ">>Formate no valido!");
-            }
-            else
-                this.errorProviderNumero.Clear();
-
-        }
         #endregion
-
-        private void Actualizar(object sender, EventArgs e)
-        {
-            validar();
-        }
     }
 }
