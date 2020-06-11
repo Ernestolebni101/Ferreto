@@ -167,6 +167,7 @@
             this.BorrarBo.TabIndex = 8;
             this.BorrarBo.Text = "Borrar";
             this.BorrarBo.Transparency = false;
+            this.BorrarBo.Click += new System.EventHandler(this.BorrarBo_Click);
             // 
             // ImprimirBo
             // 
@@ -282,6 +283,7 @@
             this.Cantidad,
             this.Categoria,
             this.Subtotal});
+            this.ProductosLV.FullRowSelect = true;
             this.ProductosLV.HideSelection = false;
             this.ProductosLV.Location = new System.Drawing.Point(45, 215);
             this.ProductosLV.Margin = new System.Windows.Forms.Padding(5);
@@ -318,10 +320,12 @@
             // Categoria
             // 
             this.Categoria.Text = "Categoria";
+            this.Categoria.Width = 200;
             // 
             // Subtotal
             // 
             this.Subtotal.Text = "Subtotal";
+            this.Subtotal.Width = 150;
             // 
             // CantidadTxt
             // 

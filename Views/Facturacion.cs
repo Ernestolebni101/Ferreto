@@ -38,35 +38,36 @@ namespace Ferreto.Views
         }
 
         #region Methods
+
+     
         private bool Existence()
         {
             var Collections = _inventariohelper.Inventory();
             bool exception = false;
           
-          foreach (var item in Collections)
-          {
+           foreach (var item in Collections)
+           {
               if (item.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
               {
                   try
                   {
                       if (int.Parse(CantidadTxt.Text) <= item.Existencia)
-                      {
-                          MessageBox.Show("Me valida la existencia");
+                      { 
+
                           errorProviderCantidad.Clear();
                              exception = false;
-                          //break;
                       }
                       else
                       {
                           errorProviderCantidad.SetError(CantidadTxt, "No existe esta cantidad en inventario");
                             exception = true;
                       }
-                    }
-                    catch (Exception e) when (e.GetType() != typeof(OverflowException))
-                    {
+                  }
+                  catch (Exception e) when (e.GetType() != typeof(OverflowException))
+                  {
                      errorProviderCantidad.SetError(CantidadTxt, "Ha ocurrido un error del tipo" + e.ToString());
                          exception = true;
-                    }
+                  }
                   catch (OverflowException e)
                   {
                         errorProviderCantidad.SetError(CantidadTxt, "Deje de poner tanta mierda");
@@ -74,7 +75,7 @@ namespace Ferreto.Views
                   }
               
               }
-          }
+           }
             if (exception)
             {
                 return true;
@@ -84,22 +85,26 @@ namespace Ferreto.Views
                 return false;
             }
         }
-    
+        /// <summary>
+        /// Controla el detalle de la factura
+        /// </summary>
         private void AddToListView()
         {
             ListViewItem item = null;
             var CollectioPrice = _precioproductohelper.Get();
             var CollectionProducts = _productohelper.ConcatenarProductos();
+            var Inventory = _inventariohelper.Inventory();
             foreach (var C in CollectionProducts)
             {
-                if (C.Nombre.Equals(ProductosTxt.Text))
+                string search = C.Nombre + " - " + C.IdmarcaNavigation.Nombre;
+                if (search.Equals(ProductosTxt.Text))
                 {
                     item = ProductosLV.Items.Add(C.Idproducto.ToString());
                     item.SubItems.Add(C.Nombre);
                     item.SubItems.Add(C.IdmarcaNavigation.Nombre);
                     foreach (var I in CollectioPrice)
                     {
-                        if (I.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
+                        if (I.IdproductoNavigation.Nombre.Equals(C.Nombre))
                         {
                             item.SubItems.Add(I.Precio.ToString());
                             item.SubItems.Add(CantidadTxt.Text);
@@ -112,28 +117,33 @@ namespace Ferreto.Views
                 }
             }           
         }
-    
-          
-        private double subtotal(double precio, string Q)
+        /// <summary>
+        /// Remueve un elemento seleccionado en  la listview 
+        /// </summary>
+        private void RemoveDetails()
         {
-            var sub =   precio * int.Parse(Q);
-            return sub;
+            foreach (ListViewItem item in  ProductosLV.SelectedItems)
+            {
+                item.Remove();
+            }
         }
-
         /// <summary>
         /// Este metodo inicializa el combobox mediante un servicio que implementa interfaces
         /// </summary>
-        private void SearchProducto()
+        private   void SearchProducto()
         {
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            var CollectionProducts = _productohelper.GetAll();
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+            var CollectionProducts = _productohelper.ConcatenarProductos();
             foreach (var iter in CollectionProducts)
             {
-                autoComplete.Add(iter.Nombre);
+                autoComplete.Add($"{iter.Nombre} - {iter.IdmarcaNavigation.Nombre}");
+               
             }
             ProductosTxt.AutoCompleteCustomSource = autoComplete;
             ProductosTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             ProductosTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
+      
         }
 
         private void Restrict()
@@ -142,19 +152,27 @@ namespace Ferreto.Views
             {
                 AddToListView();
             }
-            else
-            {
-              
-            }
         }
+
+        #region Calculos
+        private double subtotal(double precio, string Q)
+        {
+            var sub =   precio * int.Parse(Q);
+            return sub;
+        }
+        #endregion 
+       
         #endregion
 
         #region Events
         private void AgregarBo_Click(object sender, EventArgs e)
         {
             Restrict();
-            
 
+        }
+        private void BorrarBo_Click(object sender, EventArgs e)
+        {
+            RemoveDetails();
         }
         #endregion
     }
