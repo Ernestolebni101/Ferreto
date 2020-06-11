@@ -38,91 +38,79 @@ namespace Ferreto.Views
         }
 
         #region Methods
-
-        //private List<Producto> _producto()
-        //{
-        //    var listproducto = new List<Producto>()
-        //    {
-        //        new Producto()
-        //        {
-        //            Nombre= ProductosTxt.Text
-        //        }
-        //    };
-        //    return listproducto;
-        //}
-        private void Existence(string Q)
+        private bool Existence()
         {
             var Collections = _inventariohelper.Inventory();
             bool exception = false;
-            foreach (var item in Collections)
+          
+          foreach (var item in Collections)
+          {
+              if (item.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
+              {
+                  try
+                  {
+                      if (int.Parse(CantidadTxt.Text) <= item.Existencia)
+                      {
+                          MessageBox.Show("Me valida la existencia");
+                          errorProviderCantidad.Clear();
+                             exception = false;
+                          //break;
+                      }
+                      else
+                      {
+                          errorProviderCantidad.SetError(CantidadTxt, "No existe esta cantidad en inventario");
+                            exception = true;
+                      }
+                    }
+                    catch (Exception e) when (e.GetType() != typeof(OverflowException))
+                    {
+                     errorProviderCantidad.SetError(CantidadTxt, "Ha ocurrido un error del tipo" + e.ToString());
+                         exception = true;
+                    }
+                  catch (OverflowException e)
+                  {
+                        errorProviderCantidad.SetError(CantidadTxt, "Deje de poner tanta mierda");
+                         exception = true;
+                  }
+              
+              }
+          }
+            if (exception)
             {
-                if (item.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
-                {
-                    try
-                    {
-                        if (int.Parse(Q) <= item.Existencia)
-                        {
-                            MessageBox.Show("Me valida la existencia");
-                            errorProviderCantidad.Clear();
-                            break;
-                        }
-                        else
-                        {
-                            errorProviderCantidad.SetError(CantidadTxt, "No existe esta cantidad en inventario");
-                            break;
-                        }
-                       exception = true;
-                    }
-                    catch (Exception e)when (e.GetType() != typeof(StackOverflowException)) 
-                    {
-                        exception = false;
-                        errorProviderCantidad.SetError(CantidadTxt, e.ToString());
-                    }
-                    catch (StackOverflowException)
-                    {
-                        exception = false;
-                        errorProviderCantidad.SetError(CantidadTxt,"Ingresó una cantidade exagerada");
-                    }
-                }
-             
+                return true;
             }
-           
+            else
+            {
+                return false;
+            }
         }
-        private void Addtolist()
+    
+        private void AddToListView()
         {
             ListViewItem item = null;
             var CollectioPrice = _precioproductohelper.Get();
             var CollectionProducts = _productohelper.ConcatenarProductos();
-            //if (Existence(CantidadTxt.Text))
-            //{
-                foreach (var C in CollectionProducts)
+            foreach (var C in CollectionProducts)
+            {
+                if (C.Nombre.Equals(ProductosTxt.Text))
                 {
-                    if (C.Nombre.Equals(ProductosTxt.Text))
+                    item = ProductosLV.Items.Add(C.Idproducto.ToString());
+                    item.SubItems.Add(C.Nombre);
+                    item.SubItems.Add(C.IdmarcaNavigation.Nombre);
+                    foreach (var I in CollectioPrice)
                     {
-                        item = ProductosLV.Items.Add(C.Idproducto.ToString());
-                        item.SubItems.Add(C.Nombre);
-                        item.SubItems.Add(C.IdmarcaNavigation.Nombre);
-                        foreach (var I in CollectioPrice)
+                        if (I.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
                         {
-                            if (I.IdproductoNavigation.Nombre.Equals(ProductosTxt.Text))
-                            {
-                                item.SubItems.Add(I.Precio.ToString());
-                                item.SubItems.Add(CantidadTxt.Text);
-                                item.SubItems.Add(I.IdproductoNavigation.IdcategoriaNavigation.Nombre);
-                                item.SubItems.Add(subtotal(I.Precio, CantidadTxt.Text).ToString());
-                                break;
-                            }
+                            item.SubItems.Add(I.Precio.ToString());
+                            item.SubItems.Add(CantidadTxt.Text);
+                            item.SubItems.Add(I.IdproductoNavigation.IdcategoriaNavigation.Nombre);
+                            item.SubItems.Add(subtotal(I.Precio, CantidadTxt.Text).ToString());
+                            break;
                         }
-                        break;
                     }
+                    break;
                 }
-            //    errorProviderCantidad.Clear();
-            //}
-            //else
-            //{
-            //    errorProviderCantidad.SetError(CantidadTxt,"Esta cantidad no existe en inventario");
-            //}
-           
+            }           
         }
     
           
@@ -148,14 +136,25 @@ namespace Ferreto.Views
             ProductosTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
         }
 
-
+        private void Restrict()
+        {
+            if (!Existence())
+            {
+                AddToListView();
+            }
+            else
+            {
+              
+            }
+        }
         #endregion
-        #region Events
 
+        #region Events
         private void AgregarBo_Click(object sender, EventArgs e)
         {
-            //Addtolist();
-            Existence(CantidadTxt.Text);
+            Restrict();
+            
+
         }
         #endregion
     }

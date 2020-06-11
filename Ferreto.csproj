@@ -242,7 +242,6 @@
     <Compile Include="Views\Facturas.Designer.cs">
       <DependentUpon>Facturas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FerretoScontext.cs" />
     <Compile Include="Views\FirstContainer.cs">
       <SubType>Form</SubType>
     </Compile>
