@@ -38,6 +38,7 @@ namespace Ferreto.Views
         private Usuario _objusuario;
         private Persona _objpersona;
         private Rolusuario _rolusuario;
+        private Rolacceso _rolacceso;
         /// <summary>
         /// Este metodo carga las propiedades de un nuevo objeto del tipo Persona
         /// </summary>
@@ -76,6 +77,7 @@ namespace Ferreto.Views
             _objusuario.Estado = true;
             return _objusuario;
         }
+        
         private void Init()
         {
             RolCB.DataSource = _rolhelper.Get();
@@ -90,6 +92,7 @@ namespace Ferreto.Views
             _rolusuario.Estado = true;
             return _rolusuario;
         }
+     
         private void cleancontrols()
         {
             NombreTxt.Text = string.Empty;

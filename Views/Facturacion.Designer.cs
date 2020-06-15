@@ -56,6 +56,7 @@
             this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCantidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductosTxt = new System.Windows.Forms.TextBox();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).BeginInit();
             this.SuspendLayout();
@@ -357,6 +358,10 @@
             this.ProductosTxt.Size = new System.Drawing.Size(378, 28);
             this.ProductosTxt.TabIndex = 18;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
@@ -385,6 +390,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Facturacion";
             this.Text = "Venta";
+            this.Load += new System.EventHandler(this.Facturacion_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).EndInit();
             this.ResumeLayout(false);
@@ -420,5 +426,6 @@
         private System.Windows.Forms.ColumnHeader Marca;
         private System.Windows.Forms.ColumnHeader Categoria;
         private System.Windows.Forms.ColumnHeader Subtotal;
+        private System.Windows.Forms.Timer timer1;
     }
 }

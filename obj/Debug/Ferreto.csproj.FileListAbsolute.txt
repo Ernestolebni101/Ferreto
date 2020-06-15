@@ -545,3 +545,4 @@ C:\Users\usuario\Documents\FerretoS\obj\Debug\Ferreto.csproj.GenerateResource.ca
 C:\Users\usuario\Documents\FerretoS\obj\Debug\Ferreto.csproj.CopyComplete
 C:\Users\usuario\Documents\FerretoS\obj\Debug\Ferreto.exe
 C:\Users\usuario\Documents\FerretoS\obj\Debug\Ferreto.pdb
+C:\Users\usuario\Documents\FerretoS\obj\Debug\Ferreto.Views.FPrintFactura.resources

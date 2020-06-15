@@ -20,6 +20,7 @@ namespace Ferreto.Views
         private readonly FerretoSContext _context;
         private readonly Helper<Rolusuario> _rolusuariohelper;
         private Usuario _usuario;
+     
         public Login()
         {
             InitializeComponent();
@@ -27,7 +28,7 @@ namespace Ferreto.Views
             _usuariohelper = new Helper<Usuario>(_context);
             _rolusuariohelper = new Helper<Rolusuario>(_context);
         }
-      private string RolUsuarioInfo(string cadena)
+      private string RolUserInfo(string cadena)
         {
             string rolactual = string.Empty;
            var local= _rolusuariohelper.RolAcc();
@@ -45,13 +46,14 @@ namespace Ferreto.Views
             }
             return rolactual;
         }
-        private Usuario returnusuario()
+        private Usuario ReturnUser()
         {
             _usuario = new Usuario();
             _usuario.Login = this.UserTxt.Text;
             _usuario.Password = this.PassTxt.Text;
             return _usuario;
         }
+        
 
         private void InicioBo_Click(object sender, EventArgs e)
         {
@@ -59,35 +61,37 @@ namespace Ferreto.Views
         }
         public void Access()
         {
-
-            if (_usuariohelper.validatecredentials(returnusuario()))
+            if (_usuariohelper.validatecredentials(ReturnUser()))
             {
                 MainContainer obj = new MainContainer();
+                
                 //ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
-                if (RolUsuarioInfo(UserTxt.Text).Equals("Admin"))
+                if (RolUserInfo(UserTxt.Text).Equals("Admin"))
                 {
                     obj.VentaBo.Visible = false;
                     obj.ComprasBo.Visible = false;
                 }
 
-                else if (RolUsuarioInfo(UserTxt.Text).Equals("Comprador"))
+                else if (RolUserInfo(UserTxt.Text).Equals("Comprador"))
                 {
                     obj.VentaBo.Visible = false;
                     obj.FacturaBo.Visible = false;
                     obj.AdministrarBo.Visible = false;
+                  
                 }
 
-                else if (RolUsuarioInfo(UserTxt.Text).Equals("Vendedor"))
+                else if (RolUserInfo(UserTxt.Text).Equals("Vendedor"))
                 {
                     obj.ProveedoresBo.Visible = false;
                     obj.FacturaBo.Visible = false;
                     obj.ComprasBo.Visible = false;
                     obj.AdministrarBo.Visible = false;
+
                 }
 
 
-                else if (RolUsuarioInfo(UserTxt.Text).Equals("bodegaResp"))
+                else if (RolUserInfo(UserTxt.Text).Equals("bodegaResp"))
                 {
                     obj.VentaBo.Visible = false;
                     obj.FacturaBo.Visible = false;
@@ -118,6 +122,5 @@ namespace Ferreto.Views
                 PassTxt.Text = string.Empty;
             }
         }
-
     }
 }

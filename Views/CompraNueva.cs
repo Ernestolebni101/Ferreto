@@ -17,6 +17,10 @@ namespace Ferreto.Views
 {
     public partial class CompraNueva : Form
     {
+        public override string ToString()
+        {
+            return "Frcompranueva";
+        }
         public CompraNueva()
         {
             InitializeComponent();
@@ -27,20 +31,7 @@ namespace Ferreto.Views
         {
             this.Dispose();
         }
-        //private void initcb()
-        //{
-        //    var optionsbuilder = new DbContextOptionsBuilder<FerretoSContext>();
-        //    optionsbuilder.UseSqlServer(Parameter.Connectionstring);
-
-        //    var context = new FerretoSContext(optionsbuilder.Options);
-
-        //    var proveedorservice = new ProveedorService(context);
-        //    using (context)
-        //    {
-        //        ProveedorCB.DataSource = proveedorservice.GetAll();
-        //        ProveedorCB.ValueMember = "Idproveedor";
-        //        ProveedorCB.DisplayMember = "IdpersonaNavigation";
-        //    }       
+    
 
         #region Validacion
         public void Validar()

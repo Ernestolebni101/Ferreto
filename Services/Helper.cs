@@ -41,9 +41,6 @@ namespace Ferreto.Services
         {
             return await _context.Set<T>().FindAsync(id);
         }
-
-
-
         public T Update(T t)
         {
             _context.Set<T>().Update(t);

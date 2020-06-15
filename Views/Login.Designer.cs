@@ -53,10 +53,11 @@
             this.InicioBo.ForeColor = System.Drawing.Color.White;
             this.InicioBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.InicioBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.InicioBo.Location = new System.Drawing.Point(426, 278);
+            this.InicioBo.Location = new System.Drawing.Point(568, 342);
+            this.InicioBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.InicioBo.Name = "InicioBo";
             this.InicioBo.Radius = 10;
-            this.InicioBo.Size = new System.Drawing.Size(258, 42);
+            this.InicioBo.Size = new System.Drawing.Size(344, 52);
             this.InicioBo.Stroke = false;
             this.InicioBo.StrokeColor = System.Drawing.Color.Gray;
             this.InicioBo.TabIndex = 1;
@@ -69,9 +70,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.label1.Location = new System.Drawing.Point(396, -1);
+            this.label1.Location = new System.Drawing.Point(528, -1);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(321, 32);
+            this.label1.Size = new System.Drawing.Size(403, 40);
             this.label1.TabIndex = 2;
             this.label1.Text = "Sistema de Facturación";
             // 
@@ -80,9 +82,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.label2.Location = new System.Drawing.Point(421, 88);
+            this.label2.Location = new System.Drawing.Point(561, 108);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(93, 25);
+            this.label2.Size = new System.Drawing.Size(119, 32);
             this.label2.TabIndex = 5;
             this.label2.Text = "Usuario:";
             // 
@@ -91,9 +94,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.label3.Location = new System.Drawing.Point(421, 169);
+            this.label3.Location = new System.Drawing.Point(561, 208);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(136, 25);
+            this.label3.Size = new System.Drawing.Size(175, 32);
             this.label3.TabIndex = 6;
             this.label3.Text = "Contraseña:";
             // 
@@ -102,9 +106,10 @@
             this.UserTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.UserTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.UserTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserTxt.Location = new System.Drawing.Point(437, 133);
+            this.UserTxt.Location = new System.Drawing.Point(583, 164);
+            this.UserTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserTxt.Name = "UserTxt";
-            this.UserTxt.Size = new System.Drawing.Size(202, 16);
+            this.UserTxt.Size = new System.Drawing.Size(269, 20);
             this.UserTxt.TabIndex = 8;
             // 
             // PassTxt
@@ -112,18 +117,20 @@
             this.PassTxt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(230)))), ((int)(((byte)(230)))));
             this.PassTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.PassTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PassTxt.Location = new System.Drawing.Point(437, 215);
+            this.PassTxt.Location = new System.Drawing.Point(583, 265);
+            this.PassTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PassTxt.Name = "PassTxt";
             this.PassTxt.PasswordChar = '*';
-            this.PassTxt.Size = new System.Drawing.Size(202, 16);
+            this.PassTxt.Size = new System.Drawing.Size(269, 20);
             this.PassTxt.TabIndex = 9;
             // 
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Ferreto.Properties.Resources._2871689;
-            this.pictureBox3.Location = new System.Drawing.Point(426, 197);
+            this.pictureBox3.Location = new System.Drawing.Point(568, 242);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(258, 50);
+            this.pictureBox3.Size = new System.Drawing.Size(344, 62);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox3.TabIndex = 4;
             this.pictureBox3.TabStop = false;
@@ -131,9 +138,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::Ferreto.Properties.Resources._2871688;
-            this.pictureBox2.Location = new System.Drawing.Point(426, 116);
+            this.pictureBox2.Location = new System.Drawing.Point(568, 143);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(258, 50);
+            this.pictureBox2.Size = new System.Drawing.Size(344, 62);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 3;
             this.pictureBox2.TabStop = false;
@@ -142,8 +150,9 @@
             // 
             this.pictureBox1.Image = global::Ferreto.Properties.Resources.Fondo_3;
             this.pictureBox1.Location = new System.Drawing.Point(-1, -1);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(378, 342);
+            this.pictureBox1.Size = new System.Drawing.Size(504, 421);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
@@ -152,18 +161,19 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.label4.Location = new System.Drawing.Point(464, 31);
+            this.label4.Location = new System.Drawing.Point(619, 38);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(182, 32);
+            this.label4.Size = new System.Drawing.Size(228, 40);
             this.label4.TabIndex = 10;
             this.label4.Text = "e Inventarios";
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(740, 341);
+            this.ClientSize = new System.Drawing.Size(987, 420);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.PassTxt);
@@ -175,6 +185,7 @@
             this.Controls.Add(this.InicioBo);
             this.Controls.Add(this.pictureBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

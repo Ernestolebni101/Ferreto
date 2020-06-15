@@ -15,6 +15,6 @@ namespace Ferreto.Models
         public DateTime Fechafacturacion { get; set; }
 
         public virtual Usuario IdusuarioNavigation { get; set; }
-        public virtual Detallefactura IdventaNavigation { get; set; }
+        public virtual Detallefactura IdventaNavigation {get; set;}
     }
 }
