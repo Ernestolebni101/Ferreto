@@ -30,8 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Facturacion));
-            this.label1 = new System.Windows.Forms.Label();
-            this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -57,33 +55,10 @@
             this.errorProviderCantidad = new System.Windows.Forms.ErrorProvider(this.components);
             this.ProductosTxt = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.UserLab = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(39, 29);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(224, 23);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Bienvenido de nuevo:";
-            // 
-            // UserLab
-            // 
-            this.UserLab.AutoSize = true;
-            this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLab.Location = new System.Drawing.Point(310, 29);
-            this.UserLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.UserLab.Name = "UserLab";
-            this.UserLab.Size = new System.Drawing.Size(51, 23);
-            this.UserLab.TabIndex = 1;
-            this.UserLab.Text = "User";
             // 
             // FechaLab
             // 
@@ -192,6 +167,7 @@
             this.ImprimirBo.TabIndex = 9;
             this.ImprimirBo.Text = "Generar Factura";
             this.ImprimirBo.Transparency = false;
+            this.ImprimirBo.Click += new System.EventHandler(this.ImprimirBo_Click);
             // 
             // label4
             // 
@@ -362,12 +338,25 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // UserLab
+            // 
+            this.UserLab.AutoSize = true;
+            this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLab.ForeColor = System.Drawing.Color.Black;
+            this.UserLab.Location = new System.Drawing.Point(55, 29);
+            this.UserLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UserLab.Name = "UserLab";
+            this.UserLab.Size = new System.Drawing.Size(51, 23);
+            this.UserLab.TabIndex = 19;
+            this.UserLab.Text = "User";
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(820, 494);
+            this.Controls.Add(this.UserLab);
             this.Controls.Add(this.ProductosTxt);
             this.Controls.Add(this.CantidadTxt);
             this.Controls.Add(this.ProductosLV);
@@ -383,14 +372,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.FechaLab);
-            this.Controls.Add(this.UserLab);
-            this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Century Gothic", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Facturacion";
             this.Text = "Venta";
-            this.Load += new System.EventHandler(this.Facturacion_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).EndInit();
             this.ResumeLayout(false);
@@ -399,9 +385,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label UserLab;
         private System.Windows.Forms.Label FechaLab;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
@@ -427,5 +410,6 @@
         private System.Windows.Forms.ColumnHeader Categoria;
         private System.Windows.Forms.ColumnHeader Subtotal;
         private System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.Label UserLab;
     }
 }

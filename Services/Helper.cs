@@ -83,6 +83,7 @@ namespace Ferreto.Services
         public List<T> AddDetails(List<T> t)
         {
             _context.Set<T>().AddRange(t);
+            _context.SaveChanges();
             return t;
         }
 

@@ -40,7 +40,10 @@ namespace Ferreto.Views
 
         private void VentaBo_Click(object sender, EventArgs e)
         {
-            AbrirSub(new Facturacion());
+            Facturacion obj = new Facturacion();
+            obj.UserLab.Text = UserLab.Text;
+            AbrirSub(obj);
+      
         }
 
         private void InventarioBo_Click(object sender, EventArgs e)

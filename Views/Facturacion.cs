@@ -18,15 +18,13 @@ namespace Ferreto.Views
 {
     public partial class Facturacion : Form
     {
-        float total;
         int _cantidad;
-        float _iva;
-        float _neto;
         private readonly Helper<Producto> _productohelper;
         private readonly Helper<Precioproducto> _precioproductohelper;
         private readonly Helper<Inventario> _inventariohelper;
         private readonly Helper<Detallefactura> _detallefacturahelper;
         private readonly Helper<Factura> _facturahelper;
+        private readonly Helper<Usuario> _usuariohelper;
         private readonly FerretoSContext _context;
         public Facturacion()
         {
@@ -38,12 +36,68 @@ namespace Ferreto.Views
             _detallefacturahelper = new Helper<Detallefactura>(_context);
             _facturahelper = new Helper<Factura>(_context);
             _inventariohelper = new Helper<Inventario>(_context);
+            _usuariohelper = new Helper<Usuario>(_context);
             SearchProducto();
+        }
+        private Detallefactura _detallefactura;
+        private List<Detallefactura> SortedList = new List<Detallefactura>();
+        private Factura _factura;
+        private List<Detallefactura> UpdateList(int accion=0, int Q=0)
+        {
+            switch (accion)
+            {
+                case 0:
+                    SortedList.Add(_detallefactura);
+                    break;
+                case 1:
+                    SortedList.RemoveAll(x => x.Cantidad == Q);
+                    break;
+            }
+            return SortedList;
+        }
+        private List<Detallefactura> UpdateList()
+        {
+            return SortedList;
         }
 
         #region Methods
 
-
+        private void Details()
+        {
+           var detalles= _detallefacturahelper.AddDetails(UpdateList());
+            var id = from d in detalles
+                     select  d.Idventa;
+            _factura = new Factura();
+            
+            foreach (var i in id)
+            {
+                DateTime hora = DateTime.Now;
+                _factura.Idventa = i;
+                _factura.Idusuario = GetId();
+                _factura.Totalsiniva = decimal.Parse(this.BaseLab.Text);
+                _factura.Iva = double.Parse(this.IvaLab.Text);
+                _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
+                _factura.Nserie =
+               
+                _facturahelper.add(_factura);
+            }
+            
+        }
+        private int GetId()
+        {
+            int id = 0;
+            string login = this.UserLab.Text;
+            var usuarios = _usuariohelper.Get();
+            foreach (var U in usuarios)
+            {
+                if (login.Equals(U.Login))
+                {
+                    id = U.Idusuario;
+                    break;
+                }
+            }
+            return id;
+        }
         private bool Existence()
         {
             var Collections = _inventariohelper.Inventory();
@@ -153,12 +207,18 @@ namespace Ferreto.Views
                             item.SubItems.Add(I.IdproductoNavigation.IdcategoriaNavigation.Nombre);
                             item.SubItems.Add(subtotal(I.Precio, _cantidad).ToString());
                             _total += subtotal(I.Precio, _cantidad);
+                            UpdateQuantity(C.Nombre, 0);
+                            _detallefactura = new Detallefactura();
+                            _detallefactura.Cantidad = _cantidad;
+                            _detallefactura.Idproducto = C.Idproducto;
+                            _detallefactura.Precioventa = I.Precio;
+                            UpdateList(0, _cantidad);
                             break;
                         }
                     }
                     break;
                 }
-               
+
             }
             BaseLab.Text = _total.ToString();
             IvaLab.Text = (_total * 0.15).ToString();
@@ -168,7 +228,7 @@ namespace Ferreto.Views
         /// <summary>
         /// Este metodo me actualiza la cantidad de cada producto en el inventario
         /// </summary>
-        private void UpdateQuantity(Producto pro, int accion)
+        private void UpdateQuantity(string articulo, int accion)
         {
             var Inventario = _inventariohelper.Inventory();
 
@@ -177,17 +237,17 @@ namespace Ferreto.Views
                 case 0:
                     foreach (var item in Inventario)
                     {
-                        if (item.IdproductoNavigation.Nombre.Equals(pro.Nombre))
+                        if (item.IdproductoNavigation.Nombre.Equals(articulo))
                         {
                             item.Existencia -= _cantidad;
                             break;
                         }
                     }
-               break;
+                    break;
                 case 1:
                     foreach (var item in Inventario)
                     {
-                        if (item.IdproductoNavigation.Nombre.Equals(pro.Nombre))
+                        if (item.IdproductoNavigation.Nombre.Equals(articulo))
                         {
                             item.Existencia += _cantidad;
                             break;
@@ -204,17 +264,17 @@ namespace Ferreto.Views
         {
             if (ProductosLV.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Seleccione una fila para eliminarla", "Fila no seleccionada", MessageBoxButtons.OK);
+                MessageBox.Show("Seleccione una fila para eliminarla", "Fila no seleccionada", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
                 foreach (ListViewItem item in ProductosLV.SelectedItems)
                 {
-
                     _total -= double.Parse(item.SubItems[6].Text);
                     item.Remove();
+                    UpdateQuantity(item.SubItems[1].Text, 1);
+                    UpdateList(1, int.Parse(item.SubItems[4].Text));
                 }
-
                 BaseLab.Text = _total.ToString();
                 IvaLab.Text = (_total * 0.15).ToString();
                 NetoLab.Text = (_total + (_total * 0.15)).ToString();
@@ -270,7 +330,7 @@ namespace Ferreto.Views
         private void AgregarBo_Click(object sender, EventArgs e)
         {
             Restrict();
-            ValidateSubitem();
+            //ValidateSubitem();
             conteoclicks++;
         }
         private void BorrarBo_Click(object sender, EventArgs e)
@@ -278,7 +338,7 @@ namespace Ferreto.Views
             RemoveDetails();
             conteoclicks--;
         }
-       
+
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.FechaLab.Text = DateTime.Now.ToString();
@@ -287,6 +347,19 @@ namespace Ferreto.Views
         {
             timer1.Enabled = true;
         }
+
         #endregion
+
+        private void ImprimirBo_Click(object sender, EventArgs e)
+        {
+            if (ProductosLV.Items.Count != 0)
+            {
+                Details();
+                FPrintFactura obj = new FPrintFactura();
+                obj.ShowDialog();
+            }
+            else
+                MessageBox.Show("Debe añadir uno o varios productos \n antes de generar factura", "No se añadió ningun producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
     }
 }

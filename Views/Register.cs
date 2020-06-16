@@ -38,7 +38,7 @@ namespace Ferreto.Views
         private Usuario _objusuario;
         private Persona _objpersona;
         private Rolusuario _rolusuario;
-        private Rolacceso _rolacceso;
+
         /// <summary>
         /// Este metodo carga las propiedades de un nuevo objeto del tipo Persona
         /// </summary>
@@ -54,19 +54,19 @@ namespace Ferreto.Views
             _objpersona.Direccion = direcciontxt.Text;
             return _objpersona;
         }
-        
+
         /// <summary>
         /// Metodo principal para crear un usuario
         /// </summary>
         private void CreateUser()
         {
-                var dataperson = PersonalInfor();
-                _personahelper.add(dataperson);
-                var datauser = Userinfo(dataperson.Idpersona);
-                _usuariohelper.add(datauser);
-                var dataroluser = Roluser(datauser.Idusuario);
-                _rolusuariohelper.add(dataroluser);
-                errorProvidercode.SetError(FerretoCodeTxt, "Verifique su contraseña");
+            var dataperson = PersonalInfor();
+            _personahelper.add(dataperson);
+            var datauser = Userinfo(dataperson.Idpersona);
+            _usuariohelper.add(datauser);
+            var dataroluser = Roluser(datauser.Idusuario);
+            _rolusuariohelper.add(dataroluser);
+            errorProvidercode.SetError(FerretoCodeTxt, "Verifique su contraseña");
         }
         private Usuario Userinfo(int idpersona)
         {
@@ -77,22 +77,22 @@ namespace Ferreto.Views
             _objusuario.Estado = true;
             return _objusuario;
         }
-        
+
         private void Init()
         {
             RolCB.DataSource = _rolhelper.Get();
             RolCB.ValueMember = "Idrol";
-            RolCB.DisplayMember = "Nombrerol";   
+            RolCB.DisplayMember = "Nombrerol";
         }
         private Rolusuario Roluser(int idusuario)
         {
             _rolusuario = new Rolusuario();
             _rolusuario.Idusuario = idusuario;
-            _rolusuario.Idrol  = Getidrol(RolCB.Text); 
+            _rolusuario.Idrol = Getidrol(RolCB.Text);
             _rolusuario.Estado = true;
             return _rolusuario;
         }
-     
+
         private void cleancontrols()
         {
             NombreTxt.Text = string.Empty;
@@ -106,7 +106,7 @@ namespace Ferreto.Views
         }
         private int Getidrol(string cadena)
         {
-           var colection= _rolhelper.Get();
+            var colection = _rolhelper.Get();
             int idrol = 0;
             foreach (var iter in colection)
             {
@@ -114,7 +114,7 @@ namespace Ferreto.Views
                 {
                     idrol = iter.Idrol;
                     break;
-                } 
+                }
             }
             return idrol;
         }
@@ -128,7 +128,7 @@ namespace Ferreto.Views
             cleancontrols();
         }
 
-    
+
         #endregion
     }
 }

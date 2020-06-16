@@ -15,8 +15,13 @@ namespace Ferreto.Views
         public FPrintFactura()
         {
             InitializeComponent();
+            listViewdetalle.View = System.Windows.Forms.View.Details;
         }
 
-   
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
     }
 }

@@ -44,6 +44,7 @@
             this.pctMaximizar = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pctOcultar = new System.Windows.Forms.PictureBox();
+            this.UserLab = new System.Windows.Forms.Label();
             this.MenuCont.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -57,6 +58,7 @@
             // 
             this.MenuCont.AutoScroll = true;
             this.MenuCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.MenuCont.Controls.Add(this.UserLab);
             this.MenuCont.Controls.Add(this.ProveedoresBo);
             this.MenuCont.Controls.Add(this.AdministrarBo);
             this.MenuCont.Controls.Add(this.ComprasBo);
@@ -67,7 +69,7 @@
             this.MenuCont.Controls.Add(this.pictureBox1);
             this.MenuCont.Dock = System.Windows.Forms.DockStyle.Left;
             this.MenuCont.Location = new System.Drawing.Point(0, 0);
-            this.MenuCont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MenuCont.Margin = new System.Windows.Forms.Padding(4);
             this.MenuCont.Name = "MenuCont";
             this.MenuCont.Size = new System.Drawing.Size(207, 608);
             this.MenuCont.TabIndex = 0;
@@ -79,8 +81,8 @@
             this.ProveedoresBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ProveedoresBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ProveedoresBo.ForeColor = System.Drawing.Color.White;
-            this.ProveedoresBo.Location = new System.Drawing.Point(0, 338);
-            this.ProveedoresBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ProveedoresBo.Location = new System.Drawing.Point(0, 371);
+            this.ProveedoresBo.Margin = new System.Windows.Forms.Padding(4);
             this.ProveedoresBo.Name = "ProveedoresBo";
             this.ProveedoresBo.Size = new System.Drawing.Size(207, 50);
             this.ProveedoresBo.TabIndex = 7;
@@ -95,8 +97,8 @@
             this.AdministrarBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.AdministrarBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AdministrarBo.ForeColor = System.Drawing.Color.White;
-            this.AdministrarBo.Location = new System.Drawing.Point(0, 454);
-            this.AdministrarBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AdministrarBo.Location = new System.Drawing.Point(0, 487);
+            this.AdministrarBo.Margin = new System.Windows.Forms.Padding(4);
             this.AdministrarBo.Name = "AdministrarBo";
             this.AdministrarBo.Size = new System.Drawing.Size(207, 50);
             this.AdministrarBo.TabIndex = 6;
@@ -111,8 +113,8 @@
             this.ComprasBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ComprasBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ComprasBo.ForeColor = System.Drawing.Color.White;
-            this.ComprasBo.Location = new System.Drawing.Point(0, 281);
-            this.ComprasBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ComprasBo.Location = new System.Drawing.Point(0, 314);
+            this.ComprasBo.Margin = new System.Windows.Forms.Padding(4);
             this.ComprasBo.Name = "ComprasBo";
             this.ComprasBo.Size = new System.Drawing.Size(207, 50);
             this.ComprasBo.TabIndex = 5;
@@ -128,7 +130,7 @@
             this.SalirBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.SalirBo.ForeColor = System.Drawing.Color.White;
             this.SalirBo.Location = new System.Drawing.Point(0, 539);
-            this.SalirBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.SalirBo.Margin = new System.Windows.Forms.Padding(4);
             this.SalirBo.Name = "SalirBo";
             this.SalirBo.Size = new System.Drawing.Size(207, 54);
             this.SalirBo.TabIndex = 4;
@@ -143,8 +145,8 @@
             this.FacturaBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.FacturaBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FacturaBo.ForeColor = System.Drawing.Color.White;
-            this.FacturaBo.Location = new System.Drawing.Point(0, 396);
-            this.FacturaBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.FacturaBo.Location = new System.Drawing.Point(0, 429);
+            this.FacturaBo.Margin = new System.Windows.Forms.Padding(4);
             this.FacturaBo.Name = "FacturaBo";
             this.FacturaBo.Size = new System.Drawing.Size(207, 50);
             this.FacturaBo.TabIndex = 3;
@@ -159,8 +161,8 @@
             this.InventarioBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.InventarioBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InventarioBo.ForeColor = System.Drawing.Color.White;
-            this.InventarioBo.Location = new System.Drawing.Point(0, 218);
-            this.InventarioBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.InventarioBo.Location = new System.Drawing.Point(0, 251);
+            this.InventarioBo.Margin = new System.Windows.Forms.Padding(4);
             this.InventarioBo.Name = "InventarioBo";
             this.InventarioBo.Size = new System.Drawing.Size(207, 55);
             this.InventarioBo.TabIndex = 2;
@@ -175,8 +177,8 @@
             this.VentaBo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.VentaBo.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.VentaBo.ForeColor = System.Drawing.Color.White;
-            this.VentaBo.Location = new System.Drawing.Point(0, 162);
-            this.VentaBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.VentaBo.Location = new System.Drawing.Point(0, 195);
+            this.VentaBo.Margin = new System.Windows.Forms.Padding(4);
             this.VentaBo.Name = "VentaBo";
             this.VentaBo.Size = new System.Drawing.Size(207, 48);
             this.VentaBo.TabIndex = 1;
@@ -188,7 +190,7 @@
             // 
             this.pictureBox1.Image = global::Ferreto.Properties.Resources.Ferreto_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(207, 166);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -204,7 +206,7 @@
             this.panelCont.Cursor = System.Windows.Forms.Cursors.Default;
             this.panelCont.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCont.Location = new System.Drawing.Point(207, 0);
-            this.panelCont.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelCont.Margin = new System.Windows.Forms.Padding(4);
             this.panelCont.Name = "panelCont";
             this.panelCont.Size = new System.Drawing.Size(1093, 608);
             this.panelCont.TabIndex = 1;
@@ -218,7 +220,7 @@
             this.panel1.Controls.Add(this.pctOcultar);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(207, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1093, 38);
             this.panel1.TabIndex = 1;
@@ -230,7 +232,7 @@
             this.pctminizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctminizar.Image = global::Ferreto.Properties.Resources.minimize;
             this.pctminizar.Location = new System.Drawing.Point(1015, 4);
-            this.pctminizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctminizar.Margin = new System.Windows.Forms.Padding(4);
             this.pctminizar.Name = "pctminizar";
             this.pctminizar.Size = new System.Drawing.Size(33, 31);
             this.pctminizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -244,7 +246,7 @@
             this.pctMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctMaximizar.Image = global::Ferreto.Properties.Resources.full_screen;
             this.pctMaximizar.Location = new System.Drawing.Point(1015, 4);
-            this.pctMaximizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctMaximizar.Margin = new System.Windows.Forms.Padding(4);
             this.pctMaximizar.Name = "pctMaximizar";
             this.pctMaximizar.Size = new System.Drawing.Size(33, 31);
             this.pctMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -259,7 +261,7 @@
             this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox3.Image = global::Ferreto.Properties.Resources.error;
             this.pictureBox3.Location = new System.Drawing.Point(1056, 4);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(33, 31);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -273,13 +275,25 @@
             this.pctOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pctOcultar.Image = global::Ferreto.Properties.Resources.minimize__2_;
             this.pctOcultar.Location = new System.Drawing.Point(973, 4);
-            this.pctOcultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pctOcultar.Margin = new System.Windows.Forms.Padding(4);
             this.pctOcultar.Name = "pctOcultar";
             this.pctOcultar.Size = new System.Drawing.Size(33, 31);
             this.pctOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pctOcultar.TabIndex = 1;
             this.pctOcultar.TabStop = false;
             this.pctOcultar.Click += new System.EventHandler(this.Ocultar);
+            // 
+            // UserLab
+            // 
+            this.UserLab.AutoSize = true;
+            this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLab.ForeColor = System.Drawing.Color.White;
+            this.UserLab.Location = new System.Drawing.Point(82, 168);
+            this.UserLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.UserLab.Name = "UserLab";
+            this.UserLab.Size = new System.Drawing.Size(51, 23);
+            this.UserLab.TabIndex = 9;
+            this.UserLab.Text = "User";
             // 
             // MainContainer
             // 
@@ -291,13 +305,14 @@
             this.Controls.Add(this.MenuCont);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1300, 608);
             this.Name = "MainContainer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainContainer";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MenuCont.ResumeLayout(false);
+            this.MenuCont.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pctminizar)).EndInit();
@@ -325,5 +340,6 @@
         public System.Windows.Forms.Button ComprasBo;
         public System.Windows.Forms.Button AdministrarBo;
         public System.Windows.Forms.Button ProveedoresBo;
+        public System.Windows.Forms.Label UserLab;
     }
 }
