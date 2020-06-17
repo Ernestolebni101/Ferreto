@@ -167,6 +167,10 @@
     <Compile Include="Migrations\20200617022753_ModifykeystotableDetalle.designer.cs">
       <DependentUpon>20200617022753_ModifykeystotableDetalle.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\20200617061530_addnombreusuariototablefactura.cs" />
+    <Compile Include="Migrations\20200617061530_addnombreusuariototablefactura.designer.cs">
+      <DependentUpon>20200617061530_addnombreusuariototablefactura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\FerretoSContextModelSnapshot.cs" />
     <Compile Include="Models\Acceso.cs" />
     <Compile Include="Models\Categoria.cs" />

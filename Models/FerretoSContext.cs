@@ -175,6 +175,8 @@ namespace Ferreto.Models
 
                 entity.Property(e => e.Fechafacturacion).HasColumnType("date");
 
+                entity.Property(o => o.Nombreusuario).HasColumnType("nombreusuario");
+
                 entity.Property(e => e.Idusuario).HasColumnName("idusuario");
 
                 entity.Property(e => e.Iva).HasColumnName("iva");

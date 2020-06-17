@@ -8,6 +8,7 @@ namespace Ferreto.Models
         
         public int Idfactura { get; set; }
         public int Idusuario { get; set; }
+        public string Nombreusuario { get; set; }
         public double Iva { get; set; }
         public decimal Totalsiniva { get; set; }
         public decimal Totalmasiva { get; set; }

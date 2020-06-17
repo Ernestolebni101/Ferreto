@@ -19,9 +19,6 @@ namespace Ferreto.Views
     public partial class Facturacion : Form
     {
         int _cantidad;
-        double _totalbruto;
-        double _iva;
-        double _totalmasimpuesto;
         private readonly Helper<Producto> _productohelper;
         private readonly Helper<Precioproducto> _precioproductohelper;
         private readonly Helper<Inventario> _inventariohelper;
@@ -47,7 +44,7 @@ namespace Ferreto.Views
         private Factura _factura;
         private List<Detallefactura> UpdateList(int accion = 0, int Q = 0)
         {
-            _detallefactura.Idfactura = FacturaInsert().Idfactura;
+            _detallefactura.Idfactura = ReturnIdF();
             switch (accion)
             {
                 case 0:
@@ -63,18 +60,7 @@ namespace Ferreto.Views
         {
             return SortedList;
         }
-
-        private Detallefactura ObjDetail(int cantidad,int idp, double price )
-        {
-            _detallefactura = new Detallefactura();
-            _detallefactura.Cantidad = cantidad;
-            _detallefactura.Idproducto = idp;
-            _detallefactura.Precioventa = price;
-            return _detallefactura;
-        }
         #region Methods
-
-
         private int GetId()
         {
             int id = 0;
@@ -200,12 +186,10 @@ namespace Ferreto.Views
                             item.SubItems.Add(subtotal(I.Precio, _cantidad).ToString());
                             _total += subtotal(I.Precio, _cantidad);
                             UpdateQuantity(C.Nombre, 0);
-
-                            ObjDetail(_cantidad,C.Idproducto,I.Precio);
-                            //_detallefactura = new Detallefactura();
-                            //_detallefactura.Cantidad = _cantidad;
-                            //_detallefactura.Idproducto = C.Idproducto;
-                            //_detallefactura.Precioventa = I.Precio;
+                            _detallefactura = new Detallefactura();
+                            _detallefactura.Cantidad = _cantidad;
+                            _detallefactura.Idproducto = C.Idproducto;
+                            _detallefactura.Precioventa = I.Precio;
                             UpdateList(0, _cantidad);
                             break;
                         }
@@ -220,7 +204,17 @@ namespace Ferreto.Views
 
         }
 
-    
+        private int ReturnIdF()
+        {
+            int id = 0;
+            var Generic = _facturahelper.Get();
+            
+            foreach (var iter in Generic.OrderByDescending(x=> x.Idfactura).Take(1))
+            {
+                id = iter.Idfactura;
+            }
+            return id;
+        }
         private Factura FacturaInsert()
         {
             _factura = new Factura();
@@ -228,8 +222,9 @@ namespace Ferreto.Views
             _factura.Totalsiniva = decimal.Parse(this.BaseLab.Text);
             _factura.Iva = double.Parse(this.IvaLab.Text);
             _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
-            _factura.Nserie = _factura.Idfactura.ToString().PadLeft(1, '0') + _factura.Idfactura.ToString();
+            _factura.Nserie = _factura.Idfactura.ToString().PadLeft(1, '0') + ReturnIdF().ToString();
             _factura.Fechafacturacion = DateTime.Now;
+            _factura.Nombreusuario = this.UserLab.Text;
             _facturahelper.add(_factura);
             return _factura;
         }
@@ -328,8 +323,6 @@ namespace Ferreto.Views
             var sub = precio * Q;
             return sub;
         }
-
-
         #endregion
 
         #region Events
@@ -345,7 +338,6 @@ namespace Ferreto.Views
             RemoveDetails();
             conteoclicks--;
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.FechaLab.Text = DateTime.Now.ToString();
@@ -361,7 +353,7 @@ namespace Ferreto.Views
         {
             if (ProductosLV.Items.Count != 0)
             {
-                _facturahelper.add(FacturaInsert());
+                FacturaInsert();
                 _detallefacturahelper.AddDetails(UpdateList());
                 FPrintFactura obj = new FPrintFactura();
                 obj.ShowDialog();
