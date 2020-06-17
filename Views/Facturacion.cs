@@ -19,6 +19,9 @@ namespace Ferreto.Views
     public partial class Facturacion : Form
     {
         int _cantidad;
+        double _totalbruto;
+        double _iva;
+        double _totalmasimpuesto;
         private readonly Helper<Producto> _productohelper;
         private readonly Helper<Precioproducto> _precioproductohelper;
         private readonly Helper<Inventario> _inventariohelper;
@@ -42,8 +45,9 @@ namespace Ferreto.Views
         private Detallefactura _detallefactura;
         private List<Detallefactura> SortedList = new List<Detallefactura>();
         private Factura _factura;
-        private List<Detallefactura> UpdateList(int accion=0, int Q=0)
+        private List<Detallefactura> UpdateList(int accion = 0, int Q = 0)
         {
+            _detallefactura.Idfactura = FacturaInsert().Idfactura;
             switch (accion)
             {
                 case 0:
@@ -60,29 +64,17 @@ namespace Ferreto.Views
             return SortedList;
         }
 
+        private Detallefactura ObjDetail(int cantidad,int idp, double price )
+        {
+            _detallefactura = new Detallefactura();
+            _detallefactura.Cantidad = cantidad;
+            _detallefactura.Idproducto = idp;
+            _detallefactura.Precioventa = price;
+            return _detallefactura;
+        }
         #region Methods
 
-        private void Details()
-        {
-           var detalles= _detallefacturahelper.AddDetails(UpdateList());
-            var id = from d in detalles
-                     select  d.Idventa;
-            _factura = new Factura();
-            
-            foreach (var i in id)
-            {
-                DateTime hora = DateTime.Now;
-                _factura.Idventa = i;
-                _factura.Idusuario = GetId();
-                _factura.Totalsiniva = decimal.Parse(this.BaseLab.Text);
-                _factura.Iva = double.Parse(this.IvaLab.Text);
-                _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
-                _factura.Nserie =
-               
-                _facturahelper.add(_factura);
-            }
-            
-        }
+
         private int GetId()
         {
             int id = 0;
@@ -208,10 +200,12 @@ namespace Ferreto.Views
                             item.SubItems.Add(subtotal(I.Precio, _cantidad).ToString());
                             _total += subtotal(I.Precio, _cantidad);
                             UpdateQuantity(C.Nombre, 0);
-                            _detallefactura = new Detallefactura();
-                            _detallefactura.Cantidad = _cantidad;
-                            _detallefactura.Idproducto = C.Idproducto;
-                            _detallefactura.Precioventa = I.Precio;
+
+                            ObjDetail(_cantidad,C.Idproducto,I.Precio);
+                            //_detallefactura = new Detallefactura();
+                            //_detallefactura.Cantidad = _cantidad;
+                            //_detallefactura.Idproducto = C.Idproducto;
+                            //_detallefactura.Precioventa = I.Precio;
                             UpdateList(0, _cantidad);
                             break;
                         }
@@ -223,8 +217,22 @@ namespace Ferreto.Views
             BaseLab.Text = _total.ToString();
             IvaLab.Text = (_total * 0.15).ToString();
             NetoLab.Text = (_total + (_total * 0.15)).ToString();
+
         }
 
+    
+        private Factura FacturaInsert()
+        {
+            _factura = new Factura();
+            _factura.Idusuario = GetId();
+            _factura.Totalsiniva = decimal.Parse(this.BaseLab.Text);
+            _factura.Iva = double.Parse(this.IvaLab.Text);
+            _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
+            _factura.Nserie = _factura.Idfactura.ToString().PadLeft(1, '0') + _factura.Idfactura.ToString();
+            _factura.Fechafacturacion = DateTime.Now;
+            _facturahelper.add(_factura);
+            return _factura;
+        }
         /// <summary>
         /// Este metodo me actualiza la cantidad de cada producto en el inventario
         /// </summary>
@@ -291,7 +299,6 @@ namespace Ferreto.Views
             foreach (var iter in CollectionProducts)
             {
                 autoComplete.Add($"{iter.Nombre} - {iter.IdmarcaNavigation.Nombre}");
-
             }
             ProductosTxt.AutoCompleteCustomSource = autoComplete;
             ProductosTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -354,7 +361,8 @@ namespace Ferreto.Views
         {
             if (ProductosLV.Items.Count != 0)
             {
-                Details();
+                _facturahelper.add(FacturaInsert());
+                _detallefacturahelper.AddDetails(UpdateList());
                 FPrintFactura obj = new FPrintFactura();
                 obj.ShowDialog();
             }

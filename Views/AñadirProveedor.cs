@@ -20,8 +20,8 @@ namespace Ferreto.Views
     public partial class AñadirProveedor : Form
     {
         #region metods
-        private  Helper<Persona> _personaHelper;
-        private  Helper<Proveedores> _proveedorhelper;
+        private Helper<Persona> _personaHelper;
+        private Helper<Proveedores> _proveedorhelper;
         private readonly FerretoSContext _contex;
         public AñadirProveedor()
         {
@@ -77,17 +77,14 @@ namespace Ferreto.Views
         }
         private void AñadirBo_Click(object sender, EventArgs e)
         {
-            //if (Validar())
-            //{
-                create();
-                cleantext();
-            //}              
+            create();
+            cleantext();
         }
         #endregion
         #region Validar
         //public bool Validar()
         //{
-           
+
         //}
         #endregion
     }

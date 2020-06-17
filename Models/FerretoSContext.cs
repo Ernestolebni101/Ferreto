@@ -140,10 +140,10 @@ namespace Ferreto.Models
 
             modelBuilder.Entity<Detallefactura>(entity =>
             {
-                entity.HasKey(e => e.Idventa)
+                entity.HasKey(e => e.Iddetalle)
                     .HasName("PK__Venta__F82D1AFBC027FC2F");
 
-                entity.Property(e => e.Idventa).HasColumnName("idventa");
+                entity.Property(e => e.Iddetalle).HasColumnName("iddetalle");
 
                 entity.Property(e => e.Cantidad).HasColumnName("cantidad");
 
@@ -151,11 +151,19 @@ namespace Ferreto.Models
 
                 entity.Property(e => e.Precioventa).HasColumnName("precioventa");
 
+                entity.Property(e => e.Idfactura).HasColumnName("idfactura");
+
                 entity.HasOne(d => d.IdproductoNavigation)
                     .WithMany(p => p.Detallefactura)
                     .HasForeignKey(d => d.Idproducto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_pr");
+
+                entity.HasOne(d => d.IdfacturaNavigation)
+                 .WithMany(o => o.Detallefacturas)
+                 .HasForeignKey(o => o.Idfactura)
+                 .OnDelete(DeleteBehavior.ClientSetNull)
+                 .HasConstraintName("fk_tfactura");
             });
 
             modelBuilder.Entity<Factura>(entity =>
@@ -168,8 +176,6 @@ namespace Ferreto.Models
                 entity.Property(e => e.Fechafacturacion).HasColumnType("date");
 
                 entity.Property(e => e.Idusuario).HasColumnName("idusuario");
-
-                entity.Property(e => e.Idventa).HasColumnName("idventa");
 
                 entity.Property(e => e.Iva).HasColumnName("iva");
 
@@ -192,11 +198,11 @@ namespace Ferreto.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_Usua");
 
-                entity.HasOne(d => d.IdventaNavigation)
-                    .WithMany(p => p.Factura)
-                    .HasForeignKey(d => d.Idventa)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("fk_tventa");
+                //entity.HasOne(d => d.IdventaNavigation)
+                //    .WithMany(p => p.Factura)
+                //    .HasForeignKey(d => d.Idventa)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("fk_tventa");
             });
 
             modelBuilder.Entity<Inventario>(entity =>
