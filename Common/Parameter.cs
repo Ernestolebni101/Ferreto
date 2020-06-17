@@ -8,7 +8,7 @@ namespace Ferreto.Models.Common
 {
    public  static class Parameter
     {
-        public const string Connectionstring = @"Server=DESKTOP-GOCGBT4\SQLEXPRESS;Database=FerretoS;Trusted_Connection=True;MultipleActiveResultSets=true;";
+        public const string Connectionstring = @"Server=localhost\SQLEXPRESS;Database=FerretoS;Trusted_Connection=True;MultipleActiveResultSets=true;";
 
 		private static string _secretKey;
 

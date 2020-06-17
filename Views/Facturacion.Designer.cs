@@ -69,7 +69,7 @@
             this.FechaLab.Location = new System.Drawing.Point(453, 29);
             this.FechaLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FechaLab.Name = "FechaLab";
-            this.FechaLab.Size = new System.Drawing.Size(71, 23);
+            this.FechaLab.Size = new System.Drawing.Size(58, 19);
             this.FechaLab.TabIndex = 2;
             this.FechaLab.Text = "Fecha";
             // 
@@ -81,7 +81,7 @@
             this.label2.Location = new System.Drawing.Point(30, 97);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(105, 23);
+            this.label2.Size = new System.Drawing.Size(86, 21);
             this.label2.TabIndex = 3;
             this.label2.Text = "Producto:";
             // 
@@ -93,7 +93,7 @@
             this.label3.Location = new System.Drawing.Point(453, 97);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 23);
+            this.label3.Size = new System.Drawing.Size(91, 21);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cantidad:";
             // 
@@ -178,7 +178,7 @@
             this.label4.Location = new System.Drawing.Point(39, 359);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(164, 23);
+            this.label4.Size = new System.Drawing.Size(136, 21);
             this.label4.TabIndex = 10;
             this.label4.Text = "Total Antes IVA:";
             // 
@@ -191,7 +191,7 @@
             this.label5.Location = new System.Drawing.Point(153, 392);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 23);
+            this.label5.Size = new System.Drawing.Size(43, 21);
             this.label5.TabIndex = 11;
             this.label5.Text = "IVA:";
             // 
@@ -204,7 +204,7 @@
             this.label6.Location = new System.Drawing.Point(91, 426);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(129, 23);
+            this.label6.Size = new System.Drawing.Size(104, 21);
             this.label6.TabIndex = 12;
             this.label6.Text = "Precio Neto:";
             // 
@@ -217,7 +217,7 @@
             this.BaseLab.Location = new System.Drawing.Point(306, 359);
             this.BaseLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BaseLab.Name = "BaseLab";
-            this.BaseLab.Size = new System.Drawing.Size(55, 23);
+            this.BaseLab.Size = new System.Drawing.Size(40, 21);
             this.BaseLab.TabIndex = 13;
             this.BaseLab.Text = "*****";
             // 
@@ -230,7 +230,7 @@
             this.IvaLab.Location = new System.Drawing.Point(306, 392);
             this.IvaLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.IvaLab.Name = "IvaLab";
-            this.IvaLab.Size = new System.Drawing.Size(55, 23);
+            this.IvaLab.Size = new System.Drawing.Size(40, 21);
             this.IvaLab.TabIndex = 14;
             this.IvaLab.Text = "*****";
             // 
@@ -243,7 +243,7 @@
             this.NetoLab.Location = new System.Drawing.Point(306, 426);
             this.NetoLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.NetoLab.Name = "NetoLab";
-            this.NetoLab.Size = new System.Drawing.Size(55, 23);
+            this.NetoLab.Size = new System.Drawing.Size(40, 21);
             this.NetoLab.TabIndex = 15;
             this.NetoLab.Text = "*****";
             // 
@@ -268,6 +268,7 @@
             this.ProductosLV.Size = new System.Drawing.Size(733, 108);
             this.ProductosLV.TabIndex = 16;
             this.ProductosLV.UseCompatibleStateImageBehavior = false;
+            this.ProductosLV.View = System.Windows.Forms.View.Details;
             // 
             // Id
             // 
@@ -331,7 +332,7 @@
             this.ProductosTxt.Location = new System.Drawing.Point(34, 162);
             this.ProductosTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ProductosTxt.Name = "ProductosTxt";
-            this.ProductosTxt.Size = new System.Drawing.Size(378, 28);
+            this.ProductosTxt.Size = new System.Drawing.Size(378, 24);
             this.ProductosTxt.TabIndex = 18;
             // 
             // timer1
@@ -346,13 +347,13 @@
             this.UserLab.Location = new System.Drawing.Point(55, 29);
             this.UserLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserLab.Name = "UserLab";
-            this.UserLab.Size = new System.Drawing.Size(51, 23);
+            this.UserLab.Size = new System.Drawing.Size(40, 19);
             this.UserLab.TabIndex = 19;
             this.UserLab.Text = "User";
             // 
             // Facturacion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(820, 494);

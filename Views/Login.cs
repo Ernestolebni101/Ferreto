@@ -59,11 +59,12 @@ namespace Ferreto.Views
         }
         public void Access()
         {
+            errorProviderContra.Clear();
             if (_usuariohelper.validatecredentials(ReturnUser()))
             {
                 MainContainer obj = new MainContainer();
 
-                //ChargingScreen obj2 = new ChargingScreen();
+                ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
                 if (RolUserInfo(UserTxt.Text).Equals("Admin"))
                 {
@@ -97,13 +98,14 @@ namespace Ferreto.Views
                 }
                 //this.Hide();
                 obj.UserLab.Text = ReturnUser().Login;
+                obj.CargoLab.Text = RolUserInfo(UserTxt.Text);
+                obj2.ShowDialog();
                 obj.Show();
             }
             else
             {
-                MessageBox.Show("Usuario ó Contraseña Incorrectos");
-                UserTxt.Text = string.Empty;
-                PassTxt.Text = string.Empty;
+                errorProviderContra.SetError
+                (label5, ">> La contraseña ó el usuario son incorrectos!");
             }
         }
     }

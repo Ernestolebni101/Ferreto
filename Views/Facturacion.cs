@@ -21,7 +21,7 @@ namespace Ferreto.Views
         int _cantidad;
         private readonly Helper<Producto> _productohelper;
         private readonly Helper<Precioproducto> _precioproductohelper;
-        private readonly Helper<Inventario> _inventariohelper;
+        private readonly Helper<Catalogo> _inventariohelper;
         private readonly Helper<Detallefactura> _detallefacturahelper;
         private readonly Helper<Factura> _facturahelper;
         private readonly Helper<Usuario> _usuariohelper;
@@ -35,7 +35,7 @@ namespace Ferreto.Views
             _precioproductohelper = new Helper<Precioproducto>(_context);
             _detallefacturahelper = new Helper<Detallefactura>(_context);
             _facturahelper = new Helper<Factura>(_context);
-            _inventariohelper = new Helper<Inventario>(_context);
+            _inventariohelper = new Helper<Catalogo>(_context);
             _usuariohelper = new Helper<Usuario>(_context);
             SearchProducto();
         }
@@ -159,7 +159,9 @@ namespace Ferreto.Views
         /// <summary>
         /// Controla el detalle de la factura
         /// </summary>
-        private double _total = 0;
+        public double _total = 0;
+        public double _Iva = 0;
+        public double _neto = 0;
         private void AddToListView()
         {
             ListViewItem item = null;
@@ -201,7 +203,8 @@ namespace Ferreto.Views
             BaseLab.Text = _total.ToString();
             IvaLab.Text = (_total * 0.15).ToString();
             NetoLab.Text = (_total + (_total * 0.15)).ToString();
-
+            _Iva = _total * 0.15;
+            _neto = _total + (_total * 0.15);
         }
 
         private int ReturnIdF()
@@ -355,7 +358,7 @@ namespace Ferreto.Views
             {
                 FacturaInsert();
                 _detallefacturahelper.AddDetails(UpdateList());
-                FPrintFactura obj = new FPrintFactura();
+                FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto);
                 obj.ShowDialog();
             }
             else

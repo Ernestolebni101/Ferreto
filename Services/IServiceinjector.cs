@@ -1,4 +1,5 @@
-﻿using Ferreto.Views;
+﻿using Ferreto.Models;
+using Ferreto.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +14,8 @@ namespace Ferreto.Services
     /// <typeparam name="T"></typeparam>
     public interface  IServiceinjector<T> where T: class
     {
-    
+        
+        IEnumerable<Inventario> ConsultarInventario();
+        IEnumerable<Producto> consultarproductos();
     }
 }

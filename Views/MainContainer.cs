@@ -48,7 +48,12 @@ namespace Ferreto.Views
 
         private void InventarioBo_Click(object sender, EventArgs e)
         {
-            AbrirSub(new Inventario());
+            Catalogo obj = new Catalogo();
+            if (CargoLab.Text == "Gerente" || CargoLab.Text == "bodegaResp")
+                obj.ProductoVeijoCont.Visible = true;
+            else
+                obj.ProductoVeijoCont.Visible = false;
+            AbrirSub(obj);
         }
 
         private void FacturaBo_Click(object sender, EventArgs e)
