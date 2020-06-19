@@ -59,7 +59,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.pictureBox3);
@@ -85,7 +85,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Gotham", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.label1.Location = new System.Drawing.Point(42, 9);
             this.label1.Name = "label1";
@@ -122,18 +122,18 @@
             // 
             // InicioBo
             // 
-            this.InicioBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.InicioBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.InicioBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.InicioBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.InicioBo.BackColor = System.Drawing.Color.Transparent;
             this.InicioBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.InicioBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.InicioBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.InicioBo.ForeColor = System.Drawing.Color.White;
-            this.InicioBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.InicioBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.InicioBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.InicioBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.InicioBo.Location = new System.Drawing.Point(28, 3);
             this.InicioBo.Name = "InicioBo";
             this.InicioBo.Radius = 3;
-            this.InicioBo.Size = new System.Drawing.Size(145, 19);
+            this.InicioBo.Size = new System.Drawing.Size(145, 22);
             this.InicioBo.Stroke = false;
             this.InicioBo.StrokeColor = System.Drawing.Color.Gray;
             this.InicioBo.TabIndex = 2;
@@ -143,18 +143,18 @@
             // 
             // RegistroBo
             // 
-            this.RegistroBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.RegistroBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.RegistroBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.RegistroBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.RegistroBo.BackColor = System.Drawing.Color.Transparent;
             this.RegistroBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.RegistroBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.RegistroBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.RegistroBo.ForeColor = System.Drawing.Color.White;
-            this.RegistroBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.RegistroBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.RegistroBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.RegistroBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.RegistroBo.Location = new System.Drawing.Point(198, 3);
             this.RegistroBo.Name = "RegistroBo";
             this.RegistroBo.Radius = 5;
-            this.RegistroBo.Size = new System.Drawing.Size(145, 19);
+            this.RegistroBo.Size = new System.Drawing.Size(145, 22);
             this.RegistroBo.Stroke = false;
             this.RegistroBo.StrokeColor = System.Drawing.Color.Gray;
             this.RegistroBo.TabIndex = 3;
@@ -164,7 +164,7 @@
             // 
             // panelBotones
             // 
-            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.panelBotones.Controls.Add(this.RegistroBo);
             this.panelBotones.Controls.Add(this.InicioBo);
             this.panelBotones.Location = new System.Drawing.Point(0, 29);
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(740, 398);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panelCont);

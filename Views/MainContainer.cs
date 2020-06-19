@@ -10,6 +10,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//using System.Windows.Media;
 
 namespace Ferreto.Views
 {
@@ -38,10 +39,18 @@ namespace Ferreto.Views
             AbrirSub(new Inicio());
         }
 
+  
+
         private void VentaBo_Click(object sender, EventArgs e)
         {
             Facturacion obj = new Facturacion();
             obj.UserLab.Text = UserLab.Text;
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
             AbrirSub(obj);
       
         }
@@ -53,26 +62,62 @@ namespace Ferreto.Views
                 obj.ProductoVeijoCont.Visible = true;
             else
                 obj.ProductoVeijoCont.Visible = false;
+
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+
             AbrirSub(obj);
         }
 
         private void FacturaBo_Click(object sender, EventArgs e)
         {
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+
             AbrirSub(new ReimprimirBo());
         }
 
         private void ComprasBo_Click(object sender, EventArgs e)
         {
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+
             AbrirSub(new Compras());
         }
 
         private void ProveedoresBo_Click(object sender, EventArgs e)
         {
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+
             AbrirSub(new ProveedoresForm());
         }
 
         private void AdministrarBo_Click(object sender, EventArgs e)
         {
+            VentaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            InventarioBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ComprasBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
+            AdministrarBo.BackColor = System.Drawing.Color.FromArgb(253, 201, 84);
+
             AbrirSub(new Administrar());
         }
 
@@ -118,7 +163,5 @@ namespace Ferreto.Views
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
-
-        
     }
 }

@@ -64,52 +64,52 @@
             // 
             this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
-            this.FechaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(453, 29);
+            this.FechaLab.Location = new System.Drawing.Point(30, 21);
             this.FechaLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.FechaLab.Name = "FechaLab";
-            this.FechaLab.Size = new System.Drawing.Size(58, 19);
+            this.FechaLab.Size = new System.Drawing.Size(57, 18);
             this.FechaLab.TabIndex = 2;
             this.FechaLab.Text = "Fecha";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(30, 97);
+            this.label2.Location = new System.Drawing.Point(30, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 21);
+            this.label2.Size = new System.Drawing.Size(85, 18);
             this.label2.TabIndex = 3;
             this.label2.Text = "Producto:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(453, 97);
+            this.label3.Location = new System.Drawing.Point(453, 60);
             this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 21);
+            this.label3.Size = new System.Drawing.Size(84, 18);
             this.label3.TabIndex = 4;
             this.label3.Text = "Cantidad:";
             // 
             // AgregarBo
             // 
-            this.AgregarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.AgregarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.AgregarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.AgregarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AgregarBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.AgregarBo.BackColor = System.Drawing.Color.Transparent;
             this.AgregarBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.AgregarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.AgregarBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AgregarBo.ForeColor = System.Drawing.Color.White;
-            this.AgregarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AgregarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AgregarBo.Location = new System.Drawing.Point(614, 162);
+            this.AgregarBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AgregarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.AgregarBo.Inactive1 = System.Drawing.Color.White;
+            this.AgregarBo.Inactive2 = System.Drawing.Color.White;
+            this.AgregarBo.Location = new System.Drawing.Point(608, 102);
             this.AgregarBo.Margin = new System.Windows.Forms.Padding(5);
             this.AgregarBo.Name = "AgregarBo";
             this.AgregarBo.Radius = 5;
@@ -123,17 +123,17 @@
             // 
             // BorrarBo
             // 
-            this.BorrarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.BorrarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.BorrarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.BorrarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.BorrarBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.BorrarBo.BackColor = System.Drawing.Color.Transparent;
             this.BorrarBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BorrarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BorrarBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BorrarBo.ForeColor = System.Drawing.Color.White;
-            this.BorrarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BorrarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BorrarBo.Location = new System.Drawing.Point(726, 162);
+            this.BorrarBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BorrarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.BorrarBo.Inactive1 = System.Drawing.Color.White;
+            this.BorrarBo.Inactive2 = System.Drawing.Color.White;
+            this.BorrarBo.Location = new System.Drawing.Point(702, 102);
             this.BorrarBo.Margin = new System.Windows.Forms.Padding(5);
             this.BorrarBo.Name = "BorrarBo";
             this.BorrarBo.Radius = 5;
@@ -147,21 +147,21 @@
             // 
             // ImprimirBo
             // 
-            this.ImprimirBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.ImprimirBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.ImprimirBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.ImprimirBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ImprimirBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.ImprimirBo.BackColor = System.Drawing.Color.Transparent;
             this.ImprimirBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ImprimirBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ImprimirBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ImprimirBo.ForeColor = System.Drawing.Color.White;
-            this.ImprimirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ImprimirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ImprimirBo.Location = new System.Drawing.Point(614, 365);
+            this.ImprimirBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ImprimirBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.ImprimirBo.Inactive1 = System.Drawing.Color.White;
+            this.ImprimirBo.Inactive2 = System.Drawing.Color.White;
+            this.ImprimirBo.Location = new System.Drawing.Point(623, 394);
             this.ImprimirBo.Margin = new System.Windows.Forms.Padding(5);
             this.ImprimirBo.Name = "ImprimirBo";
             this.ImprimirBo.Radius = 5;
-            this.ImprimirBo.Size = new System.Drawing.Size(91, 59);
+            this.ImprimirBo.Size = new System.Drawing.Size(170, 59);
             this.ImprimirBo.Stroke = false;
             this.ImprimirBo.StrokeColor = System.Drawing.Color.Gray;
             this.ImprimirBo.TabIndex = 9;
@@ -173,12 +173,12 @@
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(39, 359);
+            this.label4.Location = new System.Drawing.Point(60, 390);
             this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(136, 21);
+            this.label4.Size = new System.Drawing.Size(137, 18);
             this.label4.TabIndex = 10;
             this.label4.Text = "Total Antes IVA:";
             // 
@@ -186,12 +186,12 @@
             // 
             this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label5.Location = new System.Drawing.Point(153, 392);
+            this.label5.Location = new System.Drawing.Point(153, 411);
             this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 21);
+            this.label5.Size = new System.Drawing.Size(42, 18);
             this.label5.TabIndex = 11;
             this.label5.Text = "IVA:";
             // 
@@ -199,12 +199,12 @@
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label6.Location = new System.Drawing.Point(91, 426);
+            this.label6.Location = new System.Drawing.Point(92, 432);
             this.label6.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(104, 21);
+            this.label6.Size = new System.Drawing.Size(104, 18);
             this.label6.TabIndex = 12;
             this.label6.Text = "Precio Neto:";
             // 
@@ -212,12 +212,12 @@
             // 
             this.BaseLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.BaseLab.AutoSize = true;
-            this.BaseLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BaseLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BaseLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.BaseLab.Location = new System.Drawing.Point(306, 359);
+            this.BaseLab.Location = new System.Drawing.Point(206, 390);
             this.BaseLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.BaseLab.Name = "BaseLab";
-            this.BaseLab.Size = new System.Drawing.Size(40, 21);
+            this.BaseLab.Size = new System.Drawing.Size(43, 18);
             this.BaseLab.TabIndex = 13;
             this.BaseLab.Text = "*****";
             // 
@@ -225,12 +225,12 @@
             // 
             this.IvaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.IvaLab.AutoSize = true;
-            this.IvaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.IvaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.IvaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.IvaLab.Location = new System.Drawing.Point(306, 392);
+            this.IvaLab.Location = new System.Drawing.Point(206, 411);
             this.IvaLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.IvaLab.Name = "IvaLab";
-            this.IvaLab.Size = new System.Drawing.Size(40, 21);
+            this.IvaLab.Size = new System.Drawing.Size(43, 18);
             this.IvaLab.TabIndex = 14;
             this.IvaLab.Text = "*****";
             // 
@@ -238,12 +238,12 @@
             // 
             this.NetoLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.NetoLab.AutoSize = true;
-            this.NetoLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NetoLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.NetoLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.NetoLab.Location = new System.Drawing.Point(306, 426);
+            this.NetoLab.Location = new System.Drawing.Point(206, 432);
             this.NetoLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.NetoLab.Name = "NetoLab";
-            this.NetoLab.Size = new System.Drawing.Size(40, 21);
+            this.NetoLab.Size = new System.Drawing.Size(43, 18);
             this.NetoLab.TabIndex = 15;
             this.NetoLab.Text = "*****";
             // 
@@ -252,6 +252,7 @@
             this.ProductosLV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.ProductosLV.BackColor = System.Drawing.Color.White;
             this.ProductosLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id,
             this.Nombre,
@@ -260,12 +261,14 @@
             this.Cantidad,
             this.Categoria,
             this.Subtotal});
+            this.ProductosLV.Font = new System.Drawing.Font("Gotham", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ProductosLV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ProductosLV.FullRowSelect = true;
             this.ProductosLV.HideSelection = false;
-            this.ProductosLV.Location = new System.Drawing.Point(45, 215);
+            this.ProductosLV.Location = new System.Drawing.Point(34, 156);
             this.ProductosLV.Margin = new System.Windows.Forms.Padding(5);
             this.ProductosLV.Name = "ProductosLV";
-            this.ProductosLV.Size = new System.Drawing.Size(733, 108);
+            this.ProductosLV.Size = new System.Drawing.Size(759, 228);
             this.ProductosLV.TabIndex = 16;
             this.ProductosLV.UseCompatibleStateImageBehavior = false;
             this.ProductosLV.View = System.Windows.Forms.View.Details;
@@ -311,10 +314,10 @@
             this.CantidadTxt.Br = System.Drawing.Color.White;
             this.CantidadTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CantidadTxt.ForeColor = System.Drawing.Color.Black;
-            this.CantidadTxt.Location = new System.Drawing.Point(448, 153);
+            this.CantidadTxt.Location = new System.Drawing.Point(447, 102);
             this.CantidadTxt.Margin = new System.Windows.Forms.Padding(5);
             this.CantidadTxt.Name = "CantidadTxt";
-            this.CantidadTxt.Size = new System.Drawing.Size(97, 37);
+            this.CantidadTxt.Size = new System.Drawing.Size(97, 30);
             this.CantidadTxt.TabIndex = 17;
             // 
             // errorProviderLetras
@@ -329,7 +332,7 @@
             // 
             // ProductosTxt
             // 
-            this.ProductosTxt.Location = new System.Drawing.Point(34, 162);
+            this.ProductosTxt.Location = new System.Drawing.Point(34, 108);
             this.ProductosTxt.Margin = new System.Windows.Forms.Padding(4);
             this.ProductosTxt.Name = "ProductosTxt";
             this.ProductosTxt.Size = new System.Drawing.Size(378, 24);
@@ -344,19 +347,20 @@
             this.UserLab.AutoSize = true;
             this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLab.ForeColor = System.Drawing.Color.Black;
-            this.UserLab.Location = new System.Drawing.Point(55, 29);
+            this.UserLab.Location = new System.Drawing.Point(335, 21);
             this.UserLab.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.UserLab.Name = "UserLab";
             this.UserLab.Size = new System.Drawing.Size(40, 19);
             this.UserLab.TabIndex = 19;
             this.UserLab.Text = "User";
+            this.UserLab.Visible = false;
             // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 494);
+            this.ClientSize = new System.Drawing.Size(820, 467);
             this.Controls.Add(this.UserLab);
             this.Controls.Add(this.ProductosTxt);
             this.Controls.Add(this.CantidadTxt);

@@ -52,6 +52,7 @@
             this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderNumero = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderdecimal = new System.Windows.Forms.ErrorProvider(this.components);
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,66 +75,66 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Gotham", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.label12.Location = new System.Drawing.Point(386, 23);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 32);
+            this.label12.Size = new System.Drawing.Size(23, 31);
             this.label12.TabIndex = 37;
             this.label12.Text = "|\r\n";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Gotham", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.label10.Location = new System.Drawing.Point(79, 30);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(213, 25);
+            this.label10.Size = new System.Drawing.Size(223, 24);
             this.label10.TabIndex = 35;
             this.label10.Text = "Detalle de Producto";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.Color.White;
+            this.label11.Font = new System.Drawing.Font("Gotham", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.label11.Location = new System.Drawing.Point(547, 30);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(121, 25);
+            this.label11.Size = new System.Drawing.Size(124, 24);
             this.label11.TabIndex = 36;
             this.label11.Text = "Monetario:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label2.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(26, 148);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 19);
+            this.label2.Size = new System.Drawing.Size(90, 18);
             this.label2.TabIndex = 39;
             this.label2.Text = "Producto:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label6.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(201, 148);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(92, 19);
+            this.label6.Size = new System.Drawing.Size(101, 18);
             this.label6.TabIndex = 40;
             this.label6.Text = "Proveedor:";
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label8.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(26, 270);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(112, 19);
+            this.label8.Size = new System.Drawing.Size(117, 18);
             this.label8.TabIndex = 41;
             this.label8.Text = "Vencimiento:";
             // 
@@ -167,11 +168,11 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(442, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(142, 19);
+            this.label3.Size = new System.Drawing.Size(145, 18);
             this.label3.TabIndex = 45;
             this.label3.Text = "Cantidad Actual:";
             // 
@@ -189,11 +190,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label4.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(629, 148);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 19);
+            this.label4.Size = new System.Drawing.Size(133, 18);
             this.label4.TabIndex = 47;
             this.label4.Text = "Costo Unitario:";
             // 
@@ -211,11 +212,11 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label5.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(442, 270);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(191, 19);
+            this.label5.Size = new System.Drawing.Size(204, 18);
             this.label5.TabIndex = 49;
             this.label5.Text = "Nuevo Precio de Venta:";
             // 
@@ -232,19 +233,19 @@
             // 
             // ActualizarBo
             // 
-            this.ActualizarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.ActualizarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.ActualizarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.ActualizarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ActualizarBo.BackColor = System.Drawing.Color.Transparent;
             this.ActualizarBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActualizarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ActualizarBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActualizarBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActualizarBo.ForeColor = System.Drawing.Color.White;
-            this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ActualizarBo.Location = new System.Drawing.Point(633, 371);
+            this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.ActualizarBo.Location = new System.Drawing.Point(446, 371);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
-            this.ActualizarBo.Size = new System.Drawing.Size(146, 42);
+            this.ActualizarBo.Size = new System.Drawing.Size(333, 42);
             this.ActualizarBo.Stroke = false;
             this.ActualizarBo.StrokeColor = System.Drawing.Color.Gray;
             this.ActualizarBo.TabIndex = 51;
@@ -254,6 +255,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
@@ -288,11 +290,16 @@
             this.errorProviderdecimal.ContainerControl = this;
             this.errorProviderdecimal.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderdecimal.Icon")));
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // CompraExistente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(800, 433);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.ActualizarBo);
@@ -349,5 +356,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderLetras;
         private System.Windows.Forms.ErrorProvider errorProviderNumero;
         private System.Windows.Forms.ErrorProvider errorProviderdecimal;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }

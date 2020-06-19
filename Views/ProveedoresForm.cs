@@ -48,10 +48,12 @@ namespace Ferreto.Views
                 if (P.Estado)
                 {
                     item.SubItems.Add("Activo");
+                    item.BackColor = System.Drawing.Color.LightGreen;
                 }
                 else
                 {
                     item.SubItems.Add("Inactivo");
+                    item.BackColor = System.Drawing.Color.IndianRed;
                 }
             }
         }
@@ -87,9 +89,12 @@ namespace Ferreto.Views
                 MessageBox.Show("Debe elegir un solo proveedor", "Fallo al actualizar estado", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        private void CambiarEstadoBo_Click(object sender, EventArgs e)
+
+        private void CambiarEstadoBo_Click_1(object sender, EventArgs e)
         {
             ChangeProvider();
         }
+
+        
     }
 }

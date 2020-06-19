@@ -153,6 +153,16 @@ namespace Ferreto.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Ferreto_Nubes {
+            get {
+                object obj = ResourceManager.GetObject("Ferreto Nubes", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ferreto_removebg_preview {
             get {
                 object obj = ResourceManager.GetObject("Ferreto-removebg-preview", resourceCulture);

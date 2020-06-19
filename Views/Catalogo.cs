@@ -57,10 +57,12 @@ namespace Ferreto.Views
                         if (I.IdproductoNavigation.Estado)
                         {
                             item.SubItems.Add("Activo");
+                            item.BackColor = System.Drawing.Color.LightGreen;
                         }
                         else
                         {
                             item.SubItems.Add("Inactivo");
+                            item.BackColor = System.Drawing.Color.IndianRed;
                         }
                     }
                 }

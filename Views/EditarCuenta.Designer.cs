@@ -48,6 +48,7 @@
             this.errorProviderVacios = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
             this.nuevorolCB = new System.Windows.Forms.ComboBox();
+            this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.panel1.SuspendLayout();
             this.PanelEditarCuenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -68,33 +69,33 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Font = new System.Drawing.Font("Gotham", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.label12.Location = new System.Drawing.Point(21, 23);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(31, 32);
+            this.label12.Size = new System.Drawing.Size(23, 31);
             this.label12.TabIndex = 37;
             this.label12.Text = "|\r\n";
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
+            this.label10.Font = new System.Drawing.Font("Gotham", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.label10.Location = new System.Drawing.Point(58, 30);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(183, 25);
+            this.label10.Size = new System.Drawing.Size(188, 24);
             this.label10.TabIndex = 35;
             this.label10.Text = "Panel de Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label1.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(34, 131);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(159, 19);
+            this.label1.Size = new System.Drawing.Size(169, 18);
             this.label1.TabIndex = 40;
             this.label1.Text = "Seleccione Usuario:";
             // 
@@ -110,33 +111,33 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label2.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(312, 131);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(217, 19);
+            this.label2.Size = new System.Drawing.Size(232, 18);
             this.label2.TabIndex = 42;
             this.label2.Text = "Nuevo Nombre de Usuario:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(312, 213);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(158, 19);
+            this.label3.Size = new System.Drawing.Size(163, 18);
             this.label3.TabIndex = 43;
             this.label3.Text = "Nueva Contraseña:";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label5.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(34, 246);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 19);
+            this.label5.Size = new System.Drawing.Size(70, 18);
             this.label5.TabIndex = 45;
             this.label5.Text = "Estado:";
             // 
@@ -177,29 +178,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label4.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(312, 300);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 19);
+            this.label4.Size = new System.Drawing.Size(100, 18);
             this.label4.TabIndex = 50;
             this.label4.Text = "Nuevo Rol:";
             // 
             // ActualizarBo
             // 
-            this.ActualizarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.ActualizarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.ActualizarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.ActualizarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ActualizarBo.BackColor = System.Drawing.Color.Transparent;
             this.ActualizarBo.Cursor = System.Windows.Forms.Cursors.Hand;
             this.ActualizarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.ActualizarBo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ActualizarBo.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ActualizarBo.ForeColor = System.Drawing.Color.White;
-            this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ActualizarBo.Location = new System.Drawing.Point(38, 336);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
-            this.ActualizarBo.Size = new System.Drawing.Size(155, 35);
+            this.ActualizarBo.Size = new System.Drawing.Size(165, 35);
             this.ActualizarBo.Stroke = false;
             this.ActualizarBo.StrokeColor = System.Drawing.Color.Gray;
             this.ActualizarBo.TabIndex = 52;
@@ -246,11 +247,16 @@
             this.nuevorolCB.Size = new System.Drawing.Size(204, 25);
             this.nuevorolCB.TabIndex = 51;
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
             // EditarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(585, 409);
             this.Controls.Add(this.PanelEditarCuenta);
             this.Controls.Add(this.ActualizarBo);
@@ -301,5 +307,6 @@
         private System.Windows.Forms.ErrorProvider errorProviderVacios;
         private System.Windows.Forms.ErrorProvider errorProviderLetras;
         private System.Windows.Forms.ComboBox nuevorolCB;
+        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
     }
 }
