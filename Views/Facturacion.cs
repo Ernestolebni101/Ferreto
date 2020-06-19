@@ -167,7 +167,6 @@ namespace Ferreto.Views
             ListViewItem item = null;
             var CollectioPrice = _precioproductohelper.Get();
             var CollectionProducts = _productohelper.ConcatenarProductos();
-            var Inventory = _inventariohelper.Inventory();
             _cantidad = int.Parse(CantidadTxt.Text);
             foreach (var C in CollectionProducts)
             {
@@ -211,8 +210,8 @@ namespace Ferreto.Views
         {
             int id = 0;
             var Generic = _facturahelper.Get();
-            
-            foreach (var iter in Generic.OrderByDescending(x=> x.Idfactura).Take(1))
+
+            foreach (var iter in Generic.OrderByDescending(x => x.Idfactura).Take(1))
             {
                 id = iter.Idfactura;
             }
@@ -220,12 +219,13 @@ namespace Ferreto.Views
         }
         private Factura FacturaInsert()
         {
+            string fcv = string.Empty;
             _factura = new Factura();
             _factura.Idusuario = GetId();
             _factura.Totalsiniva = decimal.Parse(this.BaseLab.Text);
             _factura.Iva = double.Parse(this.IvaLab.Text);
             _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
-            _factura.Nserie = _factura.Idfactura.ToString().PadLeft(1, '0') + ReturnIdF().ToString();
+            _factura.Nserie = fcv.ToString().PadLeft(1, '0') + ReturnIdF().ToString();
             _factura.Fechafacturacion = DateTime.Now;
             _factura.Nombreusuario = this.UserLab.Text;
             _facturahelper.add(_factura);
@@ -234,10 +234,9 @@ namespace Ferreto.Views
         /// <summary>
         /// Este metodo me actualiza la cantidad de cada producto en el inventario
         /// </summary>
-        private void UpdateQuantity(string articulo, int accion)
+        private  void UpdateQuantity(string articulo, int accion)
         {
             var Inventario = _inventariohelper.Inventory();
-
             switch (accion)
             {
                 case 0:
@@ -245,7 +244,7 @@ namespace Ferreto.Views
                     {
                         if (item.IdproductoNavigation.Nombre.Equals(articulo))
                         {
-                            item.Existencia -= _cantidad;
+                            _inventariohelper.UpdateIn(item.Idinventario, _cantidad, 0);
                             break;
                         }
                     }
@@ -255,7 +254,7 @@ namespace Ferreto.Views
                     {
                         if (item.IdproductoNavigation.Nombre.Equals(articulo))
                         {
-                            item.Existencia += _cantidad;
+                            _inventariohelper.UpdateIn(item.Idinventario, _cantidad, 1);
                             break;
                         }
                     }
@@ -301,9 +300,7 @@ namespace Ferreto.Views
             ProductosTxt.AutoCompleteCustomSource = autoComplete;
             ProductosTxt.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
             ProductosTxt.AutoCompleteSource = AutoCompleteSource.CustomSource;
-
         }
-
 
         private void Restrict()
         {

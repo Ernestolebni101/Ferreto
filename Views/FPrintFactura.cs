@@ -17,6 +17,12 @@ namespace Ferreto.Views
         double iva = 0;
         double neto = 0;
 
+        decimal _total = 0;
+        double _iva = 0;
+        decimal _neto = 0;
+        static string c = string.Empty;
+        static string o = string.Empty;
+        string signo = c.PadLeft(1, 'C')+o.PadRight(1, '$');
         public FPrintFactura(ListView listView, double _total, double _Iva, double _neto)
         {
             InitializeComponent();
@@ -24,22 +30,43 @@ namespace Ferreto.Views
             this.total = _total;
             this.iva = _Iva;
             this.neto = _neto;
-            AddDetailsF();
+            AddDetailsF(1);
+        }
+        public FPrintFactura(ListView listView, decimal _total, double _Iva, decimal _neto)
+        {
+            InitializeComponent();
+            producList = listView;
+            this._total = _total;
+            this._iva = _Iva;
+            this._neto = _neto;
+            AddDetailsF(0);
         }
 
-        private void AddDetailsF()
+        private void AddDetailsF(int accion)
         {
             foreach (ListViewItem item in producList.Items)
             {
                 ListViewItem listView = new ListViewItem(item.SubItems[1].Text);
                 listView.SubItems.Add(item.SubItems[3].Text);
                 listView.SubItems.Add(item.SubItems[4].Text);
-
+                listView.SubItems.Add(item.SubItems[6].Text);
                 listViewdetalle.Items.Add(listView);
             }
-            BaseLab.Text= this.total.ToString();
-            IvaLab.Text = this.iva.ToString();
-            NetoLab.Text = this.neto.ToString();
+            switch (accion)
+            {
+                case 0:
+                    BaseLab.Text = signo + " " + this._total.ToString();
+                    IvaLab.Text = signo + " " + this._iva.ToString();
+                    NetoLab.Text = signo + " " + this._neto.ToString();
+                    break;
+                case 1:
+                    BaseLab.Text = signo + " " + this.total.ToString();
+                    IvaLab.Text = signo + " " + this.iva.ToString();
+                    NetoLab.Text = signo + " " + this.neto.ToString();
+                    break;
+            }
+            
+            
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

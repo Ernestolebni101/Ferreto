@@ -350,7 +350,7 @@ namespace Ferreto.Models
                 entity.Property(e => e.Descripcion)
                     .HasColumnName("descripcion")
                     .HasMaxLength(200);
-
+                entity.Property(e => e.Medida).HasColumnName("medida").HasMaxLength(10);
                 entity.Property(e => e.Peso).HasMaxLength(15);
 
                 entity.Property(e => e.Tamaño).HasMaxLength(15);

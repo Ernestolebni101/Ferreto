@@ -30,45 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReimprimirBo));
-            this.label2 = new System.Windows.Forms.Label();
-            this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.SerieCB = new System.Windows.Forms.ComboBox();
-            this.CajeroCB = new System.Windows.Forms.ComboBox();
-            this.FechaTP = new System.Windows.Forms.DateTimePicker();
             this.BuscarBo = new AltoControls.AltoButton();
             this.ReBo = new AltoControls.AltoButton();
-            this.FacturaLV = new System.Windows.Forms.ListView();
             this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderSerie = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.idtxt = new AltoControls.AltoTextBox();
+            this.DetallesLv = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Marca = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cantidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Categoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Limpiarbttn = new AltoControls.AltoButton();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).BeginInit();
             this.SuspendLayout();
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(26, 48);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(178, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Bienvenido de nuevo:";
-            // 
-            // UserLab
-            // 
-            this.UserLab.AutoSize = true;
-            this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLab.Location = new System.Drawing.Point(210, 48);
-            this.UserLab.Name = "UserLab";
-            this.UserLab.Size = new System.Drawing.Size(40, 19);
-            this.UserLab.TabIndex = 4;
-            this.UserLab.Text = "User";
             // 
             // FechaLab
             // 
@@ -76,72 +56,12 @@
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(404, 48);
+            this.FechaLab.Location = new System.Drawing.Point(114, 42);
+            this.FechaLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaLab.Name = "FechaLab";
-            this.FechaLab.Size = new System.Drawing.Size(58, 19);
+            this.FechaLab.Size = new System.Drawing.Size(71, 23);
             this.FechaLab.TabIndex = 5;
             this.FechaLab.Text = "Fecha";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label1.Location = new System.Drawing.Point(34, 91);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 21);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Serie:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(141, 91);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(63, 21);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Fecha:";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label4.Location = new System.Drawing.Point(404, 91);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(66, 21);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Cajero:";
-            // 
-            // SerieCB
-            // 
-            this.SerieCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SerieCB.FormattingEnabled = true;
-            this.SerieCB.Location = new System.Drawing.Point(30, 141);
-            this.SerieCB.Name = "SerieCB";
-            this.SerieCB.Size = new System.Drawing.Size(54, 25);
-            this.SerieCB.TabIndex = 9;
-            // 
-            // CajeroCB
-            // 
-            this.CajeroCB.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.CajeroCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CajeroCB.FormattingEnabled = true;
-            this.CajeroCB.Location = new System.Drawing.Point(398, 139);
-            this.CajeroCB.Name = "CajeroCB";
-            this.CajeroCB.Size = new System.Drawing.Size(188, 25);
-            this.CajeroCB.TabIndex = 10;
-            // 
-            // FechaTP
-            // 
-            this.FechaTP.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FechaTP.Location = new System.Drawing.Point(139, 141);
-            this.FechaTP.Name = "FechaTP";
-            this.FechaTP.Size = new System.Drawing.Size(200, 23);
-            this.FechaTP.TabIndex = 11;
             // 
             // BuscarBo
             // 
@@ -155,10 +75,11 @@
             this.BuscarBo.ForeColor = System.Drawing.Color.White;
             this.BuscarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.BuscarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BuscarBo.Location = new System.Drawing.Point(657, 134);
+            this.BuscarBo.Location = new System.Drawing.Point(721, 165);
+            this.BuscarBo.Margin = new System.Windows.Forms.Padding(4);
             this.BuscarBo.Name = "BuscarBo";
             this.BuscarBo.Radius = 5;
-            this.BuscarBo.Size = new System.Drawing.Size(102, 30);
+            this.BuscarBo.Size = new System.Drawing.Size(136, 37);
             this.BuscarBo.Stroke = false;
             this.BuscarBo.StrokeColor = System.Drawing.Color.Gray;
             this.BuscarBo.TabIndex = 12;
@@ -178,27 +99,17 @@
             this.ReBo.ForeColor = System.Drawing.Color.White;
             this.ReBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.ReBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.ReBo.Location = new System.Drawing.Point(657, 430);
+            this.ReBo.Location = new System.Drawing.Point(876, 529);
+            this.ReBo.Margin = new System.Windows.Forms.Padding(4);
             this.ReBo.Name = "ReBo";
             this.ReBo.Radius = 5;
-            this.ReBo.Size = new System.Drawing.Size(102, 42);
+            this.ReBo.Size = new System.Drawing.Size(136, 52);
             this.ReBo.Stroke = false;
             this.ReBo.StrokeColor = System.Drawing.Color.Gray;
             this.ReBo.TabIndex = 13;
             this.ReBo.Text = "Reimprimir";
             this.ReBo.Transparency = false;
-            // 
-            // FacturaLV
-            // 
-            this.FacturaLV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FacturaLV.HideSelection = false;
-            this.FacturaLV.Location = new System.Drawing.Point(30, 190);
-            this.FacturaLV.Name = "FacturaLV";
-            this.FacturaLV.Size = new System.Drawing.Size(729, 218);
-            this.FacturaLV.TabIndex = 14;
-            this.FacturaLV.UseCompatibleStateImageBehavior = false;
+            this.ReBo.Click += new System.EventHandler(this.ReBo_Click);
             // 
             // errorProviderLetras
             // 
@@ -210,27 +121,132 @@
             this.errorProviderSerie.ContainerControl = this;
             this.errorProviderSerie.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderSerie.Icon")));
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label1.Location = new System.Drawing.Point(114, 121);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(112, 23);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "N° Factura";
+            // 
+            // idtxt
+            // 
+            this.idtxt.BackColor = System.Drawing.Color.Transparent;
+            this.idtxt.Br = System.Drawing.Color.White;
+            this.idtxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.idtxt.ForeColor = System.Drawing.Color.Black;
+            this.idtxt.Location = new System.Drawing.Point(86, 165);
+            this.idtxt.Margin = new System.Windows.Forms.Padding(4);
+            this.idtxt.Name = "idtxt";
+            this.idtxt.Size = new System.Drawing.Size(225, 37);
+            this.idtxt.TabIndex = 41;
+            // 
+            // DetallesLv
+            // 
+            this.DetallesLv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DetallesLv.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.Nombre,
+            this.Marca,
+            this.Precio,
+            this.Cantidad,
+            this.Categoria,
+            this.Subtotal});
+            this.DetallesLv.FullRowSelect = true;
+            this.DetallesLv.HideSelection = false;
+            this.DetallesLv.Location = new System.Drawing.Point(14, 230);
+            this.DetallesLv.Margin = new System.Windows.Forms.Padding(5);
+            this.DetallesLv.Name = "DetallesLv";
+            this.DetallesLv.Size = new System.Drawing.Size(1065, 290);
+            this.DetallesLv.TabIndex = 42;
+            this.DetallesLv.UseCompatibleStateImageBehavior = false;
+            this.DetallesLv.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 40;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 180;
+            // 
+            // Marca
+            // 
+            this.Marca.Text = "Marca";
+            this.Marca.Width = 180;
+            // 
+            // Precio
+            // 
+            this.Precio.Text = "Precio (C$)";
+            this.Precio.Width = 180;
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.Text = "Cantidad (Q)";
+            this.Cantidad.Width = 180;
+            // 
+            // Categoria
+            // 
+            this.Categoria.Text = "Categoria";
+            this.Categoria.Width = 200;
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.Text = "Subtotal";
+            this.Subtotal.Width = 150;
+            // 
+            // Limpiarbttn
+            // 
+            this.Limpiarbttn.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.Limpiarbttn.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.Limpiarbttn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.Limpiarbttn.BackColor = System.Drawing.Color.Transparent;
+            this.Limpiarbttn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Limpiarbttn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.Limpiarbttn.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Limpiarbttn.ForeColor = System.Drawing.Color.White;
+            this.Limpiarbttn.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.Limpiarbttn.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.Limpiarbttn.Location = new System.Drawing.Point(900, 165);
+            this.Limpiarbttn.Margin = new System.Windows.Forms.Padding(4);
+            this.Limpiarbttn.Name = "Limpiarbttn";
+            this.Limpiarbttn.Radius = 5;
+            this.Limpiarbttn.Size = new System.Drawing.Size(136, 37);
+            this.Limpiarbttn.Stroke = false;
+            this.Limpiarbttn.StrokeColor = System.Drawing.Color.Gray;
+            this.Limpiarbttn.TabIndex = 12;
+            this.Limpiarbttn.Text = "Limpiar";
+            this.Limpiarbttn.Transparency = false;
+            this.Limpiarbttn.Visible = false;
+            this.Limpiarbttn.Click += new System.EventHandler(this.limpiar);
+            // 
             // ReimprimirBo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 494);
-            this.Controls.Add(this.FacturaLV);
+            this.ClientSize = new System.Drawing.Size(1093, 608);
+            this.Controls.Add(this.DetallesLv);
+            this.Controls.Add(this.idtxt);
             this.Controls.Add(this.ReBo);
+            this.Controls.Add(this.Limpiarbttn);
             this.Controls.Add(this.BuscarBo);
-            this.Controls.Add(this.FechaTP);
-            this.Controls.Add(this.CajeroCB);
-            this.Controls.Add(this.SerieCB);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.FechaLab);
-            this.Controls.Add(this.UserLab);
-            this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ReimprimirBo";
             this.Text = "Facturas";
+            this.Load += new System.EventHandler(this.ReimprimirBo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).EndInit();
             this.ResumeLayout(false);
@@ -239,19 +255,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label UserLab;
         private System.Windows.Forms.Label FechaLab;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox SerieCB;
-        private System.Windows.Forms.ComboBox CajeroCB;
-        private System.Windows.Forms.DateTimePicker FechaTP;
         private AltoControls.AltoButton BuscarBo;
         private AltoControls.AltoButton ReBo;
-        private System.Windows.Forms.ListView FacturaLV;
         private System.Windows.Forms.ErrorProvider errorProviderLetras;
         private System.Windows.Forms.ErrorProvider errorProviderSerie;
+        private System.Windows.Forms.Label label1;
+        private AltoControls.AltoTextBox idtxt;
+        private System.Windows.Forms.ListView DetallesLv;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Marca;
+        private System.Windows.Forms.ColumnHeader Precio;
+        private System.Windows.Forms.ColumnHeader Cantidad;
+        private System.Windows.Forms.ColumnHeader Categoria;
+        private System.Windows.Forms.ColumnHeader Subtotal;
+        private AltoControls.AltoButton Limpiarbttn;
     }
 }

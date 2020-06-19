@@ -15,6 +15,7 @@ namespace Ferreto.Models
         public string Peso { get; set; }
         public string Descripcion { get; set; }
 
+        public string Medida { get; set; }
         public virtual ICollection<Producto> Producto { get; set; }
     }
 }

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 namespace Ferreto.Services
 {
     public class Helper<T> : IHelper<T> where T : class
-    { 
+    {
         private readonly FerretoSContext _context;
         public Helper(FerretoSContext context)
         {
@@ -123,5 +123,22 @@ namespace Ferreto.Services
         {
             return _context.Inventario.Include(x => x.IdproductoNavigation);
         }
+        public void UpdateIn(int id, int cantidad, int accion)
+        {
+            var originalEntry = _context.Inventario.Single(y => y.Idinventario == id);
+            var d = originalEntry.Precio.ToString();
+            switch (accion)
+            {
+                case 0:
+                    originalEntry.Existencia -= cantidad;
+                    originalEntry.Unidademonetarias = originalEntry.Existencia * Decimal.Parse(d);
+                    break;
+                case 1:
+                    originalEntry.Existencia += cantidad;
+                    break;
+            }
+            _context.Update(originalEntry);
+        }
+
     }
 }

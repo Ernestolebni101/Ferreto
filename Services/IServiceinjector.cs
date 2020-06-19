@@ -12,10 +12,14 @@ namespace Ferreto.Services
     /// Se hará cargo de proveer servicios puntuales para trabajar con los modelos de la base de datos
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface  IServiceinjector<T> where T: class
+    public interface IServiceinjector<T> where T : class
     {
-        
-        IEnumerable<Inventario> ConsultarInventario();
-        IEnumerable<Producto> consultarproductos();
+        IEnumerable<Inventario> ConsultInventory();
+        IEnumerable<Precioproducto> ConsultPrice();
+        //async void UpdateIn(int id, int cantidad, int accion);
+        void ChangeStatus(int id, byte accion);
+        IEnumerable<Proveedores> GetProveedores();
+        void ChangeStatusProvider(int id, byte accion);
+        IEnumerable<Detallefactura> GetDetails();
     }
 }

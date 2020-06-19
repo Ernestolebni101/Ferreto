@@ -30,42 +30,29 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProveedoresForm));
-            this.label17 = new System.Windows.Forms.Label();
-            this.UserLab = new System.Windows.Forms.Label();
             this.FechaLab = new System.Windows.Forms.Label();
-            this.ProveedoresDG = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.BuscarProveedorTxt = new AltoControls.AltoTextBox();
-            this.BuscarBo = new AltoControls.AltoButton();
-            this.EliminarBo = new AltoControls.AltoButton();
             this.label2 = new System.Windows.Forms.Label();
             this.AñadirBo = new AltoControls.AltoButton();
             this.errorProviderletras = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.ProveedoresDG)).BeginInit();
+            this.ProveedoresLV = new System.Windows.Forms.ListView();
+            this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Empresa = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Nombre = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Apelldo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Cedula = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Telefono = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Correo = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Direccion = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.EditarProveedoCont = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.CambiarEstadoSlide = new AltoControls.SlideButton();
+            this.CambiarEstadoBo = new AltoControls.AltoButton();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
+            this.EditarProveedoCont.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label17.Location = new System.Drawing.Point(27, 37);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(178, 19);
-            this.label17.TabIndex = 10;
-            this.label17.Text = "Bienvenido de nuevo:";
-            // 
-            // UserLab
-            // 
-            this.UserLab.AutoSize = true;
-            this.UserLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UserLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLab.Location = new System.Drawing.Point(221, 37);
-            this.UserLab.Name = "UserLab";
-            this.UserLab.Size = new System.Drawing.Size(40, 19);
-            this.UserLab.TabIndex = 11;
-            this.UserLab.Text = "User";
             // 
             // FechaLab
             // 
@@ -73,89 +60,12 @@
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(478, 37);
+            this.FechaLab.Location = new System.Drawing.Point(472, 9);
+            this.FechaLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.FechaLab.Name = "FechaLab";
-            this.FechaLab.Size = new System.Drawing.Size(58, 19);
+            this.FechaLab.Size = new System.Drawing.Size(71, 23);
             this.FechaLab.TabIndex = 12;
             this.FechaLab.Text = "Fecha";
-            // 
-            // ProveedoresDG
-            // 
-            this.ProveedoresDG.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.ProveedoresDG.BackgroundColor = System.Drawing.Color.White;
-            this.ProveedoresDG.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProveedoresDG.Location = new System.Drawing.Point(31, 175);
-            this.ProveedoresDG.Name = "ProveedoresDG";
-            this.ProveedoresDG.Size = new System.Drawing.Size(761, 264);
-            this.ProveedoresDG.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(27, 92);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(149, 21);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Buscar Proveedor:";
-            // 
-            // BuscarProveedorTxt
-            // 
-            this.BuscarProveedorTxt.BackColor = System.Drawing.Color.Transparent;
-            this.BuscarProveedorTxt.Br = System.Drawing.Color.White;
-            this.BuscarProveedorTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarProveedorTxt.ForeColor = System.Drawing.Color.Black;
-            this.BuscarProveedorTxt.Location = new System.Drawing.Point(31, 128);
-            this.BuscarProveedorTxt.Name = "BuscarProveedorTxt";
-            this.BuscarProveedorTxt.Size = new System.Drawing.Size(220, 30);
-            this.BuscarProveedorTxt.TabIndex = 16;
-            // 
-            // BuscarBo
-            // 
-            this.BuscarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.BuscarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.BuscarBo.BackColor = System.Drawing.Color.Transparent;
-            this.BuscarBo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BuscarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.BuscarBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BuscarBo.ForeColor = System.Drawing.Color.White;
-            this.BuscarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BuscarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.BuscarBo.Location = new System.Drawing.Point(313, 128);
-            this.BuscarBo.Name = "BuscarBo";
-            this.BuscarBo.Radius = 5;
-            this.BuscarBo.Size = new System.Drawing.Size(80, 30);
-            this.BuscarBo.Stroke = false;
-            this.BuscarBo.StrokeColor = System.Drawing.Color.Gray;
-            this.BuscarBo.TabIndex = 17;
-            this.BuscarBo.Text = "Buscar";
-            this.BuscarBo.Transparency = false;
-            this.BuscarBo.Click += new System.EventHandler(this.Buscarpro);
-            // 
-            // EliminarBo
-            // 
-            this.EliminarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.EliminarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.EliminarBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.EliminarBo.BackColor = System.Drawing.Color.Transparent;
-            this.EliminarBo.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.EliminarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.EliminarBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EliminarBo.ForeColor = System.Drawing.Color.White;
-            this.EliminarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.EliminarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.EliminarBo.Location = new System.Drawing.Point(31, 449);
-            this.EliminarBo.Name = "EliminarBo";
-            this.EliminarBo.Radius = 5;
-            this.EliminarBo.Size = new System.Drawing.Size(145, 30);
-            this.EliminarBo.Stroke = false;
-            this.EliminarBo.StrokeColor = System.Drawing.Color.Gray;
-            this.EliminarBo.TabIndex = 18;
-            this.EliminarBo.Text = "Eliminar Proveedor";
-            this.EliminarBo.Transparency = false;
             // 
             // label2
             // 
@@ -163,9 +73,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(547, 93);
+            this.label2.Location = new System.Drawing.Point(729, 114);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(161, 19);
+            this.label2.Size = new System.Drawing.Size(201, 23);
             this.label2.TabIndex = 19;
             this.label2.Text = "¿Proveedor Nuevo?";
             // 
@@ -181,10 +92,11 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.White;
             this.AñadirBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.AñadirBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
-            this.AñadirBo.Location = new System.Drawing.Point(547, 128);
+            this.AñadirBo.Location = new System.Drawing.Point(729, 158);
+            this.AñadirBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
-            this.AñadirBo.Size = new System.Drawing.Size(161, 30);
+            this.AñadirBo.Size = new System.Drawing.Size(215, 37);
             this.AñadirBo.Stroke = false;
             this.AñadirBo.StrokeColor = System.Drawing.Color.Gray;
             this.AñadirBo.TabIndex = 20;
@@ -197,44 +109,201 @@
             this.errorProviderletras.ContainerControl = this;
             this.errorProviderletras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderletras.Icon")));
             // 
+            // ProveedoresLV
+            // 
+            this.ProveedoresLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.Id,
+            this.Empresa,
+            this.Nombre,
+            this.Apelldo,
+            this.Cedula,
+            this.Telefono,
+            this.Correo,
+            this.Direccion,
+            this.columnHeader1});
+            this.ProveedoresLV.FullRowSelect = true;
+            this.ProveedoresLV.HideSelection = false;
+            this.ProveedoresLV.Location = new System.Drawing.Point(12, 291);
+            this.ProveedoresLV.Name = "ProveedoresLV";
+            this.ProveedoresLV.Size = new System.Drawing.Size(1069, 277);
+            this.ProveedoresLV.TabIndex = 21;
+            this.ProveedoresLV.UseCompatibleStateImageBehavior = false;
+            this.ProveedoresLV.View = System.Windows.Forms.View.Details;
+            // 
+            // Id
+            // 
+            this.Id.Text = "Id";
+            this.Id.Width = 39;
+            // 
+            // Empresa
+            // 
+            this.Empresa.Text = "Empresa";
+            this.Empresa.Width = 143;
+            // 
+            // Nombre
+            // 
+            this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 114;
+            // 
+            // Apelldo
+            // 
+            this.Apelldo.Text = "Apellido";
+            this.Apelldo.Width = 134;
+            // 
+            // Cedula
+            // 
+            this.Cedula.Text = "Cedula";
+            this.Cedula.Width = 119;
+            // 
+            // Telefono
+            // 
+            this.Telefono.Text = "Telefono";
+            this.Telefono.Width = 151;
+            // 
+            // Correo
+            // 
+            this.Correo.Text = "Correo";
+            this.Correo.Width = 93;
+            // 
+            // Direccion
+            // 
+            this.Direccion.Text = "Direccion";
+            this.Direccion.Width = 209;
+            // 
+            // EditarProveedoCont
+            // 
+            this.EditarProveedoCont.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.EditarProveedoCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.EditarProveedoCont.Controls.Add(this.CambiarEstadoBo);
+            this.EditarProveedoCont.Controls.Add(this.CambiarEstadoSlide);
+            this.EditarProveedoCont.Controls.Add(this.label4);
+            this.EditarProveedoCont.Controls.Add(this.label1);
+            this.EditarProveedoCont.Controls.Add(this.label15);
+            this.EditarProveedoCont.Location = new System.Drawing.Point(23, 114);
+            this.EditarProveedoCont.Margin = new System.Windows.Forms.Padding(4);
+            this.EditarProveedoCont.Name = "EditarProveedoCont";
+            this.EditarProveedoCont.Size = new System.Drawing.Size(332, 150);
+            this.EditarProveedoCont.TabIndex = 22;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(156, 54);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(150, 23);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Inactivo = OFF";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(179, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(129, 23);
+            this.label1.TabIndex = 27;
+            this.label1.Text = "Activo = ON";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(21, 14);
+            this.label15.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(80, 23);
+            this.label15.TabIndex = 26;
+            this.label15.Text = "Estado:";
+            // 
+            // CambiarEstadoSlide
+            // 
+            this.CambiarEstadoSlide.BorderColor = System.Drawing.Color.LightGray;
+            this.CambiarEstadoSlide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CambiarEstadoSlide.IsOn = true;
+            this.CambiarEstadoSlide.Location = new System.Drawing.Point(27, 53);
+            this.CambiarEstadoSlide.Margin = new System.Windows.Forms.Padding(4);
+            this.CambiarEstadoSlide.Name = "CambiarEstadoSlide";
+            this.CambiarEstadoSlide.Size = new System.Drawing.Size(82, 43);
+            this.CambiarEstadoSlide.TabIndex = 29;
+            this.CambiarEstadoSlide.Text = "slideButton1";
+            this.CambiarEstadoSlide.TextEnabled = true;
+            // 
+            // CambiarEstadoBo
+            // 
+            this.CambiarEstadoBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.CambiarEstadoBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.CambiarEstadoBo.BackColor = System.Drawing.Color.Transparent;
+            this.CambiarEstadoBo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.CambiarEstadoBo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.CambiarEstadoBo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CambiarEstadoBo.ForeColor = System.Drawing.Color.White;
+            this.CambiarEstadoBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.CambiarEstadoBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.CambiarEstadoBo.Location = new System.Drawing.Point(99, 103);
+            this.CambiarEstadoBo.Margin = new System.Windows.Forms.Padding(4);
+            this.CambiarEstadoBo.Name = "CambiarEstadoBo";
+            this.CambiarEstadoBo.Radius = 5;
+            this.CambiarEstadoBo.Size = new System.Drawing.Size(215, 37);
+            this.CambiarEstadoBo.Stroke = false;
+            this.CambiarEstadoBo.StrokeColor = System.Drawing.Color.Gray;
+            this.CambiarEstadoBo.TabIndex = 10;
+            this.CambiarEstadoBo.Text = "Desactivar proveedor";
+            this.CambiarEstadoBo.Transparency = false;
+            this.CambiarEstadoBo.Click += new System.EventHandler(this.CambiarEstadoBo_Click);
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Estado";
+            // 
             // ProveedoresForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(820, 494);
+            this.ClientSize = new System.Drawing.Size(1093, 608);
+            this.Controls.Add(this.EditarProveedoCont);
+            this.Controls.Add(this.ProveedoresLV);
             this.Controls.Add(this.AñadirBo);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.EliminarBo);
-            this.Controls.Add(this.BuscarBo);
-            this.Controls.Add(this.BuscarProveedorTxt);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.ProveedoresDG);
             this.Controls.Add(this.FechaLab);
-            this.Controls.Add(this.UserLab);
-            this.Controls.Add(this.label17);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ProveedoresForm";
             this.Text = "Proveedores";
-            ((System.ComponentModel.ISupportInitialize)(this.ProveedoresDG)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).EndInit();
+            this.EditarProveedoCont.ResumeLayout(false);
+            this.EditarProveedoCont.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.Label UserLab;
         private System.Windows.Forms.Label FechaLab;
-        private System.Windows.Forms.DataGridView ProveedoresDG;
-        private System.Windows.Forms.Label label3;
-        private AltoControls.AltoTextBox BuscarProveedorTxt;
-        private AltoControls.AltoButton BuscarBo;
-        private AltoControls.AltoButton EliminarBo;
         private System.Windows.Forms.Label label2;
         private AltoControls.AltoButton AñadirBo;
         private System.Windows.Forms.ErrorProvider errorProviderletras;
+        private System.Windows.Forms.ColumnHeader Id;
+        private System.Windows.Forms.ColumnHeader Empresa;
+        private System.Windows.Forms.ColumnHeader Nombre;
+        private System.Windows.Forms.ColumnHeader Apelldo;
+        private System.Windows.Forms.ColumnHeader Cedula;
+        private System.Windows.Forms.ColumnHeader Telefono;
+        private System.Windows.Forms.ColumnHeader Correo;
+        private System.Windows.Forms.ColumnHeader Direccion;
+        public System.Windows.Forms.Panel EditarProveedoCont;
+        private AltoControls.AltoButton CambiarEstadoBo;
+        private AltoControls.SlideButton CambiarEstadoSlide;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ListView ProveedoresLV;
     }
 }
