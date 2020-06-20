@@ -44,7 +44,6 @@ namespace Ferreto.Views
         private Factura _factura;
         private List<Detallefactura> UpdateList(int accion = 0, int Q = 0)
         {
-            _detallefactura.Idfactura = ReturnIdF();
             switch (accion)
             {
                 case 0:
@@ -56,11 +55,19 @@ namespace Ferreto.Views
             }
             return SortedList;
         }
-        private List<Detallefactura> UpdateList()
+        private List<Detallefactura> UpdateList(int id)
         {
+            foreach (var item in SortedList)
+            {
+                item.Idfactura = id;
+            }       
             return SortedList;
         }
         #region Methods
+        /// <summary>
+        /// Me devuelve el id del usuario que esta activo en el programa
+        /// </summary>
+        /// <returns></returns>
         private int GetId()
         {
             int id = 0;
@@ -76,6 +83,10 @@ namespace Ferreto.Views
             }
             return id;
         }
+        /// <summary>
+        /// Me valida si la cantidad demandada es menor o igual a la que se encuentra disponible en iventario
+        /// </summary>
+        /// <returns></returns>
         private bool Existence()
         {
             var Collections = _inventariohelper.Inventory();
@@ -122,40 +133,7 @@ namespace Ferreto.Views
                 return false;
             }
         }
-        private void ValidateSubitem()
-        {
-            bool retorno = false;
-            var confirm = ProductosTxt.Text;
 
-            if (conteoclicks > 1)
-            {
-                foreach (ListViewItem item in ProductosLV.Items)
-                {
-                    int index = ProductosLV.SelectedIndices.Count;
-                    if (confirm.Contains(item.SubItems[1].Text))
-                    {
-                        retorno = true;
-                        break;
-                    }
-
-                    else
-                    {
-                        retorno = false;
-                        break;
-                    }
-
-                }
-            }
-
-            if (retorno)
-            {
-                MessageBox.Show("Me valida productos repetidos");
-            }
-            else
-            {
-                MessageBox.Show("producto no repetido");
-            }
-        }
         /// <summary>
         /// Controla el detalle de la factura
         /// </summary>
@@ -354,7 +332,7 @@ namespace Ferreto.Views
             if (ProductosLV.Items.Count != 0)
             {
                 FacturaInsert();
-                _detallefacturahelper.AddDetails(UpdateList());
+                _detallefacturahelper.AddDetails(UpdateList(FacturaInsert().Idfactura));
                 FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto);
                 obj.ShowDialog();
             }

@@ -21,5 +21,6 @@ namespace Ferreto.Services
         IEnumerable<Proveedores> GetProveedores();
         void ChangeStatusProvider(int id, byte accion);
         IEnumerable<Detallefactura> GetDetails();
+
     }
 }

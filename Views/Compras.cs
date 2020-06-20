@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace Ferreto.Views
 {
     public partial class Compras : Form
@@ -16,6 +15,7 @@ namespace Ferreto.Views
         {
             InitializeComponent();
         }
+
 
         private void ActualizarBo_Click(object sender, EventArgs e)
         {
