@@ -47,9 +47,9 @@ namespace Ferreto.Views
             foreach (ListViewItem item in producList.Items)
             {
                 ListViewItem listView = new ListViewItem(item.SubItems[1].Text);
-                listView.SubItems.Add(item.SubItems[3].Text);
+                listView.SubItems.Add(signo + " " + item.SubItems[3].Text);
                 listView.SubItems.Add(item.SubItems[4].Text);
-                listView.SubItems.Add(item.SubItems[6].Text);
+                listView.SubItems.Add(signo + " " + item.SubItems[6].Text);
                 listViewdetalle.Items.Add(listView);
             }
             switch (accion)

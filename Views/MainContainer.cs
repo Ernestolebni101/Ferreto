@@ -21,7 +21,7 @@ namespace Ferreto.Views
             InitializeComponent();
             AbrirSub(new Inicio());
         }
-       
+
         public void AbrirSub(object Submenu)
         {
             if (this.panelCont.Controls.Count > 0)
@@ -38,9 +38,6 @@ namespace Ferreto.Views
         {
             AbrirSub(new Inicio());
         }
-
-  
-
         private void VentaBo_Click(object sender, EventArgs e)
         {
             Facturacion obj = new Facturacion();
@@ -52,7 +49,7 @@ namespace Ferreto.Views
             FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
             AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
             AbrirSub(obj);
-      
+
         }
 
         private void InventarioBo_Click(object sender, EventArgs e)
@@ -145,11 +142,15 @@ namespace Ferreto.Views
             pctminizar.Visible = false;
         }
 
-        private void SalirBo_Click(object sender, EventArgs e)
+        private async void SalirBo_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            FirstContainer login = new FirstContainer();
-            login.Show();
+            //this.Hide();
+            //FirstContainer login = new FirstContainer();
+            //login.Show();
+           await Task.Run(() =>
+            {
+                Application.Restart();
+            });
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]

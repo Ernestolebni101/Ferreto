@@ -18,8 +18,7 @@ namespace Ferreto.Views
         {
             InitializeComponent();
             Thread.Sleep(1000);
-            Cargar();   
-            
+            Cargar();
         }
 
         public void Cargar()
@@ -27,7 +26,6 @@ namespace Ferreto.Views
             MainContainer obj = new MainContainer();
             //ChargingScreen.ActiveForm.Hide();
             obj.Show();
-            
         }
 
         private void ChargingScreen_Load(object sender, EventArgs e)

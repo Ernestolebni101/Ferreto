@@ -83,6 +83,7 @@ namespace Ferreto.Views
                         accion = 1;
 
                     StateChanged(int.Parse(item.SubItems[0].Text), accion);
+                    
                 }
             }
             else
