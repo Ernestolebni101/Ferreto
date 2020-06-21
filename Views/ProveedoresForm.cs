@@ -31,6 +31,8 @@ namespace Ferreto.Views
         {
             AñadirProveedor obj = new AñadirProveedor();
             obj.ShowDialog();
+            ProveedoresLV.Items.Clear();
+            InitLv();
         }
         private void InitLv()
         {
@@ -84,8 +86,10 @@ namespace Ferreto.Views
                         accion = 1;
 
                     StateChanged(int.Parse(item.SubItems[0].Text), accion);
-                    
                 }
+                timer2.Start();
+                ProveedoresLV.Items.Clear();
+                InitLv();
             }
             else
                 MessageBox.Show("Debe elegir un solo proveedor", "Fallo al actualizar estado", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -95,24 +99,31 @@ namespace Ferreto.Views
         private void CambiarEstadoBo_Click_1(object sender, EventArgs e)
         {
             ChangeProvider();
+            timer2.Stop();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.FechaLab.Text = DateTime.Now.ToString();
         }
-        private void UpdateBtn()
-        {
-            if (!CambiarEstadoSlide.IsOn)
-            {
-                CambiarEstadoBo.Text = "Desactivar";
-            }
-            else
-                CambiarEstadoBo.Text = "Activar";
-        }
         private void Actualizar(object sender, EventArgs e)
         {
             UpdateBtn();
+        }
+        private void UpdateBtn()
+        {
+            if (!CambiarEstadoSlide.IsOn)
+                CambiarEstadoBo.Text = "Desactivar";
+            else
+                CambiarEstadoBo.Text = "Activar";
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timer2.Enabled == true)
+            {
+                InitLv();
+            }
         }
     }
 }
