@@ -29,6 +29,7 @@ namespace Ferreto.Views
         public Facturacion()
         {
             InitializeComponent();
+            timer1.Start();
             ProductosLV.View = System.Windows.Forms.View.Details;
             _context = Initializecontext.initcontext();
             _productohelper = new Helper<Producto>(_context);

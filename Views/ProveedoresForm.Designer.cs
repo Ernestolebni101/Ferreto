@@ -50,13 +50,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
             this.ProductoVeijoCont.SuspendLayout();
             this.SuspendLayout();
             // 
             // FechaLab
             // 
-            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -108,6 +108,9 @@
             // 
             // ProveedoresLV
             // 
+            this.ProveedoresLV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ProveedoresLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Id,
             this.Empresa,
@@ -176,7 +179,6 @@
             // 
             // ProductoVeijoCont
             // 
-            this.ProductoVeijoCont.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ProductoVeijoCont.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ProductoVeijoCont.Controls.Add(this.CambiarEstadoBo);
             this.ProductoVeijoCont.Controls.Add(this.CambiarEstadoSlide);
@@ -206,7 +208,7 @@
             this.CambiarEstadoBo.Stroke = false;
             this.CambiarEstadoBo.StrokeColor = System.Drawing.Color.Gray;
             this.CambiarEstadoBo.TabIndex = 10;
-            this.CambiarEstadoBo.Text = "Desactivar";
+            this.CambiarEstadoBo.Text = "Activar";
             this.CambiarEstadoBo.Transparency = false;
             this.CambiarEstadoBo.Click += new System.EventHandler(this.CambiarEstadoBo_Click_1);
             // 
@@ -221,6 +223,7 @@
             this.CambiarEstadoSlide.TabIndex = 29;
             this.CambiarEstadoSlide.Text = "slideButton1";
             this.CambiarEstadoSlide.TextEnabled = true;
+            this.CambiarEstadoSlide.Click += new System.EventHandler(this.Actualizar);
             // 
             // label3
             // 
@@ -254,6 +257,10 @@
             this.label6.Size = new System.Drawing.Size(70, 18);
             this.label6.TabIndex = 26;
             this.label6.Text = "Estado:";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // ProveedoresForm
             // 
@@ -298,5 +305,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Timer timer1;
     }
 }

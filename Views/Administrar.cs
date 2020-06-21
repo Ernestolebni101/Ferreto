@@ -16,6 +16,7 @@ namespace Ferreto.Views
         public Administrar()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
         private void EditarItemBo_Click(object sender, EventArgs e)
@@ -28,6 +29,11 @@ namespace Ferreto.Views
         {
             EditarCuenta obj = new EditarCuenta();
             obj.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FechaLab.Text = DateTime.Now.ToString();
         }
     }
 }

@@ -62,7 +62,6 @@
             // 
             // FechaLab
             // 
-            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -87,6 +86,7 @@
             // 
             // label3
             // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -109,7 +109,7 @@
             this.AgregarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.AgregarBo.Inactive1 = System.Drawing.Color.White;
             this.AgregarBo.Inactive2 = System.Drawing.Color.White;
-            this.AgregarBo.Location = new System.Drawing.Point(608, 102);
+            this.AgregarBo.Location = new System.Drawing.Point(623, 102);
             this.AgregarBo.Margin = new System.Windows.Forms.Padding(5);
             this.AgregarBo.Name = "AgregarBo";
             this.AgregarBo.Radius = 5;
@@ -133,7 +133,7 @@
             this.BorrarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.BorrarBo.Inactive1 = System.Drawing.Color.White;
             this.BorrarBo.Inactive2 = System.Drawing.Color.White;
-            this.BorrarBo.Location = new System.Drawing.Point(702, 102);
+            this.BorrarBo.Location = new System.Drawing.Point(713, 102);
             this.BorrarBo.Margin = new System.Windows.Forms.Padding(5);
             this.BorrarBo.Name = "BorrarBo";
             this.BorrarBo.Radius = 5;
@@ -310,6 +310,7 @@
             // 
             // CantidadTxt
             // 
+            this.CantidadTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.CantidadTxt.BackColor = System.Drawing.Color.Transparent;
             this.CantidadTxt.Br = System.Drawing.Color.White;
             this.CantidadTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

@@ -46,13 +46,13 @@
             this.Categoria = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Limpiarbttn = new AltoControls.AltoButton();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaLab
             // 
-            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -74,7 +74,7 @@
             this.BuscarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.BuscarBo.Inactive1 = System.Drawing.Color.White;
             this.BuscarBo.Inactive2 = System.Drawing.Color.White;
-            this.BuscarBo.Location = new System.Drawing.Point(560, 90);
+            this.BuscarBo.Location = new System.Drawing.Point(694, 90);
             this.BuscarBo.Name = "BuscarBo";
             this.BuscarBo.Radius = 5;
             this.BuscarBo.Size = new System.Drawing.Size(102, 30);
@@ -120,7 +120,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -158,7 +157,7 @@
             this.DetallesLv.FullRowSelect = true;
             this.DetallesLv.HideSelection = false;
             this.DetallesLv.Location = new System.Drawing.Point(24, 127);
-            this.DetallesLv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.DetallesLv.Margin = new System.Windows.Forms.Padding(4);
             this.DetallesLv.Name = "DetallesLv";
             this.DetallesLv.Size = new System.Drawing.Size(772, 269);
             this.DetallesLv.TabIndex = 42;
@@ -224,6 +223,10 @@
             this.Limpiarbttn.Visible = false;
             this.Limpiarbttn.Click += new System.EventHandler(this.limpiar);
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // ReimprimirBo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,5 +268,6 @@
         private System.Windows.Forms.ColumnHeader Categoria;
         private System.Windows.Forms.ColumnHeader Subtotal;
         private AltoControls.AltoButton Limpiarbttn;
+        private System.Windows.Forms.Timer timer1;
     }
 }

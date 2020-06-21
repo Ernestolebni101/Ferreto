@@ -14,6 +14,7 @@ namespace Ferreto.Views
         public Compras()
         {
             InitializeComponent();
+            timer1.Start();
         }
 
 
@@ -28,6 +29,11 @@ namespace Ferreto.Views
             CompraNueva obj = new CompraNueva();
             obj.UserLabel.Text = UserLabel.Text;
             obj.ShowDialog();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FechaLab.Text = DateTime.Now.ToString();
         }
     }
 }

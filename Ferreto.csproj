@@ -447,6 +447,36 @@
   <ItemGroup>
     <None Include="Resources\Ferreto Nubes.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturacion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Facturacion.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Catalogo.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Compras.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ver-Facturas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Administrar.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Proveedores1.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ver Facturas.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ver Facturas1.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets" Condition="Exists('packages\Microsoft.Data.SqlClient.SNI.1.0.19235.1\build\net46\Microsoft.Data.SqlClient.SNI.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

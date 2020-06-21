@@ -21,6 +21,7 @@ namespace Ferreto.Views
         public ReimprimirBo()
         {
             InitializeComponent();
+            timer1.Start();
             _context = Initializecontext.initcontext();
             _detallehelper = new ServicesInjector<Detallefactura>(_context);
         }
@@ -104,6 +105,11 @@ namespace Ferreto.Views
         private void ReBo_Click(object sender, EventArgs e)
         {
             ReImprimir();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FechaLab.Text = DateTime.Now.ToString();
         }
     }
 }
