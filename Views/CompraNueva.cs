@@ -24,8 +24,14 @@ namespace Ferreto.Views
         private readonly Helper<Categoria> _categoriahelper;
         private readonly Helper<Marca> _marcahelper;
         private readonly Helper<Presentacion> _presentacionhelper;
+        private readonly Helper<Precioproducto> _preciohelper;
+        private readonly ServicesInjector<Proveedores> _proveedorhelper;
+        private readonly Helper<Usuario> _usuariohelper;
+        private readonly Helper<Inventario> _inventariohelper;
         private Producto _producto;
         private Compra _compra;
+        private Precioproducto _precio;
+        private Inventario _inventario;
         public CompraNueva()
         {
             InitializeComponent();
@@ -35,6 +41,10 @@ namespace Ferreto.Views
             _categoriahelper = new Helper<Categoria>(_context);
             _marcahelper = new Helper<Marca>(_context);
             _presentacionhelper = new Helper<Presentacion>(_context);
+            _proveedorhelper = new ServicesInjector<Proveedores>(_context);
+            _usuariohelper = new Helper<Usuario>(_context);
+            _preciohelper = new Helper<Precioproducto>(_context);
+            _inventariohelper = new Helper<Inventario>(_context);
             Initialize();
         }
 
@@ -49,28 +59,83 @@ namespace Ferreto.Views
             this.MedidaCB.DataSource = _presentacionhelper.Get();
             this.MedidaCB.ValueMember = "Idpresentacion";
             this.MedidaCB.DisplayMember = "Medida";
+            AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
+            var CollectionProducts = _proveedorhelper.GetProveedores();
+            foreach (var iter in CollectionProducts)
+            {
+                autoComplete.Add($"{iter.IdpersonaNavigation.Nombre} - {iter.Empresa}");
+            }
+            this.ProveedorCb.DataSource = autoComplete;
+            ProveedorCb.DisplayMember = "autoComplete";
         }
-        private Producto NewProduct()
+        private Producto InserNewProduct()
         {
             var ids = Getids();
             _producto = new Producto();
             _producto.Nombre = ProductoTxt.Text;
-            _producto.Idmarca = ids._idmarc;
-            _producto.Ubicacion = "Zona A";
-            _producto.Idcategoria = ids._idcate;
-            _producto.Idpresentacion = ids.idpresent;
+            _producto.Idmarca = ids.idmarca;
+            _producto.Ubicacion = "Sede Central";
+            _producto.Idcategoria = ids.idcategoria;
+            _producto.Idpresentacion = ids.idpresentacion;
+            _producto.Fecharegistro = DateTime.Now;
+            _producto.Fvencimiento = VencimientoTP.Value;
+            _producto.Estado = true;
+            _producto.Codproducto = Utils.codigo;
             return _producto;
         }
 
-        private (int _idcate, int idpresent, int _idmarc) Getids()
+        private Precioproducto InsertToTablePrecioProducto(int idproducto)
         {
-            var ids = _categoriahelper.Get();
-            var idss = _marcahelper.Get();
-            var idsss = _presentacionhelper.Get();
+            _precio = new Precioproducto();
+            _precio.Estado = true;
+            _precio.Precio = double.Parse(PrecioTxt.Text);
+            _precio.Fechacreacion = DateTime.Now;
+            _precio.Idproducto = idproducto;
+            return _precio;
+        }
+        private Compra InsertToTableCompras(int idproducto)
+        {
+            _compra = new Compra();
+            _compra.Cantidad = int.Parse(this.CantidadTxt.Text);
+            _compra.Costounitario = double.Parse(this.CostoUnitarioTxt.Text);
+            _compra.Idusuario = Getids().idusuario;
+            _compra.Codproveedor = idprovider();
+            _compra.Idproducto = idproducto;
+            return _compra;
+        }
+        private Inventario InsertToInventario(int cantidad, double costounitario,int idproducto)
+        {
+            _inventario = new Inventario();
+            _inventario.Existencia = cantidad;
+            _inventario.Precio = costounitario;
+            _inventario.Idproducto = idproducto;
+            _inventario.Unidademonetarias = cantidad * decimal.Parse(costounitario.ToString());
+            _inventario.Nombreproducto = InserNewProduct().Nombre;
+           return _inventario;
+        }
+
+        private void Transaction()
+        {
+            var insertoproduct = _productohelper.add(InserNewProduct());
+            var inserttotableprice = _preciohelper.add(InsertToTablePrecioProducto(insertoproduct.Idproducto));
+            var insertotablecompra = _comprahelper.add(InsertToTableCompras(insertoproduct.Idproducto));
+            var insertoinventario = _inventariohelper.add(InsertToInventario(insertotablecompra.Cantidad,insertotablecompra.Costounitario,insertoproduct.Idproducto));
+         }
+        private (int idcategoria, int idpresentacion, int idmarca, int idusuario) Getids()
+        {
+            var Categoricollection = _categoriahelper.Get();
+            var MarcaCollection = _marcahelper.Get();
+            var PresentacionCollection = _presentacionhelper.Get();
+            var ProveedoresCollection = _proveedorhelper.GetProveedores();
+            var UsuariosCollection = _usuariohelper.Get();
             int idcategoria = 0;
             int idmarca = 0;
             int idpresentacion = 0;
-            foreach (var i in ids)
+            int idprovider = 0;
+            int idusuario = 0;
+
+
+            foreach (var i in Categoricollection)
             {
                 if (i.Nombre.Equals(CategoriaCB.Text))
                 {
@@ -78,7 +143,7 @@ namespace Ferreto.Views
                     break;
                 }
             }
-            foreach (var i in idss)
+            foreach (var i in MarcaCollection)
             {
                 if (i.Nombre.Equals(MarcaCB.Text))
                 {
@@ -87,7 +152,7 @@ namespace Ferreto.Views
                 }
             }
 
-            foreach (var o in idsss )
+            foreach (var o in PresentacionCollection)
             {
                 if (o.Medida.Equals(MedidaCB.Text))
                 {
@@ -95,7 +160,51 @@ namespace Ferreto.Views
                     break;
                 }
             }
-            return (idcategoria, idpresentacion, idmarca);
+            foreach (var item in ProveedoresCollection)
+            {
+                if (item.IdpersonaNavigation.Nombre.Contains(ProveedorCb.Text))
+                {
+                    idprovider = item.Idproveedor;
+                }
+            }
+            foreach (var item in UsuariosCollection)
+            {
+                if (item.Login.Equals(UserLabel.Text))
+                {
+                    idusuario = item.Idusuario;
+                    break;
+                }
+            }
+            return (idcategoria, idpresentacion, idmarca, idusuario);
+        }
+
+        private int idprovider()
+        {
+            var ProveedoresCollection = _proveedorhelper.GetProveedores();
+            int idprovider = 0;
+            string str = string.Empty;
+
+            for (int i = 0; i < ProveedorCb.Text.Length; i++)
+            {
+                if (ProveedorCb.Text[i] == ' ')
+                {
+                    for (int j = 0; j < i; j++)
+                    {
+                        str = str + ProveedorCb.Text[j];
+                    }
+                    break;
+                }
+            }
+            string prueba = str;
+            foreach (var item in ProveedoresCollection)
+            {
+                if (item.IdpersonaNavigation.Nombre.Contains(str))
+                {
+                    idprovider = item.Idproveedor;
+                    break;
+                }
+            }
+            return idprovider;
         }
         private void Cerrar(object sender, EventArgs e)
         {
@@ -104,7 +213,7 @@ namespace Ferreto.Views
 
         private void Añadir(object sender, EventArgs e)
         {
-            NewProduct();
+            Transaction();
         }
     }
 }

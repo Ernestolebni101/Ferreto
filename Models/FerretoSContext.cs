@@ -43,7 +43,7 @@ namespace Ferreto.Models
             }
         }
 
-        
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Acceso>(entity =>
@@ -51,7 +51,7 @@ namespace Ferreto.Models
                 entity.HasKey(e => e.Idacceso)
                     .HasName("PK__Acceso__F7B9EC7108DF438A");
 
-                entity.Property(e => e.Idacceso).HasColumnName("idacceso"); 
+                entity.Property(e => e.Idacceso).HasColumnName("idacceso");
 
                 entity.Property(e => e.Estado).HasColumnName("estado");
 
@@ -85,8 +85,12 @@ namespace Ferreto.Models
 
                 entity.Property(e => e.Idcompra).HasColumnName("idcompra");
 
-                entity.Property(e => e.Codproveedor).HasColumnName("codproveedor");
+                entity.Property(e => e.Codproveedor).HasColumnName("codproveedor")
+                .HasMaxLength(15);
 
+                entity.Property(e => e.Nombreusuario).HasColumnName("nombreusuario")
+                .HasMaxLength(15);
+                entity.Property(p => p.Nombreproveedor).HasColumnName("nombreproveedor");
                 entity.Property(e => e.Fechacompra)
                     .HasColumnName("fechacompra")
                     .HasColumnType("date");
@@ -96,13 +100,17 @@ namespace Ferreto.Models
                 entity.Property(e => e.Totalcompra)
                     .HasColumnName("totalcompra")
                     .HasColumnType("decimal(18, 0)");
-
+                entity.Property(e => e.Cantidad).HasColumnName("cantidad");
+                entity.Property(e => e.Costounitario).HasColumnName("costounitario");
                 entity.HasOne(d => d.CodproveedorNavigation)
                     .WithMany(p => p.Compra)
                     .HasForeignKey(d => d.Codproveedor)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("fk_p");
-
+                entity.HasOne(p => p.IdproductoNavigation)
+                .WithMany(d => d.Compras).HasForeignKey(f => f.Idproducto)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("fk_tproducto");
                 entity.HasOne(d => d.IdusuarioNavigation)
                     .WithMany(p => p.Compra)
                     .HasForeignKey(d => d.Idusuario)
@@ -366,7 +374,7 @@ namespace Ferreto.Models
                 entity.Property(e => e.Codproducto)
                     .IsRequired()
                     .HasColumnName("codproducto")
-                    .HasMaxLength(12);
+                    .HasMaxLength(100);
 
                 entity.Property(e => e.Descripcion)
                     .HasColumnName("descripcion")
@@ -375,8 +383,8 @@ namespace Ferreto.Models
 
                 entity.Property(e => e.Estado).HasColumnName("estado");
 
-                entity.Property(e => e.Fproduccion)
-                    .HasColumnName("fproduccion")
+                entity.Property(e => e.Fecharegistro)
+                    .HasColumnName("fecharegistro")
                     .HasColumnType("date");
 
                 entity.Property(e => e.Fvencimiento)
@@ -392,7 +400,7 @@ namespace Ferreto.Models
                 entity.Property(e => e.Nombre)
                     .IsRequired()
                     .HasColumnName("nombre")
-                    .HasMaxLength(15);
+                    .HasMaxLength(50);
 
                 entity.Property(e => e.Ubicacion)
                     .HasColumnName("ubicacion")

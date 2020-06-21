@@ -262,7 +262,6 @@ namespace Ferreto.Views
                 IvaLab.Text = (_total * 0.15).ToString();
                 NetoLab.Text = (_total + (_total * 0.15)).ToString();
             }
-
         }
         /// <summary>
         /// Este metodo inicializa el Textbox mediante un servicio que implementa interfaces

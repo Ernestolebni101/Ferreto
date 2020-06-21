@@ -26,6 +26,7 @@ namespace Ferreto.Views
         private void AñadirBo_Click(object sender, EventArgs e)
         {
             CompraNueva obj = new CompraNueva();
+            obj.UserLabel.Text = UserLabel.Text;
             obj.ShowDialog();
         }
     }

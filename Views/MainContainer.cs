@@ -90,8 +90,9 @@ namespace Ferreto.Views
             ProveedoresBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
             FacturaBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
             AdministrarBo.BackColor = System.Drawing.Color.FromArgb(63, 63, 68);
-
-            AbrirSub(new Compras());
+            Compras obj = new Compras();
+            obj.UserLabel.Text = UserLab.Text;
+            AbrirSub(obj);
         }
 
         private void ProveedoresBo_Click(object sender, EventArgs e)

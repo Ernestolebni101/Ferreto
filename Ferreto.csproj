@@ -156,6 +156,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Common\Initializecontext.cs" />
+    <Compile Include="Common\Utils.cs" />
     <Compile Include="Migrations\20200608183449_Initialize.cs" />
     <Compile Include="Migrations\20200608183449_Initialize.designer.cs">
       <DependentUpon>20200608183449_Initialize.cs</DependentUpon>

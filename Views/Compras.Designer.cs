@@ -36,6 +36,7 @@
             this.AñadirBo = new AltoControls.AltoButton();
             this.altoButton1 = new AltoControls.AltoButton();
             this.FechaLab = new System.Windows.Forms.Label();
+            this.UserLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -83,7 +84,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(31, 132);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(1032, 383);
@@ -101,7 +102,7 @@
             this.ActualizarBo.Inactive1 = System.Drawing.Color.White;
             this.ActualizarBo.Inactive2 = System.Drawing.Color.White;
             this.ActualizarBo.Location = new System.Drawing.Point(211, 87);
-            this.ActualizarBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ActualizarBo.Margin = new System.Windows.Forms.Padding(4);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
             this.ActualizarBo.Size = new System.Drawing.Size(243, 37);
@@ -125,7 +126,7 @@
             this.AñadirBo.Inactive1 = System.Drawing.Color.White;
             this.AñadirBo.Inactive2 = System.Drawing.Color.White;
             this.AñadirBo.Location = new System.Drawing.Point(665, 87);
-            this.AñadirBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AñadirBo.Margin = new System.Windows.Forms.Padding(4);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
             this.AñadirBo.Size = new System.Drawing.Size(231, 37);
@@ -149,7 +150,7 @@
             this.altoButton1.Inactive1 = System.Drawing.Color.White;
             this.altoButton1.Inactive2 = System.Drawing.Color.White;
             this.altoButton1.Location = new System.Drawing.Point(31, 523);
-            this.altoButton1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.altoButton1.Margin = new System.Windows.Forms.Padding(4);
             this.altoButton1.Name = "altoButton1";
             this.altoButton1.Radius = 5;
             this.altoButton1.Size = new System.Drawing.Size(241, 37);
@@ -172,12 +173,27 @@
             this.FechaLab.TabIndex = 11;
             this.FechaLab.Text = "Fecha";
             // 
+            // UserLabel
+            // 
+            this.UserLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.UserLabel.AutoSize = true;
+            this.UserLabel.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UserLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.UserLabel.Location = new System.Drawing.Point(27, 68);
+            this.UserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UserLabel.Name = "UserLabel";
+            this.UserLabel.Size = new System.Drawing.Size(65, 23);
+            this.UserLabel.TabIndex = 16;
+            this.UserLabel.Text = "USER";
+            this.UserLabel.Visible = false;
+            // 
             // Compras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1093, 575);
+            this.Controls.Add(this.UserLabel);
             this.Controls.Add(this.altoButton1);
             this.Controls.Add(this.AñadirBo);
             this.Controls.Add(this.ActualizarBo);
@@ -187,7 +203,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Compras";
             this.Text = "Compras";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -205,5 +221,6 @@
         private AltoControls.AltoButton AñadirBo;
         private AltoControls.AltoButton altoButton1;
         private System.Windows.Forms.Label FechaLab;
+        public System.Windows.Forms.Label UserLabel;
     }
 }

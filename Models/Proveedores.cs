@@ -14,7 +14,6 @@ namespace Ferreto.Models
         public string Empresa { get; set; }
         public int Idpersona { get;  set; }
         public bool Estado { get; set; }
-
         public virtual Persona IdpersonaNavigation { get; set; }
         public virtual ICollection<Compra> Compra { get; set; }
     }

@@ -30,8 +30,8 @@ namespace Ferreto.Views
             InitList();
         }
 
-      
 
+    
         private void InitList()
         {
             ListViewItem item = null;
@@ -52,7 +52,7 @@ namespace Ferreto.Views
                         item.SubItems.Add(I.Existencia.ToString());
                         item.SubItems.Add(I.IdproductoNavigation.IdpresentacionNavigation.Peso);
                         item.SubItems.Add(I.IdproductoNavigation.IdpresentacionNavigation.Tamaño);
-                        item.SubItems.Add(I.IdproductoNavigation.Fproduccion.ToString());
+                        item.SubItems.Add(I.IdproductoNavigation.Fecharegistro.ToString());
                         item.SubItems.Add(I.IdproductoNavigation.Fvencimiento.ToString());
                         if (I.IdproductoNavigation.Estado)
                         {
@@ -77,7 +77,7 @@ namespace Ferreto.Views
                     _productohelper.ChangeStatus(id, accion);
                     break;
                 case 1:
-                    _productohelper.ChangeStatus(id,accion);
+                    _productohelper.ChangeStatus(id, accion);
                     break;
             }
         }
@@ -102,8 +102,8 @@ namespace Ferreto.Views
         }
 
         private void CambiarEstadoBo_Click(object sender, EventArgs e)
-        {  
-            ChangedProduct();            
+        {
+            ChangedProduct();
         }
     }
 }

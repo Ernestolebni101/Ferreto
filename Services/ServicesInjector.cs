@@ -51,7 +51,13 @@ namespace Ferreto.Services
             }
             _context.SaveChanges();
         }
-
+        public IEnumerable<Producto> ConsultProduct()
+        {
+            var Listproducts = _context.Producto.Include(z => z.IdcategoriaNavigation)
+                .Include(x => x.IdmarcaNavigation)
+                .Include(x => x.IdpresentacionNavigation);
+            return Listproducts;
+        }
         public IEnumerable<Inventario> ConsultInventory()
         {
             var warehouse = _context.Inventario.Include(o => o.IdproductoNavigation)
@@ -74,7 +80,7 @@ namespace Ferreto.Services
                 .Include(x => x.IdproductoNavigation)
                 .ThenInclude(z => z.IdmarcaNavigation)
                 .Include(x => x.IdproductoNavigation)
-                .ThenInclude(k=>k.IdcategoriaNavigation)
+                .ThenInclude(k => k.IdcategoriaNavigation)
                 .Include(f => f.IdfacturaNavigation)
                 .ToList();
             return detail;

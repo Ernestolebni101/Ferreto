@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Ferreto.Common;
+using System;
 using System.Collections.Generic;
 
 namespace Ferreto.Models
@@ -11,9 +12,8 @@ namespace Ferreto.Models
             Detallefactura = new HashSet<Detallefactura>();
             Inventario = new HashSet<Inventario>();
             Movinventario = new HashSet<Movinventario>();
-            Precioproducto = new HashSet<Precioproducto>();
+            Precioproducto = new HashSet<Precioproducto>(); 
         }
-
         public int Idproducto { get; set; }
         public string Codproducto { get; set; }
         public string Nombre { get; set; }
@@ -21,7 +21,7 @@ namespace Ferreto.Models
         public string Descripcion { get; set; }
         public int Idcategoria { get; set; }
         public int Idpresentacion { get; set; }
-        public DateTime Fproduccion { get; set; }
+        public DateTime Fecharegistro { get; set; }
         public DateTime Fvencimiento { get; set; }
         public string Ubicacion { get; set; }
         public int Idmarca { get; set; }
@@ -34,5 +34,7 @@ namespace Ferreto.Models
         public virtual ICollection<Inventario> Inventario { get; set; }
         public virtual ICollection<Movinventario> Movinventario { get; set; }
         public virtual ICollection<Precioproducto> Precioproducto { get; set; }
+
+        public List<Compra> Compras { get; set; }
     }
 }
