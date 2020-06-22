@@ -49,6 +49,12 @@
             this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
             this.nuevorolCB = new System.Windows.Forms.ComboBox();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.Nombrecheck = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.ContraseñaCheck = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.Rolcheck = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.EstadoCheck = new Bunifu.Framework.UI.BunifuCheckbox();
+            this.Estadolabel = new System.Windows.Forms.Label();
+            this.timerselect = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.PanelEditarCuenta.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -112,6 +118,7 @@
             this.UsuarioCB.Name = "UsuarioCB";
             this.UsuarioCB.Size = new System.Drawing.Size(205, 29);
             this.UsuarioCB.TabIndex = 41;
+            this.UsuarioCB.SelectedIndexChanged += new System.EventHandler(this.UsuarioCB_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -178,13 +185,14 @@
             this.statusSlide.BorderColor = System.Drawing.Color.LightGray;
             this.statusSlide.Cursor = System.Windows.Forms.Cursors.Hand;
             this.statusSlide.IsOn = true;
-            this.statusSlide.Location = new System.Drawing.Point(164, 297);
+            this.statusSlide.Location = new System.Drawing.Point(38, 342);
             this.statusSlide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.statusSlide.Name = "statusSlide";
             this.statusSlide.Size = new System.Drawing.Size(82, 43);
             this.statusSlide.TabIndex = 49;
             this.statusSlide.Text = "slideButton1";
             this.statusSlide.TextEnabled = true;
+            this.statusSlide.Click += new System.EventHandler(this.statusSlide_Click);
             // 
             // label4
             // 
@@ -268,12 +276,88 @@
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
             // 
+            // Nombrecheck
+            // 
+            this.Nombrecheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.Nombrecheck.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.Nombrecheck.Checked = false;
+            this.Nombrecheck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.Nombrecheck.ForeColor = System.Drawing.Color.White;
+            this.Nombrecheck.Location = new System.Drawing.Point(388, 164);
+            this.Nombrecheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Nombrecheck.Name = "Nombrecheck";
+            this.Nombrecheck.Size = new System.Drawing.Size(20, 20);
+            this.Nombrecheck.TabIndex = 54;
+            this.Nombrecheck.Click += new System.EventHandler(this.Nombrecheck_Click);
+            // 
+            // ContraseñaCheck
+            // 
+            this.ContraseñaCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ContraseñaCheck.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.ContraseñaCheck.Checked = false;
+            this.ContraseñaCheck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.ContraseñaCheck.ForeColor = System.Drawing.Color.White;
+            this.ContraseñaCheck.Location = new System.Drawing.Point(388, 262);
+            this.ContraseñaCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ContraseñaCheck.Name = "ContraseñaCheck";
+            this.ContraseñaCheck.Size = new System.Drawing.Size(20, 20);
+            this.ContraseñaCheck.TabIndex = 54;
+            this.ContraseñaCheck.Click += new System.EventHandler(this.ContraseñaCheck_Click);
+            // 
+            // Rolcheck
+            // 
+            this.Rolcheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.Rolcheck.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.Rolcheck.Checked = false;
+            this.Rolcheck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.Rolcheck.ForeColor = System.Drawing.Color.White;
+            this.Rolcheck.Location = new System.Drawing.Point(388, 369);
+            this.Rolcheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Rolcheck.Name = "Rolcheck";
+            this.Rolcheck.Size = new System.Drawing.Size(20, 20);
+            this.Rolcheck.TabIndex = 54;
+            this.Rolcheck.Click += new System.EventHandler(this.Rolcheck_Click);
+            // 
+            // EstadoCheck
+            // 
+            this.EstadoCheck.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.EstadoCheck.ChechedOffColor = System.Drawing.Color.FromArgb(((int)(((byte)(132)))), ((int)(((byte)(135)))), ((int)(((byte)(140)))));
+            this.EstadoCheck.Checked = false;
+            this.EstadoCheck.CheckedOnColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(205)))), ((int)(((byte)(117)))));
+            this.EstadoCheck.ForeColor = System.Drawing.Color.White;
+            this.EstadoCheck.Location = new System.Drawing.Point(17, 306);
+            this.EstadoCheck.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.EstadoCheck.Name = "EstadoCheck";
+            this.EstadoCheck.Size = new System.Drawing.Size(20, 20);
+            this.EstadoCheck.TabIndex = 54;
+            // 
+            // Estadolabel
+            // 
+            this.Estadolabel.AutoSize = true;
+            this.Estadolabel.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Estadolabel.ForeColor = System.Drawing.Color.White;
+            this.Estadolabel.Location = new System.Drawing.Point(137, 303);
+            this.Estadolabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.Estadolabel.Name = "Estadolabel";
+            this.Estadolabel.Size = new System.Drawing.Size(27, 23);
+            this.Estadolabel.TabIndex = 45;
+            this.Estadolabel.Text = "O";
+ 
+            // 
+            // timerselect
+            // 
+            this.timerselect.Tick += new System.EventHandler(this.timerselect_Tick);
+            // 
             // EditarCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(780, 503);
+            this.Controls.Add(this.EstadoCheck);
+            this.Controls.Add(this.Rolcheck);
+            this.Controls.Add(this.ContraseñaCheck);
+            this.Controls.Add(this.Nombrecheck);
             this.Controls.Add(this.PanelEditarCuenta);
             this.Controls.Add(this.ActualizarBo);
             this.Controls.Add(this.nuevorolCB);
@@ -281,6 +365,7 @@
             this.Controls.Add(this.statusSlide);
             this.Controls.Add(this.contraselaNuevatxt);
             this.Controls.Add(this.nombreUsuarioTxt);
+            this.Controls.Add(this.Estadolabel);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -325,5 +410,11 @@
         private System.Windows.Forms.ErrorProvider errorProviderLetras;
         private System.Windows.Forms.ComboBox nuevorolCB;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private Bunifu.Framework.UI.BunifuCheckbox EstadoCheck;
+        private Bunifu.Framework.UI.BunifuCheckbox Rolcheck;
+        private Bunifu.Framework.UI.BunifuCheckbox ContraseñaCheck;
+        private Bunifu.Framework.UI.BunifuCheckbox Nombrecheck;
+        private System.Windows.Forms.Label Estadolabel;
+        private System.Windows.Forms.Timer timerselect;
     }
 }

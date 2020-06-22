@@ -26,6 +26,7 @@ namespace Ferreto.Views
         public EditarCuenta()
         {
             InitializeComponent();
+            timerselect.Start();
             _context = Initializecontext.initcontext();
             _usuariohelper = new ServicesInjector<Usuario>(_context);
             _rolhelper = new ServicesInjector<Rol>(_context);
@@ -45,17 +46,20 @@ namespace Ferreto.Views
             nuevorolCB.DisplayMember = "Nombrerol";
         }
 
-        private (int id_user, int id_rol) Getids()
+        private (int id_user, int id_rol, bool estado) Getids()
         {
             var usuarios = _usuariohelper.GetInfo().usuarios;
             var roles = _rolhelper.GetInfo().roles;
             int idusuario = 0;
             int idrol = 0;
+            bool estado = false;
             foreach (var item in usuarios)
             {
-                if (item.IdpersonaNavigation.Nombre.Equals(UsuarioCB.Text))
+
+                if (item.Login.Equals(UsuarioCB.Text))
                 {
                     idusuario = item.Idusuario;
+                    estado = item.Estado;
                 }
             }
             foreach (var item in roles)
@@ -65,13 +69,15 @@ namespace Ferreto.Views
                     idrol = item.Idrol;
                 }
             }
-            return (idusuario, idrol);
+            return (idusuario, idrol, estado);
         }
         private Usuario UpdateUser()
         {
             _user = new Usuario();
-            _user.IdpersonaNavigation.Nombre = nombreUsuarioTxt.Text;
-            _user.Estado = false ? !statusSlide.IsOn : _user.Estado = true;
+            _user.Login = nombreUsuarioTxt.Text;
+            _user.Password = this.contraselaNuevatxt.Text;
+            _user.Idusuario = Getids().id_user;
+            _user.Estado = true ? statusSlide.IsOn : _user.Estado = false;
             return _user;
         }
         private Rolusuario UpdateRolusuario()
@@ -82,19 +88,139 @@ namespace Ferreto.Views
             return _rolusuario;
         }
 
+        private void UpdateTables()
+        {
+            if (EstadoCheck.Checked == true)
+                _usuariohelper.ChangesProperty(1, UpdateUser());
+          
+            else if (Nombrecheck.Checked==true)
+                _usuariohelper.ChangesProperty(2, UpdateUser());
+
+            else if(ContraseñaCheck.Checked==true)
+                _usuariohelper.ChangesProperty(3, UpdateUser());
+         
+            else if(Rolcheck.Checked==true)
+                _rolusuariohelper.ChangesProperty(4,null,UpdateRolusuario());
+        }
+
         #endregion
-        #region
+
+        #region Events
         private void Cerrar(object sender, EventArgs e)
         {
             this.Dispose();
 
         }
 
-
-
         private void Actualizar(object sender, EventArgs e)
         {
+            UpdateTables();
+        }
+        private void Contraseña()
+        {
+            if (ContraseñaCheck.Checked == true)
+            {
+                contraselaNuevatxt.Enabled = true;
+                ActualizarBo.Enabled = true;
 
+                statusSlide.Enabled = false;
+                nombreUsuarioTxt.Enabled = false;
+                nuevorolCB.Enabled = false;
+
+                EstadoCheck.Checked = false;
+                Nombrecheck.Checked = false;
+                Rolcheck.Checked = false;
+            }
+            else
+                ActualizarBo.Enabled = false;
+        }
+        private void NombreUser()
+        {
+            if (Nombrecheck.Checked)
+            {
+                nombreUsuarioTxt.Enabled = true;
+                ActualizarBo.Enabled = true;
+
+                statusSlide.Enabled = false;
+                contraselaNuevatxt.Enabled = false;
+                nuevorolCB.Enabled = false;
+
+                EstadoCheck.Checked = false;
+                ContraseñaCheck.Checked = false;
+                Rolcheck.Checked = false;
+            }
+            else
+                ActualizarBo.Enabled = false;
+        }
+
+
+        private void Estado()
+        {
+            if (EstadoCheck.Checked)
+            {
+                statusSlide.Enabled = true;
+                ActualizarBo.Enabled = true;
+
+                nombreUsuarioTxt.Enabled = false;
+                contraselaNuevatxt.Enabled = false;
+                nuevorolCB.Enabled = false;
+
+                Nombrecheck.Checked = false;
+                ContraseñaCheck.Checked = false;
+                Rolcheck.Checked = false;
+            }
+            else
+                ActualizarBo.Enabled = false;
+        }
+
+        private void Rol()
+        {
+            if (Rolcheck.Checked)
+            {
+                nuevorolCB.Enabled = true;
+                ActualizarBo.Enabled = true;
+
+                nombreUsuarioTxt.Enabled = false;
+                contraselaNuevatxt.Enabled = false;
+                statusSlide.Enabled = false;
+
+                Nombrecheck.Checked = false;
+                Nombrecheck.Checked = false;
+                EstadoCheck.Checked = false;
+            }
+            else
+                ActualizarBo.Enabled = false;
+            
+        }
+
+        private void statusSlide_Click(object sender, EventArgs e)
+        {
+            Estado();
+        }
+
+        private void timerselect_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsuarioCB_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Estadolabel.Text = (Getids().estado) ? "Activo" : "Inactivo";
+        }
+
+        private void Nombrecheck_Click(object sender, EventArgs e)
+        {
+            NombreUser();
+        }
+
+        private void ContraseñaCheck_Click(object sender, EventArgs e)
+        {
+            Contraseña();
+        }
+
+        private void Rolcheck_Click(object sender, EventArgs e)
+        {
+            Rol();
         }
         #endregion
     }

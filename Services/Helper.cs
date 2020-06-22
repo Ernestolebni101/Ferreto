@@ -135,6 +135,7 @@ namespace Ferreto.Services
                     break;
                 case 1:
                     originalEntry.Existencia += cantidad;
+                    originalEntry.Unidademonetarias = originalEntry.Existencia * Decimal.Parse(d);
                     break;
             }
             _context.Update(originalEntry);

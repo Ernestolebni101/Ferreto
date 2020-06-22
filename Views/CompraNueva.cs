@@ -60,8 +60,8 @@ namespace Ferreto.Views
             this.MedidaCB.ValueMember = "Idpresentacion";
             this.MedidaCB.DisplayMember = "Medida";
             AutoCompleteStringCollection autoComplete = new AutoCompleteStringCollection();
-            var CollectionProducts = _proveedorhelper.GetProveedores();
-            foreach (var iter in CollectionProducts)
+            var Collection = _proveedorhelper.GetProveedores();
+            foreach (var iter in Collection)
             {
                 autoComplete.Add($"{iter.IdpersonaNavigation.Nombre} - {iter.Empresa}");
             }
@@ -100,6 +100,8 @@ namespace Ferreto.Views
             _compra.Costounitario = double.Parse(this.CostoUnitarioTxt.Text);
             _compra.Idusuario = Getids().idusuario;
             _compra.Codproveedor = idprovider();
+            _compra.Fechacompra = DateTime.Now;
+            _compra.Totalcompra = _compra.Cantidad * Decimal.Parse(_compra.Costounitario.ToString());
             _compra.Idproducto = idproducto;
             return _compra;
         }

@@ -63,7 +63,6 @@ namespace Ferreto.Views
             if (_usuariohelper.validatecredentials(ReturnUser()))
             {
                 MainContainer obj = new MainContainer();
-
                 ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
                 if (RolUserInfo(UserTxt.Text).Equals("Admin"))
@@ -96,7 +95,6 @@ namespace Ferreto.Views
                     obj.AdministrarBo.Visible = false;
                     obj.ComprasBo.Visible = false;
                 }
-                //this.Hide();
                 obj.UserLab.Text = ReturnUser().Login;
                 obj.CargoLab.Text = RolUserInfo(UserTxt.Text);
                 obj2.ShowDialog();

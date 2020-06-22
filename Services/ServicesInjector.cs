@@ -51,6 +51,56 @@ namespace Ferreto.Services
             }
             _context.SaveChanges();
         }
+
+        public void AlterInventario(Inventario I)
+        {
+            var originalEntry = _context.Inventario.Single(y => y.Idproducto == I.Idproducto);
+            originalEntry.Existencia = I.Existencia;
+            originalEntry.Precio = I.Precio;
+           originalEntry.Unidademonetarias = I.Unidademonetarias;   
+            _context.Update(originalEntry);
+        }
+
+        public void AlterPrice(Precioproducto p)
+        {
+            var obj = _context.Precioproducto.Single(z => z.Idproducto == p.Idproducto);
+            obj.Precio = p.Precio;
+            _context.SaveChanges();
+        }
+        public void ChangesProperty(byte accion, Usuario U = null, Rolusuario Rlu = null)
+        {
+            Usuario Originaluser;
+            Rolusuario Entry;
+            if (U != null)
+            {
+                Originaluser = this.GetInfo().usuarios.Single(x => x.Idusuario.Equals(U.Idusuario));
+                switch (accion)
+                {
+                    case 1:
+
+                        Originaluser.Estado = U.Estado;
+                        break;
+                    case 2:
+
+                        Originaluser.Login = U.Login;
+                        break;
+                    case 3:
+                        Originaluser.Password = U.Password;
+                        break;
+                }
+            }
+            else if (Rlu != null)
+            {
+                Entry = this.GetInfo().rolusuarios.Single(R => R.Idusuario.Equals(Rlu.Idusuario));
+                switch (accion)
+                {
+                    case 4:
+                        Entry.Idrol = Rlu.Idrol;
+                        break;
+                }
+            }
+            _context.SaveChanges();
+        }
         public IEnumerable<Producto> ConsultProduct()
         {
             var Listproducts = _context.Producto.Include(z => z.IdcategoriaNavigation)
@@ -94,11 +144,23 @@ namespace Ferreto.Services
             return proveedoreslist;
         }
 
-        public (IEnumerable<Usuario> usuarios, IEnumerable<Rol> roles) GetInfo()
+        public Compra Byid(int idproduct)
+        {
+            var compra = _context.Compra.Single(c => c.Idproducto == idproduct);
+            return compra;
+        }
+
+        public (IEnumerable<Usuario> usuarios, IEnumerable<Rol> roles,
+            IEnumerable<Rolusuario> rolusuarios, IEnumerable<Proveedores> proveedores,IEnumerable<Compra> compras) GetInfo()
         {
             var roles = _context.Rol.ToList();
-            var usuarios = _context.Usuario.ToList();
-            return (usuarios,roles);
+            var usuarios = _context.Usuario.Include(x => x.IdpersonaNavigation).ToList();
+            var rolusuario = _context.Rolusuario.ToList();
+            var proveedores = _context.Proveedores.Include(p => p.IdpersonaNavigation).ToList();
+            var compra = _context.Compra.Include(x => x.IdproductoNavigation)
+                .ThenInclude(x => x.Precioproducto)
+                .Include(p => p.CodproveedorNavigation).ThenInclude(c=>c.IdpersonaNavigation);
+            return (usuarios, roles, rolusuario, proveedores,compra);
         }
     }
 }

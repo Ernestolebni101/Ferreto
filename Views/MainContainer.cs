@@ -119,11 +119,12 @@ namespace Ferreto.Views
             AbrirSub(new Administrar());
         }
 
+        #region PanelTop
         private void Cerrarpaneltop(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
+       
         private void Ocultar(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
@@ -142,16 +143,13 @@ namespace Ferreto.Views
             pctMaximizar.Visible = true;
             pctminizar.Visible = false;
         }
+        #endregion
 
         private async void SalirBo_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //FirstContainer login = new FirstContainer();
-            //login.Show();
-           await Task.Run(() =>
-            {
-                Application.Restart();
-            });
+            this.Hide();
+            FirstContainer login = new FirstContainer();
+            login.Show();
         }
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
