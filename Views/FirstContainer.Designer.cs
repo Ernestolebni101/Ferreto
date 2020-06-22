@@ -32,14 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FirstContainer));
             this.panelCont = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pctOcultar = new System.Windows.Forms.PictureBox();
             this.InicioBo = new AltoControls.AltoButton();
             this.RegistroBo = new AltoControls.AltoButton();
-            this.panelBotones = new System.Windows.Forms.Panel();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pctOcultar = new System.Windows.Forms.PictureBox();
+            this.panelBotones = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -71,17 +71,6 @@
             this.panel1.TabIndex = 1;
             this.panel1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mover);
             // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Ferreto.Properties.Resources.padlock_78356;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mover_d);
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -93,32 +82,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Login";
             this.label1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mover_f);
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = global::Ferreto.Properties.Resources.error;
-            this.pictureBox3.Location = new System.Drawing.Point(712, 3);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 4;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.Cerrar);
-            // 
-            // pctOcultar
-            // 
-            this.pctOcultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pctOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pctOcultar.Image = global::Ferreto.Properties.Resources.minimize__2_;
-            this.pctOcultar.Location = new System.Drawing.Point(681, 3);
-            this.pctOcultar.Name = "pctOcultar";
-            this.pctOcultar.Size = new System.Drawing.Size(25, 25);
-            this.pctOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctOcultar.TabIndex = 3;
-            this.pctOcultar.TabStop = false;
-            this.pctOcultar.Click += new System.EventHandler(this.Minimizar);
             // 
             // InicioBo
             // 
@@ -162,6 +125,48 @@
             this.RegistroBo.Transparency = false;
             this.RegistroBo.Click += new System.EventHandler(this.RegistroBo_Click);
             // 
+            // bunifuElipse1
+            // 
+            this.bunifuElipse1.ElipseRadius = 20;
+            this.bunifuElipse1.TargetControl = this;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Ferreto.Properties.Resources.padlock_78356;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(33, 34);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Mover_d);
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::Ferreto.Properties.Resources.error;
+            this.pictureBox3.Location = new System.Drawing.Point(712, 3);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 4;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.Cerrar);
+            // 
+            // pctOcultar
+            // 
+            this.pctOcultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pctOcultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pctOcultar.Image = global::Ferreto.Properties.Resources.minimize__2_;
+            this.pctOcultar.Location = new System.Drawing.Point(681, 3);
+            this.pctOcultar.Name = "pctOcultar";
+            this.pctOcultar.Size = new System.Drawing.Size(25, 25);
+            this.pctOcultar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctOcultar.TabIndex = 3;
+            this.pctOcultar.TabStop = false;
+            this.pctOcultar.Click += new System.EventHandler(this.Minimizar);
+            // 
             // panelBotones
             // 
             this.panelBotones.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
@@ -172,15 +177,11 @@
             this.panelBotones.Size = new System.Drawing.Size(377, 28);
             this.panelBotones.TabIndex = 0;
             // 
-            // bunifuElipse1
-            // 
-            this.bunifuElipse1.ElipseRadius = 20;
-            this.bunifuElipse1.TargetControl = this;
-            // 
             // FirstContainer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ClientSize = new System.Drawing.Size(740, 398);
             this.Controls.Add(this.panel1);
@@ -209,9 +210,9 @@
         private System.Windows.Forms.PictureBox pctOcultar;
         private AltoControls.AltoButton InicioBo;
         private AltoControls.AltoButton RegistroBo;
-        private System.Windows.Forms.Panel panelBotones;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label1;
-        private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        public Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.Panel panelBotones;
     }
 }

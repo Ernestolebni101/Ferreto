@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,17 +17,8 @@ namespace Ferreto.Views
         public ChargingScreen()
         {
             InitializeComponent();
-            Thread.Sleep(1000);
-            Cargar();
         }
-
-        public void Cargar()
-        {
-            MainContainer obj = new MainContainer();
-            //ChargingScreen.ActiveForm.Hide();
-            obj.Show();
-        }
-
+       
         private void ChargingScreen_Load(object sender, EventArgs e)
         {
             this.Opacity = 0;
