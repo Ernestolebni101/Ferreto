@@ -40,7 +40,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.nombreUsuarioTxt = new AltoControls.AltoTextBox();
             this.contraselaNuevatxt = new AltoControls.AltoTextBox();
-            this.slideButton1 = new AltoControls.SlideButton();
+            this.statusSlide = new AltoControls.SlideButton();
             this.label4 = new System.Windows.Forms.Label();
             this.ActualizarBo = new AltoControls.AltoButton();
             this.PanelEditarCuenta = new System.Windows.Forms.Panel();
@@ -61,9 +61,10 @@
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(0, 33);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(585, 77);
+            this.panel1.Size = new System.Drawing.Size(780, 95);
             this.panel1.TabIndex = 39;
             // 
             // label12
@@ -71,9 +72,10 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Gotham", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
-            this.label12.Location = new System.Drawing.Point(21, 23);
+            this.label12.Location = new System.Drawing.Point(28, 28);
+            this.label12.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(23, 31);
+            this.label12.Size = new System.Drawing.Size(29, 38);
             this.label12.TabIndex = 37;
             this.label12.Text = "|\r\n";
             // 
@@ -82,9 +84,10 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Gotham", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
-            this.label10.Location = new System.Drawing.Point(58, 30);
+            this.label10.Location = new System.Drawing.Point(77, 37);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(188, 24);
+            this.label10.Size = new System.Drawing.Size(245, 31);
             this.label10.TabIndex = 35;
             this.label10.Text = "Panel de Usuario";
             // 
@@ -93,9 +96,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 131);
+            this.label1.Location = new System.Drawing.Point(45, 161);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(169, 18);
+            this.label1.Size = new System.Drawing.Size(206, 23);
             this.label1.TabIndex = 40;
             this.label1.Text = "Seleccione Usuario:";
             // 
@@ -103,9 +107,10 @@
             // 
             this.UsuarioCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UsuarioCB.FormattingEnabled = true;
-            this.UsuarioCB.Location = new System.Drawing.Point(38, 181);
+            this.UsuarioCB.Location = new System.Drawing.Point(51, 223);
+            this.UsuarioCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UsuarioCB.Name = "UsuarioCB";
-            this.UsuarioCB.Size = new System.Drawing.Size(155, 25);
+            this.UsuarioCB.Size = new System.Drawing.Size(205, 29);
             this.UsuarioCB.TabIndex = 41;
             // 
             // label2
@@ -113,9 +118,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(312, 131);
+            this.label2.Location = new System.Drawing.Point(416, 161);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(232, 18);
+            this.label2.Size = new System.Drawing.Size(283, 23);
             this.label2.TabIndex = 42;
             this.label2.Text = "Nuevo Nombre de Usuario:";
             // 
@@ -124,9 +130,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(312, 213);
+            this.label3.Location = new System.Drawing.Point(416, 262);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(163, 18);
+            this.label3.Size = new System.Drawing.Size(200, 23);
             this.label3.TabIndex = 43;
             this.label3.Text = "Nueva Contraseña:";
             // 
@@ -135,9 +142,10 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(34, 246);
+            this.label5.Location = new System.Drawing.Point(45, 303);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 18);
+            this.label5.Size = new System.Drawing.Size(86, 23);
             this.label5.TabIndex = 45;
             this.label5.Text = "Estado:";
             // 
@@ -147,9 +155,10 @@
             this.nombreUsuarioTxt.Br = System.Drawing.Color.White;
             this.nombreUsuarioTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreUsuarioTxt.ForeColor = System.Drawing.Color.Black;
-            this.nombreUsuarioTxt.Location = new System.Drawing.Point(316, 176);
+            this.nombreUsuarioTxt.Location = new System.Drawing.Point(421, 217);
+            this.nombreUsuarioTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nombreUsuarioTxt.Name = "nombreUsuarioTxt";
-            this.nombreUsuarioTxt.Size = new System.Drawing.Size(204, 30);
+            this.nombreUsuarioTxt.Size = new System.Drawing.Size(272, 37);
             this.nombreUsuarioTxt.TabIndex = 46;
             // 
             // contraselaNuevatxt
@@ -158,31 +167,34 @@
             this.contraselaNuevatxt.Br = System.Drawing.Color.White;
             this.contraselaNuevatxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contraselaNuevatxt.ForeColor = System.Drawing.Color.Black;
-            this.contraselaNuevatxt.Location = new System.Drawing.Point(316, 246);
+            this.contraselaNuevatxt.Location = new System.Drawing.Point(421, 303);
+            this.contraselaNuevatxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.contraselaNuevatxt.Name = "contraselaNuevatxt";
-            this.contraselaNuevatxt.Size = new System.Drawing.Size(204, 30);
+            this.contraselaNuevatxt.Size = new System.Drawing.Size(272, 37);
             this.contraselaNuevatxt.TabIndex = 47;
             // 
-            // slideButton1
+            // statusSlide
             // 
-            this.slideButton1.BorderColor = System.Drawing.Color.LightGray;
-            this.slideButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.slideButton1.IsOn = true;
-            this.slideButton1.Location = new System.Drawing.Point(123, 241);
-            this.slideButton1.Name = "slideButton1";
-            this.slideButton1.Size = new System.Drawing.Size(60, 35);
-            this.slideButton1.TabIndex = 49;
-            this.slideButton1.Text = "slideButton1";
-            this.slideButton1.TextEnabled = true;
+            this.statusSlide.BorderColor = System.Drawing.Color.LightGray;
+            this.statusSlide.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.statusSlide.IsOn = true;
+            this.statusSlide.Location = new System.Drawing.Point(164, 297);
+            this.statusSlide.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.statusSlide.Name = "statusSlide";
+            this.statusSlide.Size = new System.Drawing.Size(82, 43);
+            this.statusSlide.TabIndex = 49;
+            this.statusSlide.Text = "slideButton1";
+            this.statusSlide.TextEnabled = true;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(312, 300);
+            this.label4.Location = new System.Drawing.Point(416, 369);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(100, 18);
+            this.label4.Size = new System.Drawing.Size(120, 23);
             this.label4.TabIndex = 50;
             this.label4.Text = "Nuevo Rol:";
             // 
@@ -197,10 +209,11 @@
             this.ActualizarBo.ForeColor = System.Drawing.Color.White;
             this.ActualizarBo.Inactive1 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ActualizarBo.Inactive2 = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
-            this.ActualizarBo.Location = new System.Drawing.Point(38, 336);
+            this.ActualizarBo.Location = new System.Drawing.Point(51, 414);
+            this.ActualizarBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
-            this.ActualizarBo.Size = new System.Drawing.Size(165, 35);
+            this.ActualizarBo.Size = new System.Drawing.Size(220, 43);
             this.ActualizarBo.Stroke = false;
             this.ActualizarBo.StrokeColor = System.Drawing.Color.Gray;
             this.ActualizarBo.TabIndex = 52;
@@ -213,16 +226,18 @@
             this.PanelEditarCuenta.Controls.Add(this.pictureBox1);
             this.PanelEditarCuenta.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelEditarCuenta.Location = new System.Drawing.Point(0, 0);
+            this.PanelEditarCuenta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.PanelEditarCuenta.Name = "PanelEditarCuenta";
-            this.PanelEditarCuenta.Size = new System.Drawing.Size(585, 32);
+            this.PanelEditarCuenta.Size = new System.Drawing.Size(780, 39);
             this.PanelEditarCuenta.TabIndex = 53;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Ferreto.Properties.Resources.error;
-            this.pictureBox1.Location = new System.Drawing.Point(553, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(737, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(29, 32);
+            this.pictureBox1.Size = new System.Drawing.Size(39, 39);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 38;
             this.pictureBox1.TabStop = false;
@@ -242,9 +257,10 @@
             // 
             this.nuevorolCB.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nuevorolCB.FormattingEnabled = true;
-            this.nuevorolCB.Location = new System.Drawing.Point(316, 336);
+            this.nuevorolCB.Location = new System.Drawing.Point(421, 414);
+            this.nuevorolCB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.nuevorolCB.Name = "nuevorolCB";
-            this.nuevorolCB.Size = new System.Drawing.Size(204, 25);
+            this.nuevorolCB.Size = new System.Drawing.Size(271, 29);
             this.nuevorolCB.TabIndex = 51;
             // 
             // bunifuElipse1
@@ -254,15 +270,15 @@
             // 
             // EditarCuenta
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
-            this.ClientSize = new System.Drawing.Size(585, 409);
+            this.ClientSize = new System.Drawing.Size(780, 503);
             this.Controls.Add(this.PanelEditarCuenta);
             this.Controls.Add(this.ActualizarBo);
             this.Controls.Add(this.nuevorolCB);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.slideButton1);
+            this.Controls.Add(this.statusSlide);
             this.Controls.Add(this.contraselaNuevatxt);
             this.Controls.Add(this.nombreUsuarioTxt);
             this.Controls.Add(this.label5);
@@ -273,6 +289,7 @@
             this.Controls.Add(this.panel1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "EditarCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarCuenta";
@@ -299,7 +316,7 @@
         private System.Windows.Forms.Label label5;
         private AltoControls.AltoTextBox nombreUsuarioTxt;
         private AltoControls.AltoTextBox contraselaNuevatxt;
-        private AltoControls.SlideButton slideButton1;
+        private AltoControls.SlideButton statusSlide;
         private System.Windows.Forms.Label label4;
         private AltoControls.AltoButton ActualizarBo;
         private System.Windows.Forms.Panel PanelEditarCuenta;

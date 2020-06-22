@@ -23,6 +23,7 @@ namespace Ferreto.Views
         public Catalogo()
         {
             InitializeComponent();
+            timer1.Start();
             _context = Initializecontext.initcontext();
             _inventariohelper = new ServicesInjector<Inventario>(_context);
             _precioproductohelper = new ServicesInjector<Precioproducto>(_context);
@@ -104,6 +105,11 @@ namespace Ferreto.Views
         private void CambiarEstadoBo_Click(object sender, EventArgs e)
         {
             ChangedProduct();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FechaLab.Text = DateTime.Now.ToString();
         }
     }
 }

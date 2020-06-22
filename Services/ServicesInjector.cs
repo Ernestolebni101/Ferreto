@@ -93,5 +93,12 @@ namespace Ferreto.Services
                 .ToList();
             return proveedoreslist;
         }
+
+        public (IEnumerable<Usuario> usuarios, IEnumerable<Rol> roles) GetInfo()
+        {
+            var roles = _context.Rol.ToList();
+            var usuarios = _context.Usuario.ToList();
+            return (usuarios,roles);
+        }
     }
 }

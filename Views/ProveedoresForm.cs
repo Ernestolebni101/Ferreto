@@ -21,6 +21,7 @@ namespace Ferreto.Views
         public ProveedoresForm()
         {
             InitializeComponent();
+            timer1.Start();
             _context = Initializecontext.initcontext();
             _proveedoreshelper = new ServicesInjector<Persona>(_context);
             InitLv();
@@ -96,6 +97,22 @@ namespace Ferreto.Views
             ChangeProvider();
         }
 
-        
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.FechaLab.Text = DateTime.Now.ToString();
+        }
+        private void UpdateBtn()
+        {
+            if (!CambiarEstadoSlide.IsOn)
+            {
+                CambiarEstadoBo.Text = "Desactivar";
+            }
+            else
+                CambiarEstadoBo.Text = "Activar";
+        }
+        private void Actualizar(object sender, EventArgs e)
+        {
+            UpdateBtn();
+        }
     }
 }

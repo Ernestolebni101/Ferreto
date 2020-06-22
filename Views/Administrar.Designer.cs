@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.FechaLab = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -48,11 +49,11 @@
             this.FCNuevoTxt = new AltoControls.AltoTextBox();
             this.ActualizarBo = new AltoControls.AltoButton();
             this.label14 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // FechaLab
             // 
-            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -316,6 +317,10 @@
             this.label14.TabIndex = 37;
             this.label14.Text = "-Rol";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Administrar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -371,5 +376,6 @@
         private AltoControls.AltoTextBox FCNuevoTxt;
         private AltoControls.AltoButton ActualizarBo;
         private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Timer timer1;
     }
 }

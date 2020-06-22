@@ -51,13 +51,13 @@
             this.FechaRegistro = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.FechaVencimiento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.ProductoVeijoCont.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaLab
             // 
-            this.FechaLab.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
@@ -239,6 +239,10 @@
             // 
             this.columnHeader1.Text = "Estado";
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +285,6 @@
         private System.Windows.Forms.ColumnHeader Peso;
         private System.Windows.Forms.ColumnHeader Tamaño;
         private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
