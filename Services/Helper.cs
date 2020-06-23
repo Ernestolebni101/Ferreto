@@ -17,6 +17,37 @@ namespace Ferreto.Services
             _context = context;
         }
 
+        public void Editaritem(byte accion, int idmarca = 0, int idrol = 0)
+        {
+            if (idmarca != 0)
+            {
+                var marca = _context.Marca.Single(x => x.Idmarca == idmarca);
+                switch (accion)
+                {
+                    case 1:
+                        marca.Estado = true;
+                        break;
+                    case 2:
+                        marca.Estado = false;
+                        break;
+                }
+            }
+            else if (idrol != 0)
+            {
+                var rol = _context.Rol.Single(x => x.Idrol.Equals(idrol));
+                switch (accion)
+                {
+                    case 3:
+                        rol.Estado = true;
+                        break;
+                    case 4:
+                        rol.Estado = false;
+                        break;
+                }
+            }
+            _context.SaveChanges();
+        }
+
         public T add(T t)
         {
             _context.Set<T>().Add(t);

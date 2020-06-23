@@ -43,6 +43,7 @@ namespace Ferreto.Views
         private Detallefactura _detallefactura;
         private List<Detallefactura> SortedList = new List<Detallefactura>();
         private Factura _factura;
+        string nombre;
         private List<Detallefactura> UpdateList(int accion = 0, int Q = 0)
         {
             switch (accion)
@@ -84,6 +85,7 @@ namespace Ferreto.Views
             }
             return id;
         }
+       
         /// <summary>
         /// Me valida si la cantidad demandada es menor o igual a la que se encuentra disponible en iventario
         /// </summary>
@@ -198,6 +200,7 @@ namespace Ferreto.Views
         }
         private Factura FacturaInsert()
         {
+            nombre= Utils.ReturName(GetId()); 
             string fcv = string.Empty;
             _factura = new Factura();
             _factura.Idusuario = GetId();
@@ -206,7 +209,7 @@ namespace Ferreto.Views
             _factura.Totalmasiva = decimal.Parse(this.NetoLab.Text);
             _factura.Nserie = fcv.ToString().PadLeft(1, '0') + ReturnIdF().ToString();
             _factura.Fechafacturacion = DateTime.Now;
-            _factura.Nombreusuario = this.UserLab.Text;
+            _factura.Nombreusuario = nombre;
             _facturahelper.add(_factura);
             return _factura;
         }
@@ -329,11 +332,12 @@ namespace Ferreto.Views
 
         private void ImprimirBo_Click(object sender, EventArgs e)
         {
+            nombre= Utils.ReturName(GetId());
             if (ProductosLV.Items.Count != 0)
             {
                 FacturaInsert();
                 _detallefacturahelper.AddDetails(UpdateList(FacturaInsert().Idfactura));
-                FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto);
+                FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto,nombre);
                 obj.ShowDialog();
             }
             else

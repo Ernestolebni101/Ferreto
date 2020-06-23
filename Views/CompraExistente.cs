@@ -65,31 +65,33 @@ namespace Ferreto.Views
                 {
                     idproveedor = item.Idproveedor;
                     nombrep = item.IdpersonaNavigation.Nombre;
+                    break;
                 }
             }
             foreach (var item in Icollection.usuarios)
             {
-                if (item.IdpersonaNavigation.Nombre.Equals(UserLabel.Text))
+                if (item.Login.Equals(UserLabel.Text))
                 {
                     iduser = item.Idusuario;
                     nombreu = item.IdpersonaNavigation.Nombre;
+                    break;
                 }
             }
             return (idproducto,idproveedor,iduser,nombrep,nombreu);
         }
 
-        private Compra UpdateCompra()
+        private Compra InsertToCompras()
         {
-            double costoantiguo = _compraservices.Byid(GetId().idproducto).Costounitario;
             _compra = new Compra();
             _compra.Cantidad = int.Parse(CantidadTxt.Text);
+            _compra.Idproducto = GetId().idproducto;
             _compra.Fechacompra = DateTime.Now;
             _compra.Idusuario = GetId().idusuario;
             _compra.Nombreusuario = GetId().nombreusuario;
             _compra.Codproveedor = GetId().idprovider;
             _compra.Nombreproveedor = GetId().nombreproveedor;
-            double promedio = (costoantiguo + double.Parse(CostoUnitarioTxt.Text)) / 2;
-            _compra.Costounitario = promedio;
+            _compra.Costounitario = double.Parse(CostoUnitarioTxt.Text);
+            _compra.Totalcompra = _compra.Cantidad * Decimal.Parse(_compra.Costounitario.ToString());
             return _compra;
         }
 
@@ -101,20 +103,21 @@ namespace Ferreto.Views
             return _precio;
         }
 
-        private Inventario AlterInventario(int existencia, double Costo)
+        private Inventario AlterInventario(int existencia)
         {
+            var variable = _inventarioservices.ConsultInventory().Single(x => x.Idproducto.Equals(GetId().idproducto));
+            double costoantiguo = variable.Precio;
             _inventario = new Inventario();
             _inventario.Existencia = existencia;
             _inventario.Idproducto = GetId().idproducto;
-            _inventario.Precio = Costo;
-            var Monetario = Decimal.Parse(_inventario.Precio.ToString()) * _inventario.Existencia;
-            _inventario.Unidademonetarias = Monetario;
+          double  promedio = (costoantiguo + double.Parse(CostoUnitarioTxt.Text)) / 2;
+            _inventario.Precio = promedio;     
             return _inventario;
         }
         private void UpdateChanges()
         {
-            var compra = _comprahelper.add(UpdateCompra());
-             _inventarioservices.AlterInventario(AlterInventario(compra.Cantidad,compra.Costounitario));
+            var compra = _comprahelper.add(InsertToCompras());
+             _inventarioservices.AlterInventario(AlterInventario(compra.Cantidad));
             _precioservices.AlterPrice(AlterPrice());
         }
         private void Init()

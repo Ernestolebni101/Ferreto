@@ -23,22 +23,24 @@ namespace Ferreto.Views
         static string c = string.Empty;
         static string o = string.Empty;
         string signo = c.PadLeft(1, 'C')+o.PadRight(1, '$');
-        public FPrintFactura(ListView listView, double _total, double _Iva, double _neto)
+        public FPrintFactura(ListView listView, double _total, double _Iva, double _neto,string nombre)
         {
             InitializeComponent();
             producList = listView;
             this.total = _total;
             this.iva = _Iva;
             this.neto = _neto;
+            this.nombrelabel.Text = nombre;
             AddDetailsF(1);
         }
-        public FPrintFactura(ListView listView, decimal _total, double _Iva, decimal _neto)
+        public FPrintFactura(ListView listView, decimal _total, double _Iva, decimal _neto,string nombre)
         {
             InitializeComponent();
             producList = listView;
             this._total = _total;
             this._iva = _Iva;
             this._neto = _neto;
+            this.nombrelabel.Text = nombre;
             AddDetailsF(0);
         }
 

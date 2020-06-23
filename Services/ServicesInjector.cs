@@ -21,6 +21,7 @@ namespace Ferreto.Services
         {
             _context = context;
         }
+ 
 
         public void ChangeStatus(int id, byte accion)
         {
@@ -55,9 +56,9 @@ namespace Ferreto.Services
         public void AlterInventario(Inventario I)
         {
             var originalEntry = _context.Inventario.Single(y => y.Idproducto == I.Idproducto);
-            originalEntry.Existencia = I.Existencia;
+            originalEntry.Existencia += I.Existencia;
             originalEntry.Precio = I.Precio;
-           originalEntry.Unidademonetarias = I.Unidademonetarias;   
+            originalEntry.Unidademonetarias = originalEntry.Existencia * Decimal.Parse(originalEntry.Precio.ToString());
             _context.Update(originalEntry);
         }
 
@@ -65,12 +66,14 @@ namespace Ferreto.Services
         {
             var obj = _context.Precioproducto.Single(z => z.Idproducto == p.Idproducto);
             obj.Precio = p.Precio;
+            var noduplicate =
             _context.SaveChanges();
         }
         public void ChangesProperty(byte accion, Usuario U = null, Rolusuario Rlu = null)
         {
             Usuario Originaluser;
-            Rolusuario Entry;
+            //var Entry = _context.Rolusuario.Where(x => x.Idrol.Equals(Rlu.Idrol) || Rlu.Idusuario.Equals(Rlu.Idusuario)).ToList();
+
             if (U != null)
             {
                 Originaluser = this.GetInfo().usuarios.Single(x => x.Idusuario.Equals(U.Idusuario));
@@ -91,12 +94,15 @@ namespace Ferreto.Services
             }
             else if (Rlu != null)
             {
-                Entry = this.GetInfo().rolusuarios.Single(R => R.Idusuario.Equals(Rlu.Idusuario));
-                switch (accion)
+                bool exist = _context.Rolusuario.Where(x => x.Idusuario.Equals(Rlu.Idusuario)).Any(r => r.Idrol.Equals(Rlu.Idrol));
+                if (!exist)
                 {
-                    case 4:
-                        Entry.Idrol = Rlu.Idrol;
-                        break;
+                    switch (accion)
+                    {
+                        case 4:
+                            _context.Rolusuario.Add(Rlu);
+                            break;
+                    }
                 }
             }
             _context.SaveChanges();
@@ -144,14 +150,10 @@ namespace Ferreto.Services
             return proveedoreslist;
         }
 
-        public Compra Byid(int idproduct)
-        {
-            var compra = _context.Compra.Single(c => c.Idproducto == idproduct);
-            return compra;
-        }
+
 
         public (IEnumerable<Usuario> usuarios, IEnumerable<Rol> roles,
-            IEnumerable<Rolusuario> rolusuarios, IEnumerable<Proveedores> proveedores,IEnumerable<Compra> compras) GetInfo()
+            IEnumerable<Rolusuario> rolusuarios, IEnumerable<Proveedores> proveedores, IEnumerable<Compra> compras) GetInfo()
         {
             var roles = _context.Rol.ToList();
             var usuarios = _context.Usuario.Include(x => x.IdpersonaNavigation).ToList();
@@ -159,8 +161,8 @@ namespace Ferreto.Services
             var proveedores = _context.Proveedores.Include(p => p.IdpersonaNavigation).ToList();
             var compra = _context.Compra.Include(x => x.IdproductoNavigation)
                 .ThenInclude(x => x.Precioproducto)
-                .Include(p => p.CodproveedorNavigation).ThenInclude(c=>c.IdpersonaNavigation);
-            return (usuarios, roles, rolusuario, proveedores,compra);
+                .Include(p => p.CodproveedorNavigation).ThenInclude(c => c.IdpersonaNavigation);
+            return (usuarios, roles, rolusuario, proveedores, compra);
         }
     }
 }

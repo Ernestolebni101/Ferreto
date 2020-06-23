@@ -254,6 +254,8 @@ namespace Ferreto.Models
                     .HasMaxLength(200)
                     .IsUnicode(false);
 
+                entity.Property(e => e.Estado).HasColumnName("estado");
+
                 entity.Property(e => e.Nombre)
                     .IsRequired()
                     .HasColumnName("nombre")

@@ -38,7 +38,7 @@ namespace Ferreto.Views
             ListViewItem item = null;
             var t_Inventario = _inventariohelper.ConsultInventory();
             var t_precioproducto = _precioproductohelper.ConsultPrice();
-            foreach (var P in t_precioproducto)
+            foreach (var P in t_precioproducto.OrderByDescending(x => x.IdproductoNavigation.Estado))
             {
                 item = this.Inventariolv.Items.Add(P.IdproductoNavigation.Idproducto.ToString());
                 item.SubItems.Add(P.Precio.ToString());

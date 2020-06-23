@@ -46,6 +46,28 @@ namespace Ferreto.Views
             }
             return rolactual;
         }
+        private bool Verify()
+        {
+            var usuarios = _usuariohelper.Get();
+            bool entrada = false;
+            try
+            {
+              var u=  usuarios.Single(x => x.Login.Equals(ReturnUser().Login));
+                entrada = (u.Estado == true) ? true : false;
+            }
+            catch (Exception e) when( e.GetType()!=typeof(InvalidOperationException))
+            {
+                MessageBox.Show(e.ToString());
+                entrada = false;
+               
+            }
+            catch(InvalidOperationException e)
+            {
+                MessageBox.Show(e.ToString());
+                entrada = false;
+            }
+           return entrada;
+         }
         private Usuario ReturnUser()
         {
             _usuario = new Usuario();
@@ -55,7 +77,14 @@ namespace Ferreto.Views
         }
         private void InicioBo_Click(object sender, EventArgs e)
         {
-            Access();
+            if (Verify())
+            {
+                Access();
+            }
+            else
+            {
+                MessageBox.Show("Este usuario está inactivo", "Usuario Deshabilitado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         public void Access()
         {

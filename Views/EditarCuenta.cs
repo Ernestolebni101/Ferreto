@@ -85,6 +85,7 @@ namespace Ferreto.Views
             _rolusuario = new Rolusuario();
             _rolusuario.Idusuario = Getids().id_user;
             _rolusuario.Idrol = Getids().id_rol;
+            _rolusuario.Estado = true;
             return _rolusuario;
         }
 

@@ -77,7 +77,7 @@ namespace Ferreto.Views
             _producto.Ubicacion = "Sede Central";
             _producto.Idcategoria = ids.idcategoria;
             _producto.Idpresentacion = ids.idpresentacion;
-            _producto.Fecharegistro = DateTime.Now;
+            _producto.Fecharegistro = DateTime.Today;
             _producto.Fvencimiento = VencimientoTP.Value;
             _producto.Estado = true;
             _producto.Codproducto = Utils.codigo;
@@ -105,6 +105,7 @@ namespace Ferreto.Views
             _compra.Idproducto = idproducto;
             return _compra;
         }
+
         private Inventario InsertToInventario(int cantidad, double costounitario,int idproducto)
         {
             _inventario = new Inventario();
@@ -121,7 +122,8 @@ namespace Ferreto.Views
             var insertoproduct = _productohelper.add(InserNewProduct());
             var inserttotableprice = _preciohelper.add(InsertToTablePrecioProducto(insertoproduct.Idproducto));
             var insertotablecompra = _comprahelper.add(InsertToTableCompras(insertoproduct.Idproducto));
-            var insertoinventario = _inventariohelper.add(InsertToInventario(insertotablecompra.Cantidad,insertotablecompra.Costounitario,insertoproduct.Idproducto));
+            var inventario = InsertToInventario(insertotablecompra.Cantidad, insertotablecompra.Costounitario, insertoproduct.Idproducto);
+            _inventariohelper.add(inventario);
          }
         private (int idcategoria, int idpresentacion, int idmarca, int idusuario) Getids()
         {

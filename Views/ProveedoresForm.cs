@@ -38,7 +38,7 @@ namespace Ferreto.Views
         {
             ListViewItem item = null;
             var t_proveedores = _proveedoreshelper.GetProveedores();
-            foreach (var P in t_proveedores)
+            foreach (var P in t_proveedores.OrderByDescending(x=>x.Estado))
             {
                 item = this.ProveedoresLV.Items.Add(P.Idproveedor.ToString());
                 item.SubItems.Add(P.Empresa.ToString());

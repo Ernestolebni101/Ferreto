@@ -18,6 +18,7 @@ namespace Ferreto.Views
     {
         private readonly FerretoSContext _context;
         private readonly ServicesInjector<Detallefactura> _detallehelper;
+      
         public ReimprimirBo()
         {
             InitializeComponent();
@@ -77,6 +78,7 @@ namespace Ferreto.Views
             decimal total = 0m;
             double iva = 0;
             decimal neto = 0m;
+            string nombre = string.Empty;
             foreach (var item in factura)
             {
                 if (item.Idfactura.Equals(int.Parse(idtxt.Text)))
@@ -84,10 +86,11 @@ namespace Ferreto.Views
                     total = item.IdfacturaNavigation.Totalsiniva;
                     iva = item.IdfacturaNavigation.Iva;
                     neto = item.IdfacturaNavigation.Totalmasiva;
+                    nombre = item.IdfacturaNavigation.Nombreusuario;
                     break;
                 }    
             }
-            FPrintFactura obj = new FPrintFactura(DetallesLv, total, iva, neto);
+            FPrintFactura obj = new FPrintFactura(DetallesLv, total, iva, neto, nombre);
            obj.ShowDialog();
         }
         private void ReimprimirBo_Load(object sender, EventArgs e)
