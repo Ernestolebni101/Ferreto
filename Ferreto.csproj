@@ -150,8 +150,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="ValidatorAligator">
-      <HintPath>..\Coasa de clases xd\Programacion II\Proyecto para feria 2020 (ARCHIVOS IMPORTANTES)\ValidatorAligator\ValidatorAligator\obj\Debug\ValidatorAligator.dll</HintPath>
+    <Reference Include="ValidatorAligator, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\Proyecto para feria 2020 (ARCHIVOS IMPORTANTES)\ValidatorAligator\ValidatorAligator\bin\Debug\ValidatorAligator.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Catalogo));
             this.FechaLab = new System.Windows.Forms.Label();
             this.ProductoVeijoCont = new System.Windows.Forms.Panel();
             this.CambiarEstadoBo = new AltoControls.AltoButton();
@@ -37,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.errorProviderletras = new System.Windows.Forms.ErrorProvider(this.components);
             this.Inventariolv = new System.Windows.Forms.ListView();
             this.Id = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PrecioUnitario = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -52,8 +50,8 @@
             this.FechaVencimiento = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.ProductoVeijoCont.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaLab
@@ -148,11 +146,6 @@
             this.label15.TabIndex = 26;
             this.label15.Text = "Estado:";
             // 
-            // errorProviderletras
-            // 
-            this.errorProviderletras.ContainerControl = this;
-            this.errorProviderletras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderletras.Icon")));
-            // 
             // Inventariolv
             // 
             this.Inventariolv.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -243,6 +236,10 @@
             // 
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
+            // 
             // Catalogo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,7 +254,6 @@
             this.Text = "Inventario";
             this.ProductoVeijoCont.ResumeLayout(false);
             this.ProductoVeijoCont.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderletras)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -270,7 +266,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.ErrorProvider errorProviderletras;
         public System.Windows.Forms.Panel ProductoVeijoCont;
         private System.Windows.Forms.ListView Inventariolv;
         private System.Windows.Forms.ColumnHeader Id;
@@ -286,5 +281,6 @@
         private System.Windows.Forms.ColumnHeader Tamaño;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timer2;
     }
 }

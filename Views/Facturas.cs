@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -45,11 +46,13 @@ namespace Ferreto.Views
                     P.SubItems.Add(d.IdproductoNavigation.IdcategoriaNavigation.Nombre);
                     subtotal = d.Cantidad * d.Precioventa;
                     P.SubItems.Add(subtotal.ToString());
+                    Limpiarbttn.Visible = true;
                 }
             }
             catch (Exception e)
             {
                 MessageBox.Show(" Algo malo sucedió! ", "Problema desconocido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Limpiarbttn.Visible = false;
             }
 
         }
@@ -61,15 +64,16 @@ namespace Ferreto.Views
             }
             else
             {
-                this.BuscarBo.Visible = false;
                 SendToList();
-                this.Limpiarbttn.Visible = true;
             }
 
         }
         private void Buscar(object sender, EventArgs e)
         {
-            Verifiy();
+            if (Validate())
+            {
+                Verifiy();
+            }
         }
 
         private void ReImprimir()
@@ -93,10 +97,6 @@ namespace Ferreto.Views
             FPrintFactura obj = new FPrintFactura(DetallesLv, total, iva, neto, nombre);
            obj.ShowDialog();
         }
-        private void ReimprimirBo_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void limpiar(object sender, EventArgs e)
         {
@@ -114,5 +114,16 @@ namespace Ferreto.Views
         {
             this.FechaLab.Text = DateTime.Now.ToString();
         }
+
+        #region Validacion
+        private bool Validate()
+        {
+            ValidatorAligator.ReValidate.ValidarNumeros(idtxt,errorProviderNum);
+            if (ValidatorAligator.ReValidate.ValidarNumeros(idtxt, errorProviderNum) == true)
+                return true;
+            else
+                return false;
+        }
+        #endregion
     }
 }

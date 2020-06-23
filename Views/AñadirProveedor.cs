@@ -13,7 +13,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -77,15 +76,31 @@ namespace Ferreto.Views
         }
         private void AñadirBo_Click(object sender, EventArgs e)
         {
-            create();
-            cleantext();
+            if (Validar())
+            {
+                create();
+                cleantext();
+            }
         }
         #endregion
         #region Validar
-        //public bool Validar()
-        //{
-
-        //}
+        public bool Validar()
+        {
+            ValidatorAligator.ReValidate.ValidarNombre(nombretxt,ErrorProviderNombre);
+            ValidatorAligator.ReValidate.ValidarApellido(apellidotxt,errorProviderApellidos);
+            ValidatorAligator.ReValidate.ValidarTelefono(telefonotxt,errorProviderTelefono);
+            ValidatorAligator.ReValidate.ValidarCorreo(correotxt,errorProviderCorreo);
+            ValidatorAligator.ReValidate.ValidarCedula(CedulaTxt,errorProviderCedula);
+            ValidatorAligator.ReValidate.ValidarVacios(Empresatxt,errorProviderEmpresa);
+            ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt,errorProviderDireccion);
+            if (ValidatorAligator.ReValidate.ValidarNombre(nombretxt, ErrorProviderNombre) == true && ValidatorAligator.ReValidate.ValidarApellido(apellidotxt, errorProviderApellidos) == true &&
+                ValidatorAligator.ReValidate.ValidarTelefono(telefonotxt, errorProviderTelefono) == true && ValidatorAligator.ReValidate.ValidarCorreo(correotxt, errorProviderCorreo) == true &&
+                ValidatorAligator.ReValidate.ValidarCedula(CedulaTxt, errorProviderCedula) == true && ValidatorAligator.ReValidate.ValidarVacios(Empresatxt, errorProviderEmpresa) == true &&
+                ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt, errorProviderDireccion) == true)
+                return true;
+            else
+                return false;
+        }
         #endregion
     }
 }

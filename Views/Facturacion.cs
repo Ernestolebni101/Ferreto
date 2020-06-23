@@ -13,6 +13,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -178,7 +179,6 @@ namespace Ferreto.Views
                     }
                     break;
                 }
-
             }
             BaseLab.Text = _total.ToString();
             IvaLab.Text = (_total * 0.15).ToString();
@@ -310,9 +310,11 @@ namespace Ferreto.Views
         int conteoclicks = 1;
         private void AgregarBo_Click(object sender, EventArgs e)
         {
-            Restrict();
-            //ValidateSubitem();
-            conteoclicks++;
+            if (Valido())
+            {
+                Restrict();
+                conteoclicks++;
+            }
         }
         private void BorrarBo_Click(object sender, EventArgs e)
         {
@@ -327,21 +329,35 @@ namespace Ferreto.Views
         {
             timer1.Enabled = true;
         }
-
-        #endregion
-
         private void ImprimirBo_Click(object sender, EventArgs e)
         {
-            nombre= Utils.ReturName(GetId());
+            nombre = Utils.ReturName(GetId());
             if (ProductosLV.Items.Count != 0)
             {
                 FacturaInsert();
                 _detallefacturahelper.AddDetails(UpdateList(FacturaInsert().Idfactura));
-                FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto,nombre);
+                FPrintFactura obj = new FPrintFactura(ProductosLV, _total, _Iva, _neto, nombre);
                 obj.ShowDialog();
+                ProductosLV.Items.Clear();
             }
             else
                 MessageBox.Show("Debe añadir uno o varios productos \n antes de generar factura", "No se añadió ningun producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+        #endregion
+
+        #region Validar
+        private bool Valido()
+        {
+            ValidatorAligator.ReValidate.ValidarVaciosTxt(ProductosTxt,errorProviderLetras);
+            ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt,errorProviderCantidad);
+
+            if (ValidatorAligator.ReValidate.ValidarVaciosTxt(ProductosTxt, errorProviderLetras) == true &&
+            ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt, errorProviderCantidad) == true)
+                return true;
+            else
+                return false;
+        }
+
+        #endregion
     }
 }

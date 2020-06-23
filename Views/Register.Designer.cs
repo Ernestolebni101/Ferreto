@@ -54,19 +54,25 @@
             this.TelefonoTxt = new AltoControls.AltoTextBox();
             this.CorreoTxt = new AltoControls.AltoTextBox();
             this.direcciontxt = new System.Windows.Forms.TextBox();
-            this.ErrorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderTelefono = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderDireccion = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProvidercode = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderUser = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderContra = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderApellido = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercode)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUser)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderContra)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellido)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -338,10 +344,10 @@
             this.direcciontxt.Size = new System.Drawing.Size(135, 83);
             this.direcciontxt.TabIndex = 54;
             // 
-            // ErrorProviderLetras
+            // ErrorProviderNombre
             // 
-            this.ErrorProviderLetras.ContainerControl = this;
-            this.ErrorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorProviderLetras.Icon")));
+            this.ErrorProviderNombre.ContainerControl = this;
+            this.ErrorProviderNombre.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorProviderNombre.Icon")));
             // 
             // errorProviderTelefono
             // 
@@ -367,6 +373,21 @@
             // 
             this.errorProvidercode.ContainerControl = this;
             this.errorProvidercode.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProvidercode.Icon")));
+            // 
+            // errorProviderUser
+            // 
+            this.errorProviderUser.ContainerControl = this;
+            this.errorProviderUser.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderUser.Icon")));
+            // 
+            // errorProviderContra
+            // 
+            this.errorProviderContra.ContainerControl = this;
+            this.errorProviderContra.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderContra.Icon")));
+            // 
+            // errorProviderApellido
+            // 
+            this.errorProviderApellido.ContainerControl = this;
+            this.errorProviderApellido.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderApellido.Icon")));
             // 
             // Register
             // 
@@ -402,12 +423,15 @@
             this.Name = "Register";
             this.Text = "Register";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvidercode)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderUser)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderContra)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellido)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,11 +463,14 @@
         private AltoControls.AltoTextBox TelefonoTxt;
         private AltoControls.AltoTextBox CorreoTxt;
         private System.Windows.Forms.TextBox direcciontxt;
-        private System.Windows.Forms.ErrorProvider ErrorProviderLetras;
+        private System.Windows.Forms.ErrorProvider ErrorProviderNombre;
         private System.Windows.Forms.ErrorProvider errorProviderTelefono;
         private System.Windows.Forms.ErrorProvider errorProviderCorreo;
         private System.Windows.Forms.ErrorProvider errorProviderCedula;
         private System.Windows.Forms.ErrorProvider errorProviderDireccion;
         private System.Windows.Forms.ErrorProvider errorProvidercode;
+        private System.Windows.Forms.ErrorProvider errorProviderUser;
+        private System.Windows.Forms.ErrorProvider errorProviderContra;
+        private System.Windows.Forms.ErrorProvider errorProviderApellido;
     }
 }

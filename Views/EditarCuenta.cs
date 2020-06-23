@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -26,7 +27,6 @@ namespace Ferreto.Views
         public EditarCuenta()
         {
             InitializeComponent();
-            timerselect.Start();
             _context = Initializecontext.initcontext();
             _usuariohelper = new ServicesInjector<Usuario>(_context);
             _rolhelper = new ServicesInjector<Rol>(_context);
@@ -91,17 +91,19 @@ namespace Ferreto.Views
 
         private void UpdateTables()
         {
-            if (EstadoCheck.Checked == true)
+            if (EstadoCheck.IsOn == true)
                 _usuariohelper.ChangesProperty(1, UpdateUser());
           
-            else if (Nombrecheck.Checked==true)
+            else if (Nombrecheck.IsOn == true)
                 _usuariohelper.ChangesProperty(2, UpdateUser());
 
-            else if(ContraseñaCheck.Checked==true)
+            else if(ContraseñaCheck.IsOn == true)
                 _usuariohelper.ChangesProperty(3, UpdateUser());
          
-            else if(Rolcheck.Checked==true)
+            else if(Rolcheck.IsOn == true)
                 _rolusuariohelper.ChangesProperty(4,null,UpdateRolusuario());
+            timerselect.Start();
+            Init();
         }
 
         #endregion
@@ -113,13 +115,47 @@ namespace Ferreto.Views
 
         }
 
+        private void clear()
+        {
+            nombreUsuarioTxt.Text = string.Empty;
+            contraselaNuevatxt.Text = string.Empty;
+        }
+
+        private void verify()
+        {
+            if (Nombrecheck.IsOn && ValidarUser())
+            {
+                UpdateTables();
+                timerselect.Stop();
+                clear();
+            }
+            else if (ContraseñaCheck.IsOn && Validarpass())
+            {
+                UpdateTables();
+                timerselect.Stop();
+                clear();
+            }
+            else if (EstadoCheck.IsOn)
+            {
+                UpdateTables();
+                timerselect.Stop();
+                clear();
+            }
+            else if (Rolcheck.IsOn)
+            {
+                UpdateTables();
+                timerselect.Stop();
+                clear();
+            }
+        }
+
         private void Actualizar(object sender, EventArgs e)
         {
-            UpdateTables();
+            verify();
         }
         private void Contraseña()
         {
-            if (ContraseñaCheck.Checked == true)
+            if (ContraseñaCheck.IsOn)
             {
                 contraselaNuevatxt.Enabled = true;
                 ActualizarBo.Enabled = true;
@@ -128,16 +164,20 @@ namespace Ferreto.Views
                 nombreUsuarioTxt.Enabled = false;
                 nuevorolCB.Enabled = false;
 
-                EstadoCheck.Checked = false;
-                Nombrecheck.Checked = false;
-                Rolcheck.Checked = false;
+                EstadoCheck.IsOn = false;
+                Nombrecheck.IsOn = false;
+                Rolcheck.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                contraselaNuevatxt.Enabled = false;
+            }
         }
+
         private void NombreUser()
         {
-            if (Nombrecheck.Checked)
+            if (Nombrecheck.IsOn)
             {
                 nombreUsuarioTxt.Enabled = true;
                 ActualizarBo.Enabled = true;
@@ -146,18 +186,20 @@ namespace Ferreto.Views
                 contraselaNuevatxt.Enabled = false;
                 nuevorolCB.Enabled = false;
 
-                EstadoCheck.Checked = false;
-                ContraseñaCheck.Checked = false;
-                Rolcheck.Checked = false;
+                EstadoCheck.IsOn = false;
+                ContraseñaCheck.IsOn = false;
+                Rolcheck.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                nombreUsuarioTxt.Enabled = false;
+            }
         }
-
 
         private void Estado()
         {
-            if (EstadoCheck.Checked)
+            if (EstadoCheck.IsOn)
             {
                 statusSlide.Enabled = true;
                 ActualizarBo.Enabled = true;
@@ -166,17 +208,20 @@ namespace Ferreto.Views
                 contraselaNuevatxt.Enabled = false;
                 nuevorolCB.Enabled = false;
 
-                Nombrecheck.Checked = false;
-                ContraseñaCheck.Checked = false;
-                Rolcheck.Checked = false;
+                Nombrecheck.IsOn = false;
+                ContraseñaCheck.IsOn = false;
+                Rolcheck.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                statusSlide.Enabled = false;
+            }
         }
 
         private void Rol()
         {
-            if (Rolcheck.Checked)
+            if (Rolcheck.IsOn)
             {
                 nuevorolCB.Enabled = true;
                 ActualizarBo.Enabled = true;
@@ -185,43 +230,67 @@ namespace Ferreto.Views
                 contraselaNuevatxt.Enabled = false;
                 statusSlide.Enabled = false;
 
-                Nombrecheck.Checked = false;
-                Nombrecheck.Checked = false;
-                EstadoCheck.Checked = false;
+                Nombrecheck.IsOn = false;
+                ContraseñaCheck.IsOn = false;
+                EstadoCheck.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                nuevorolCB.Enabled = false;
+            }
             
         }
 
-        private void statusSlide_Click(object sender, EventArgs e)
+        private void Estado(object sender, EventArgs e)
         {
             Estado();
         }
 
+        private void NewName(object sender, EventArgs e)
+        {
+            NombreUser();
+        }
+
+        private void NewPass(object sender, EventArgs e)
+        {
+            Contraseña();
+        }
+
+        private void NewRol(object sender, EventArgs e)
+        {
+            Rol();
+        }
+
         private void timerselect_Tick(object sender, EventArgs e)
         {
-
+            if (timerselect.Enabled == true)
+            {
+                Init();
+            }
         }
 
         private void UsuarioCB_SelectedIndexChanged(object sender, EventArgs e)
         {
             Estadolabel.Text = (Getids().estado) ? "Activo" : "Inactivo";
         }
-
-        private void Nombrecheck_Click(object sender, EventArgs e)
+        #endregion
+        #region Validar
+        private bool ValidarUser()
         {
-            NombreUser();
+            ValidatorAligator.ReValidate.ValidarVacios(nombreUsuarioTxt,errorProviderVacios);
+            if (ValidatorAligator.ReValidate.ValidarVacios(nombreUsuarioTxt, errorProviderVacios) == true)
+                return true;
+            else
+                return false;
         }
-
-        private void ContraseñaCheck_Click(object sender, EventArgs e)
+        private bool Validarpass()
         {
-            Contraseña();
-        }
-
-        private void Rolcheck_Click(object sender, EventArgs e)
-        {
-            Rol();
+            ValidatorAligator.ReValidate.ValidarContraseña(contraselaNuevatxt, errorProviderVacios);
+            if (ValidatorAligator.ReValidate.ValidarContraseña(contraselaNuevatxt, errorProviderVacios) == true)
+                return true;
+            else
+                return false;
         }
         #endregion
     }

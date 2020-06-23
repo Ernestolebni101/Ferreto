@@ -11,6 +11,7 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using Ferreto.Common;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -130,7 +131,10 @@ namespace Ferreto.Views
         #region Events
         private void Actualizar(object sender, EventArgs e)
         {
-            Verifybool();
+            Verify();
+            timer1.Start();
+            initCb();
+            timer1.Stop();
         }
         private void Cerrar(object sender, EventArgs e)
         {
@@ -138,6 +142,7 @@ namespace Ferreto.Views
         }
         #endregion
 
+        #region sLIDE
         private void Marca()
         {
             if (Slidermarca.IsOn)
@@ -160,7 +165,10 @@ namespace Ferreto.Views
                 nuevamedida.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                estadomarcasl.Enabled = false;
+            }
 
         }
 
@@ -177,6 +185,7 @@ namespace Ferreto.Views
                 RolTxt.Enabled = false;
                 CategoriaTxt.Enabled = false;
                 MedidaTxt.Enabled = false;
+                estadomarcasl.Enabled = false;
                 //Block sli
                 Sliderol.IsOn = false;
                 Slidermarca.IsOn = false;
@@ -210,7 +219,10 @@ namespace Ferreto.Views
                 nuevamedida.IsOn = false;
             }
             else
+            {
                 ActualizarBo.Enabled = false;
+                estadorolsl.Enabled = false;
+            }
         }
 
         private void NewRol()
@@ -250,6 +262,7 @@ namespace Ferreto.Views
                 RolCB.Enabled = false;
                 RolTxt.Enabled = false;
                 MedidaTxt.Enabled = false;
+                estadomarcasl.Enabled = false;
                 //block sli
                 Slidermarca.IsOn = false;
                 marcanueva.IsOn = false;
@@ -314,6 +327,98 @@ namespace Ferreto.Views
         private void NewMedida(object sender, EventArgs e)
         {
             NewMedida();
+        }
+        #endregion
+
+        #region Validar
+        private bool validarMarca()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(MarcaTxt,errorProviderMarca);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(MarcaTxt, errorProviderMarca) == true)
+                return true;
+            else
+                return false;
+
+        }
+        private bool validarCategoria()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(CategoriaTxt, errorProviderCategoria);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(CategoriaTxt, errorProviderCategoria) == true)
+                return true;
+            else
+                return false;
+        }
+        private bool validarRol()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(RolTxt, errorProviderRol);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(RolTxt, errorProviderRol) == true)
+                return true;
+            else
+                return false;
+        }
+        private bool validarCMedida()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(MedidaTxt, errorProviderMEDIDA);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(MedidaTxt, errorProviderMEDIDA) == true)
+                return true;
+            else
+                return false;
+        }
+        private void Verify()
+        {
+            if (marcanueva.IsOn && validarMarca())
+            {
+                errorProviderCategoria.Clear();
+                errorProviderMarca.Clear();
+                errorProviderMEDIDA.Clear();
+                errorProviderRol.Clear();
+                Verifybool();
+                MarcaTxt.Text = string.Empty;
+            }
+            else if (categorianueva.IsOn && validarCategoria())
+            {
+                errorProviderCategoria.Clear();
+                errorProviderMarca.Clear();
+                errorProviderMEDIDA.Clear();
+                errorProviderRol.Clear();
+                Verifybool();
+                CategoriaTxt.Text = string.Empty;
+            }
+            else if (nuevorol.IsOn && validarRol())
+            {
+                errorProviderCategoria.Clear();
+                errorProviderMarca.Clear();
+                errorProviderMEDIDA.Clear();
+                errorProviderRol.Clear();
+                Verifybool();
+                RolTxt.Text = string.Empty;
+            }
+            else if (nuevamedida.IsOn && validarCMedida())
+            {
+                errorProviderCategoria.Clear();
+                errorProviderMarca.Clear();
+                errorProviderMEDIDA.Clear();
+                errorProviderRol.Clear();
+                Verifybool();
+                MedidaTxt.Text = string.Empty;
+            }
+            else if (Slidermarca.IsOn)
+                Verifybool();
+            else if (Sliderol.IsOn)
+                Verifybool();
+        }
+        #endregion
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            if (timer1.Enabled == true)
+            {
+                initCb();
+            }
         }
     }
 }

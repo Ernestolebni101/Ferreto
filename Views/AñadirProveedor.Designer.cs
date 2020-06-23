@@ -51,22 +51,24 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.CedulaTxt = new AltoControls.AltoTextBox();
-            this.ErrorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
+            this.ErrorProviderNombre = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderTelefono = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCorreo = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderCedula = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderEmpresa = new System.Windows.Forms.ErrorProvider(this.components);
             this.errorProviderDireccion = new System.Windows.Forms.ErrorProvider(this.components);
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
+            this.errorProviderApellidos = new System.Windows.Forms.ErrorProvider(this.components);
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmpresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellidos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -133,7 +135,7 @@
             this.nombretxt.Location = new System.Drawing.Point(39, 173);
             this.nombretxt.Name = "nombretxt";
             this.nombretxt.Size = new System.Drawing.Size(169, 30);
-            this.nombretxt.TabIndex = 40;
+            this.nombretxt.TabIndex = 1;
             // 
             // label1
             // 
@@ -166,7 +168,7 @@
             this.telefonotxt.Location = new System.Drawing.Point(39, 270);
             this.telefonotxt.Name = "telefonotxt";
             this.telefonotxt.Size = new System.Drawing.Size(169, 30);
-            this.telefonotxt.TabIndex = 44;
+            this.telefonotxt.TabIndex = 3;
             // 
             // label4
             // 
@@ -188,7 +190,7 @@
             this.apellidotxt.Location = new System.Drawing.Point(246, 173);
             this.apellidotxt.Name = "apellidotxt";
             this.apellidotxt.Size = new System.Drawing.Size(169, 30);
-            this.apellidotxt.TabIndex = 46;
+            this.apellidotxt.TabIndex = 2;
             // 
             // correotxt
             // 
@@ -199,7 +201,7 @@
             this.correotxt.Location = new System.Drawing.Point(246, 270);
             this.correotxt.Name = "correotxt";
             this.correotxt.Size = new System.Drawing.Size(194, 30);
-            this.correotxt.TabIndex = 47;
+            this.correotxt.TabIndex = 4;
             // 
             // label5
             // 
@@ -221,7 +223,7 @@
             this.Empresatxt.Location = new System.Drawing.Point(529, 173);
             this.Empresatxt.Name = "Empresatxt";
             this.Empresatxt.Size = new System.Drawing.Size(206, 30);
-            this.Empresatxt.TabIndex = 49;
+            this.Empresatxt.TabIndex = 6;
             // 
             // label6
             // 
@@ -251,7 +253,7 @@
             this.AñadirBo.Size = new System.Drawing.Size(226, 42);
             this.AñadirBo.Stroke = false;
             this.AñadirBo.StrokeColor = System.Drawing.Color.Gray;
-            this.AñadirBo.TabIndex = 52;
+            this.AñadirBo.TabIndex = 8;
             this.AñadirBo.Text = "Añadir";
             this.AñadirBo.Transparency = false;
             this.AñadirBo.Click += new System.EventHandler(this.AñadirBo_Click);
@@ -263,7 +265,7 @@
             this.direcciontxt.Multiline = true;
             this.direcciontxt.Name = "direcciontxt";
             this.direcciontxt.Size = new System.Drawing.Size(226, 105);
-            this.direcciontxt.TabIndex = 53;
+            this.direcciontxt.TabIndex = 7;
             // 
             // panel2
             // 
@@ -307,12 +309,12 @@
             this.CedulaTxt.Location = new System.Drawing.Point(39, 362);
             this.CedulaTxt.Name = "CedulaTxt";
             this.CedulaTxt.Size = new System.Drawing.Size(169, 30);
-            this.CedulaTxt.TabIndex = 56;
+            this.CedulaTxt.TabIndex = 5;
             // 
-            // ErrorProviderLetras
+            // ErrorProviderNombre
             // 
-            this.ErrorProviderLetras.ContainerControl = this;
-            this.ErrorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorProviderLetras.Icon")));
+            this.ErrorProviderNombre.ContainerControl = this;
+            this.ErrorProviderNombre.Icon = ((System.Drawing.Icon)(resources.GetObject("ErrorProviderNombre.Icon")));
             // 
             // errorProviderTelefono
             // 
@@ -343,6 +345,11 @@
             // 
             this.bunifuElipse1.ElipseRadius = 20;
             this.bunifuElipse1.TargetControl = this;
+            // 
+            // errorProviderApellidos
+            // 
+            this.errorProviderApellidos.ContainerControl = this;
+            this.errorProviderApellidos.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderApellidos.Icon")));
             // 
             // AñadirProveedor
             // 
@@ -375,12 +382,13 @@
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderLetras)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ErrorProviderNombre)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderTelefono)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCorreo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCedula)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderEmpresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderDireccion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderApellidos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -409,12 +417,13 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private AltoControls.AltoTextBox CedulaTxt;
-        private System.Windows.Forms.ErrorProvider ErrorProviderLetras;
+        private System.Windows.Forms.ErrorProvider ErrorProviderNombre;
         private System.Windows.Forms.ErrorProvider errorProviderTelefono;
         private System.Windows.Forms.ErrorProvider errorProviderCorreo;
         private System.Windows.Forms.ErrorProvider errorProviderCedula;
         private System.Windows.Forms.ErrorProvider errorProviderEmpresa;
         private System.Windows.Forms.ErrorProvider errorProviderDireccion;
         private Bunifu.Framework.UI.BunifuElipse bunifuElipse1;
+        private System.Windows.Forms.ErrorProvider errorProviderApellidos;
     }
 }

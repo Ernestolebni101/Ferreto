@@ -13,6 +13,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -123,12 +124,42 @@ namespace Ferreto.Views
         #region Events
         private void Registrar(object sender, EventArgs e)
         {
-            CreateUser();
-            //var encrypted = Parameter.Str(FerretoCodeTxt.Text);
-            cleancontrols();
+            if (Valida())
+            {
+                CreateUser();
+                cleancontrols();
+            }
         }
 
 
+        #endregion
+
+        #region VALIDACION
+        private bool Valida()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(UsuarioTxt,errorProviderUser);
+            ValidatorAligator.ReValidate.ValidarContraseña(ContraseñaTxt,errorProviderContra);
+            ValidatorAligator.ReValidate.ValidarVacios(FerretoCodeTxt,errorProvidercode);
+            ValidatorAligator.ReValidate.ValidarNombre(NombreTxt,ErrorProviderNombre);
+            ValidatorAligator.ReValidate.ValidarApellido(ApellidoTxt,errorProviderApellido);
+            ValidatorAligator.ReValidate.ValidarCedula(CedulaTxt,errorProviderCedula);
+            ValidatorAligator.ReValidate.ValidarTelefono(TelefonoTxt,errorProviderTelefono);
+            ValidatorAligator.ReValidate.ValidarCorreo(CorreoTxt,errorProviderCorreo);
+            ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt,errorProviderDireccion);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(UsuarioTxt, errorProviderUser) == true &&
+            ValidatorAligator.ReValidate.ValidarContraseña(ContraseñaTxt, errorProviderContra) == true &&
+            ValidatorAligator.ReValidate.ValidarVacios(FerretoCodeTxt, errorProvidercode) == true &&
+            ValidatorAligator.ReValidate.ValidarNombre(NombreTxt, ErrorProviderNombre) == true &&
+            ValidatorAligator.ReValidate.ValidarApellido(ApellidoTxt, errorProviderApellido) == true &&
+            ValidatorAligator.ReValidate.ValidarCedula(CedulaTxt, errorProviderCedula) == true &&
+            ValidatorAligator.ReValidate.ValidarTelefono(TelefonoTxt, errorProviderTelefono) == true &&
+            ValidatorAligator.ReValidate.ValidarCorreo(CorreoTxt, errorProviderCorreo) == true &&
+            ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt, errorProviderDireccion) == true)
+                return true;
+            else
+                return false;
+        }
         #endregion
     }
 }

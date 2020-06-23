@@ -13,6 +13,7 @@ using Ferreto.Models;
 using Ferreto.Models.Common;
 using Ferreto.Services;
 using Microsoft.EntityFrameworkCore;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -215,9 +216,40 @@ namespace Ferreto.Views
             this.Dispose();
         }
 
+        private void Clear()
+        {
+            ProductoTxt.Text = string.Empty;
+            CantidadTxt.Text = string.Empty;
+            CostoUnitarioTxt.Text = string.Empty;
+            PrecioTxt.Text = string.Empty;
+        }
+
         private void Añadir(object sender, EventArgs e)
         {
-            Transaction();
+            if (Validacion())
+            {
+                Transaction();
+                Clear();
+            }
         }
+
+        #region Validaciones
+        private bool Validacion()
+        {
+            ValidatorAligator.ReValidate.ValidarVacios(ProductoTxt,errorProviderLetras);
+            ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt,errorProviderNumero1);
+            ValidatorAligator.ReValidate.ValidarDecimal(CostoUnitarioTxt,errorProviderdecimal);
+            ValidatorAligator.ReValidate.ValidarDecimal(PrecioTxt,errorProviderDecimalVE);
+
+            if (ValidatorAligator.ReValidate.ValidarVacios(ProductoTxt, errorProviderLetras) == true &&
+                ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt, errorProviderNumero1) == true &&
+                ValidatorAligator.ReValidate.ValidarDecimal(CostoUnitarioTxt, errorProviderdecimal) == true &&
+                ValidatorAligator.ReValidate.ValidarDecimal(PrecioTxt, errorProviderDecimalVE) == true)
+                return true;
+            else
+                return false;
+        }
+        #endregion
+
     }
 }

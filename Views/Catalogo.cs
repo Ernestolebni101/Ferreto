@@ -97,6 +97,9 @@ namespace Ferreto.Views
 
                     StateChanged(int.Parse(item.SubItems[0].Text), accion);
                 }
+                timer2.Stop();
+                Inventariolv.Items.Clear();
+                InitList();
             }
             else
                 MessageBox.Show("Debe elegir un solo producto", "Fallo al actualizar el producto", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -105,11 +108,20 @@ namespace Ferreto.Views
         private void CambiarEstadoBo_Click(object sender, EventArgs e)
         {
             ChangedProduct();
+            timer2.Stop();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.FechaLab.Text = DateTime.Now.ToString();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timer2.Enabled == true)
+            {
+                InitList();
+            }
         }
     }
 }

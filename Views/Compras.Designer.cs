@@ -46,6 +46,7 @@
             this.Precio = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Proveedor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Fecha = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // label2
@@ -53,20 +54,18 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label2.Location = new System.Drawing.Point(207, 49);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(155, 40);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(223, 23);
+            this.label2.Size = new System.Drawing.Size(185, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "¿Producto Existente?";
             // 
             // MARGEN
             // 
             this.MARGEN.AutoSize = true;
-            this.MARGEN.Location = new System.Drawing.Point(17, 943);
-            this.MARGEN.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.MARGEN.Location = new System.Drawing.Point(13, 766);
             this.MARGEN.Name = "MARGEN";
-            this.MARGEN.Size = new System.Drawing.Size(33, 17);
+            this.MARGEN.Size = new System.Drawing.Size(22, 13);
             this.MARGEN.TabIndex = 8;
             this.MARGEN.Text = "-----";
             // 
@@ -76,10 +75,9 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.label3.Location = new System.Drawing.Point(661, 49);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(496, 40);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(195, 23);
+            this.label3.Size = new System.Drawing.Size(162, 18);
             this.label3.TabIndex = 3;
             this.label3.Text = "¿Producto Nuevo?";
             // 
@@ -94,11 +92,10 @@
             this.ActualizarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ActualizarBo.Inactive1 = System.Drawing.Color.White;
             this.ActualizarBo.Inactive2 = System.Drawing.Color.White;
-            this.ActualizarBo.Location = new System.Drawing.Point(211, 87);
-            this.ActualizarBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.ActualizarBo.Location = new System.Drawing.Point(158, 71);
             this.ActualizarBo.Name = "ActualizarBo";
             this.ActualizarBo.Radius = 5;
-            this.ActualizarBo.Size = new System.Drawing.Size(243, 37);
+            this.ActualizarBo.Size = new System.Drawing.Size(182, 30);
             this.ActualizarBo.Stroke = false;
             this.ActualizarBo.StrokeColor = System.Drawing.Color.Gray;
             this.ActualizarBo.TabIndex = 13;
@@ -118,11 +115,10 @@
             this.AñadirBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.AñadirBo.Inactive1 = System.Drawing.Color.White;
             this.AñadirBo.Inactive2 = System.Drawing.Color.White;
-            this.AñadirBo.Location = new System.Drawing.Point(665, 87);
-            this.AñadirBo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.AñadirBo.Location = new System.Drawing.Point(499, 71);
             this.AñadirBo.Name = "AñadirBo";
             this.AñadirBo.Radius = 5;
-            this.AñadirBo.Size = new System.Drawing.Size(231, 37);
+            this.AñadirBo.Size = new System.Drawing.Size(173, 30);
             this.AñadirBo.Stroke = false;
             this.AñadirBo.StrokeColor = System.Drawing.Color.Gray;
             this.AñadirBo.TabIndex = 14;
@@ -135,10 +131,9 @@
             this.FechaLab.AutoSize = true;
             this.FechaLab.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FechaLab.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.FechaLab.Location = new System.Drawing.Point(25, 11);
-            this.FechaLab.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.FechaLab.Location = new System.Drawing.Point(19, 9);
             this.FechaLab.Name = "FechaLab";
-            this.FechaLab.Size = new System.Drawing.Size(70, 23);
+            this.FechaLab.Size = new System.Drawing.Size(57, 18);
             this.FechaLab.TabIndex = 11;
             this.FechaLab.Text = "Fecha";
             // 
@@ -147,10 +142,9 @@
             this.UserLabel.AutoSize = true;
             this.UserLabel.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
-            this.UserLabel.Location = new System.Drawing.Point(27, 68);
-            this.UserLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.UserLabel.Location = new System.Drawing.Point(20, 55);
             this.UserLabel.Name = "UserLabel";
-            this.UserLabel.Size = new System.Drawing.Size(65, 23);
+            this.UserLabel.Size = new System.Drawing.Size(53, 18);
             this.UserLabel.TabIndex = 16;
             this.UserLabel.Text = "USER";
             this.UserLabel.Visible = false;
@@ -161,6 +155,9 @@
             // 
             // ComprasLV
             // 
+            this.ComprasLV.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.ComprasLV.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Nombre,
@@ -171,9 +168,10 @@
             this.Proveedor,
             this.Fecha});
             this.ComprasLV.HideSelection = false;
-            this.ComprasLV.Location = new System.Drawing.Point(29, 174);
+            this.ComprasLV.Location = new System.Drawing.Point(22, 141);
+            this.ComprasLV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.ComprasLV.Name = "ComprasLV";
-            this.ComprasLV.Size = new System.Drawing.Size(1019, 370);
+            this.ComprasLV.Size = new System.Drawing.Size(765, 301);
             this.ComprasLV.TabIndex = 17;
             this.ComprasLV.UseCompatibleStateImageBehavior = false;
             this.ComprasLV.View = System.Windows.Forms.View.Details;
@@ -185,37 +183,48 @@
             // Nombre
             // 
             this.Nombre.Text = "Nombre";
+            this.Nombre.Width = 150;
             // 
             // Cantidad
             // 
             this.Cantidad.Text = "Cantidad";
+            this.Cantidad.Width = 70;
             // 
             // Costo
             // 
             this.Costo.Text = "Costo";
+            this.Costo.Width = 70;
             // 
             // Total
             // 
             this.Total.Text = "Total";
+            this.Total.Width = 70;
             // 
             // Precio
             // 
             this.Precio.Text = "Precio de venta";
+            this.Precio.Width = 100;
             // 
             // Proveedor
             // 
             this.Proveedor.Text = "Proveedor";
+            this.Proveedor.Width = 150;
             // 
             // Fecha
             // 
             this.Fecha.Text = "Fecha de compra";
+            this.Fecha.Width = 100;
+            // 
+            // timer2
+            // 
+            this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // Compras
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1093, 575);
+            this.ClientSize = new System.Drawing.Size(820, 467);
             this.Controls.Add(this.ComprasLV);
             this.Controls.Add(this.UserLabel);
             this.Controls.Add(this.AñadirBo);
@@ -225,7 +234,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Compras";
             this.Text = "Compras";
             this.ResumeLayout(false);
@@ -251,5 +259,6 @@
         private System.Windows.Forms.ColumnHeader Precio;
         private System.Windows.Forms.ColumnHeader Proveedor;
         private System.Windows.Forms.ColumnHeader Fecha;
+        private System.Windows.Forms.Timer timer2;
     }
 }

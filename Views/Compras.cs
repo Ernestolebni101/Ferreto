@@ -31,6 +31,10 @@ namespace Ferreto.Views
             CompraExistente obj = new CompraExistente();
             obj.UserLabel.Text = UserLabel.Text;
             obj.ShowDialog();
+            timer2.Start();
+            ComprasLV.Items.Clear();
+            Init();
+            timer2.Stop();
         }
         private void Init()
         {
@@ -59,11 +63,23 @@ namespace Ferreto.Views
             CompraNueva obj = new CompraNueva();
             obj.UserLabel.Text = UserLabel.Text;
             obj.ShowDialog();
+            timer2.Start();
+            ComprasLV.Items.Clear();
+            Init();
+            timer2.Stop();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             this.FechaLab.Text = DateTime.Now.ToString();
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            if (timer2.Enabled == true)
+            {
+                Init();
+            }
         }
     }
 }

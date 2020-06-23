@@ -33,8 +33,7 @@
             this.FechaLab = new System.Windows.Forms.Label();
             this.BuscarBo = new AltoControls.AltoButton();
             this.ReBo = new AltoControls.AltoButton();
-            this.errorProviderLetras = new System.Windows.Forms.ErrorProvider(this.components);
-            this.errorProviderSerie = new System.Windows.Forms.ErrorProvider(this.components);
+            this.errorProviderNum = new System.Windows.Forms.ErrorProvider(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.idtxt = new AltoControls.AltoTextBox();
             this.DetallesLv = new System.Windows.Forms.ListView();
@@ -47,8 +46,7 @@
             this.Subtotal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Limpiarbttn = new AltoControls.AltoButton();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNum)).BeginInit();
             this.SuspendLayout();
             // 
             // FechaLab
@@ -108,15 +106,10 @@
             this.ReBo.Transparency = false;
             this.ReBo.Click += new System.EventHandler(this.ReBo_Click);
             // 
-            // errorProviderLetras
+            // errorProviderNum
             // 
-            this.errorProviderLetras.ContainerControl = this;
-            this.errorProviderLetras.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderLetras.Icon")));
-            // 
-            // errorProviderSerie
-            // 
-            this.errorProviderSerie.ContainerControl = this;
-            this.errorProviderSerie.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderSerie.Icon")));
+            this.errorProviderNum.ContainerControl = this;
+            this.errorProviderNum.Icon = ((System.Drawing.Icon)(resources.GetObject("errorProviderNum.Icon")));
             // 
             // label1
             // 
@@ -243,9 +236,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ReimprimirBo";
             this.Text = "Facturas";
-            this.Load += new System.EventHandler(this.ReimprimirBo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProviderSerie)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProviderNum)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -255,8 +246,7 @@
         private System.Windows.Forms.Label FechaLab;
         private AltoControls.AltoButton BuscarBo;
         private AltoControls.AltoButton ReBo;
-        private System.Windows.Forms.ErrorProvider errorProviderLetras;
-        private System.Windows.Forms.ErrorProvider errorProviderSerie;
+        private System.Windows.Forms.ErrorProvider errorProviderNum;
         private System.Windows.Forms.Label label1;
         private AltoControls.AltoTextBox idtxt;
         private System.Windows.Forms.ListView DetallesLv;

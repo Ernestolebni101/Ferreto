@@ -11,6 +11,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ValidatorAligator;
 
 namespace Ferreto.Views
 {
@@ -149,10 +150,35 @@ namespace Ferreto.Views
             this.Dispose();
         }
 
+        private void Clean()
+        {
+            CantidadTxt.Text = string.Empty;
+            NuevoPrecioTxt.Text = string.Empty;
+            CostoUnitarioTxt.Text = string.Empty;
+        }
         private void Actualizar(object sender, EventArgs e)
         {
-            UpdateChanges();
+            if (Validation())
+            {
+                UpdateChanges();
+                Clean();
+            }
         }
-        #endregion 
+        #endregion
+        #region Validacion
+        private bool Validation()
+        {
+            ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt,errorProviderCantidadActual);
+            ValidatorAligator.ReValidate.ValidarDecimal(CostoUnitarioTxt,errorProviderCostoU);
+            ValidatorAligator.ReValidate.ValidarDecimal(NuevoPrecioTxt,errorProviderNuevopre);
+
+            if (ValidatorAligator.ReValidate.ValidarNumeros(CantidadTxt, errorProviderCantidadActual) == true &&
+                ValidatorAligator.ReValidate.ValidarDecimal(CostoUnitarioTxt, errorProviderCostoU) == true &&
+                ValidatorAligator.ReValidate.ValidarDecimal(NuevoPrecioTxt, errorProviderNuevopre) == true)
+                return true;
+            else
+                return false;
+        }
+        #endregion
     }
 }
