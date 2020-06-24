@@ -157,7 +157,7 @@ namespace Ferreto.Views
             ValidatorAligator.ReValidate.ValidarTelefono(TelefonoTxt, errorProviderTelefono) == true &&
             ValidatorAligator.ReValidate.ValidarCorreo(CorreoTxt, errorProviderCorreo) == true &&
             ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt, errorProviderDireccion) == true &&
-            valid == false)
+            valid == true)
 
                 return true;
             else
