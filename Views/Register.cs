@@ -146,6 +146,7 @@ namespace Ferreto.Views
             ValidatorAligator.ReValidate.ValidarTelefono(TelefonoTxt,errorProviderTelefono);
             ValidatorAligator.ReValidate.ValidarCorreo(CorreoTxt,errorProviderCorreo);
             ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt,errorProviderDireccion);
+            bool valid = FCVal();
 
             if (ValidatorAligator.ReValidate.ValidarVacios(UsuarioTxt, errorProviderUser) == true &&
             ValidatorAligator.ReValidate.ValidarContraseña(ContraseñaTxt, errorProviderContra) == true &&
@@ -155,7 +156,17 @@ namespace Ferreto.Views
             ValidatorAligator.ReValidate.ValidarCedula(CedulaTxt, errorProviderCedula) == true &&
             ValidatorAligator.ReValidate.ValidarTelefono(TelefonoTxt, errorProviderTelefono) == true &&
             ValidatorAligator.ReValidate.ValidarCorreo(CorreoTxt, errorProviderCorreo) == true &&
-            ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt, errorProviderDireccion) == true)
+            ValidatorAligator.ReValidate.ValidarDireccion(direcciontxt, errorProviderDireccion) == true &&
+            valid == false)
+
+                return true;
+            else
+                return false;
+        }
+
+        private bool FCVal()
+        {
+            if (FerretoCodeTxt.Text == "HolaMundo")
                 return true;
             else
                 return false;

@@ -167,9 +167,11 @@
             this.Precio,
             this.Proveedor,
             this.Fecha});
+            this.ComprasLV.Font = new System.Drawing.Font("Gotham", 9.749999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ComprasLV.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
             this.ComprasLV.HideSelection = false;
             this.ComprasLV.Location = new System.Drawing.Point(22, 141);
-            this.ComprasLV.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ComprasLV.Margin = new System.Windows.Forms.Padding(2);
             this.ComprasLV.Name = "ComprasLV";
             this.ComprasLV.Size = new System.Drawing.Size(765, 301);
             this.ComprasLV.TabIndex = 17;

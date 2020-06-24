@@ -94,14 +94,8 @@ namespace Ferreto.Views
                 MainContainer obj = new MainContainer();
                 ChargingScreen obj2 = new ChargingScreen();
                 FirstContainer.ActiveForm.Hide();
-                if (RolUserInfo(UserTxt.Text).Equals("Admin"))
-                {
-                    obj.VentaBo.Visible = false;
-                    obj.ComprasBo.Visible = false;
 
-                }
-
-                else if (RolUserInfo(UserTxt.Text).Equals("Comprador"))
+                if (RolUserInfo(UserTxt.Text).Equals("Comprador"))
                 {
                     obj.VentaBo.Visible = false;
                     obj.FacturaBo.Visible = false;

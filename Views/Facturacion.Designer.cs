@@ -56,6 +56,9 @@
             this.ProductosTxt = new System.Windows.Forms.TextBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.UserLab = new System.Windows.Forms.Label();
+            this.AceptarBo = new AltoControls.AltoButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.AperturaTxt = new AltoControls.AltoTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderLetras)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProviderCantidad)).BeginInit();
             this.SuspendLayout();
@@ -356,12 +359,65 @@
             this.UserLab.Text = "User";
             this.UserLab.Visible = false;
             // 
+            // AceptarBo
+            // 
+            this.AceptarBo.Active1 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.AceptarBo.Active2 = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(201)))), ((int)(((byte)(84)))));
+            this.AceptarBo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AceptarBo.BackColor = System.Drawing.Color.Transparent;
+            this.AceptarBo.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.AceptarBo.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.AceptarBo.Font = new System.Drawing.Font("Gotham", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AceptarBo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(68)))));
+            this.AceptarBo.Inactive1 = System.Drawing.Color.White;
+            this.AceptarBo.Inactive2 = System.Drawing.Color.White;
+            this.AceptarBo.Location = new System.Drawing.Point(684, 54);
+            this.AceptarBo.Margin = new System.Windows.Forms.Padding(5);
+            this.AceptarBo.Name = "AceptarBo";
+            this.AceptarBo.Radius = 5;
+            this.AceptarBo.Size = new System.Drawing.Size(80, 30);
+            this.AceptarBo.Stroke = false;
+            this.AceptarBo.StrokeColor = System.Drawing.Color.Gray;
+            this.AceptarBo.TabIndex = 20;
+            this.AceptarBo.Text = "Aceptar";
+            this.AceptarBo.Transparency = false;
+            this.AceptarBo.Click += new System.EventHandler(this.AceptarBo_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Gotham", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(150)))), ((int)(((byte)(40)))));
+            this.label1.Location = new System.Drawing.Point(521, 21);
+            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(105, 18);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Se abre con:";
+            // 
+            // AperturaTxt
+            // 
+            this.AperturaTxt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.AperturaTxt.BackColor = System.Drawing.Color.Transparent;
+            this.AperturaTxt.Br = System.Drawing.Color.White;
+            this.AperturaTxt.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.AperturaTxt.ForeColor = System.Drawing.Color.Black;
+            this.AperturaTxt.Location = new System.Drawing.Point(641, 14);
+            this.AperturaTxt.Margin = new System.Windows.Forms.Padding(5);
+            this.AperturaTxt.Name = "AperturaTxt";
+            this.AperturaTxt.Size = new System.Drawing.Size(123, 30);
+            this.AperturaTxt.TabIndex = 22;
+            // 
             // Facturacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(820, 467);
+            this.Controls.Add(this.AperturaTxt);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.AceptarBo);
             this.Controls.Add(this.UserLab);
             this.Controls.Add(this.ProductosTxt);
             this.Controls.Add(this.CantidadTxt);
@@ -417,5 +473,8 @@
         private System.Windows.Forms.ColumnHeader Subtotal;
         private System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Label UserLab;
+        private AltoControls.AltoTextBox AperturaTxt;
+        private System.Windows.Forms.Label label1;
+        private AltoControls.AltoButton AceptarBo;
     }
 }

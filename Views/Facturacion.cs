@@ -359,5 +359,10 @@ namespace Ferreto.Views
         }
 
         #endregion
+
+        private void AceptarBo_Click(object sender, EventArgs e)
+        {
+            AperturaTxt.Enabled = false;
+        }
     }
 }
