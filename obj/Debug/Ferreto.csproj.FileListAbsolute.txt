@@ -1027,3 +1027,4 @@ C:\Users\user\Desktop\2DO AÑO UNI\FERRETOS\FERRETO .7 (FINAL)\obj\Debug\Ferreto
 C:\Users\user\Desktop\2DO AÑO UNI\FERRETOS\FERRETO .7 (FINAL)\obj\Debug\Ferreto.csproj.CopyComplete
 C:\Users\user\Desktop\2DO AÑO UNI\FERRETOS\FERRETO .7 (FINAL)\obj\Debug\Ferreto.exe
 C:\Users\user\Desktop\2DO AÑO UNI\FERRETOS\FERRETO .7 (FINAL)\obj\Debug\Ferreto.pdb
+C:\Users\Carlos\Documents\TODO\Coasa de clases xd\Programacion II\BD\Ferreto\obj\Debug\Ferreto.csprojAssemblyReference.cache
